@@ -1,26 +1,34 @@
-// Attaques : armes puis puces offensives.
+// Attaques : arme puis puces offensives.
 
-// Équipe la première arme disponible si on n'en tient aucune.
-function ensureWeapon() {
-    if (getWeapon() == null) {
-        var weapons = getWeapons();
-        if (count(weapons) > 0) {
-            setWeapon(weapons[0]); // coûte 1 PT
-        }
+// Équipe l'arme voulue si on ne la tient pas déjà (coûte 1 PT).
+function ensureWeapon(weapon) {
+    if (getWeapon() != weapon && inArray(getWeapons(), weapon)) {
+        setWeapon(weapon);
     }
 }
 
 // Tire tant que l'arme est utilisable et que la cible est vivante.
-function attackUntilEmpty(target) {
-    ensureWeapon();
-    var guard = 0; // sécurité anti-boucle infinie
-    while (isAlive(target) && canUseWeapon(target) && guard < 10) {
+function shootUntilEmpty(target) {
+    var shots = 0;
+    while (shots < 10 && isAlive(target) && canUseWeapon(target)) {
         var result = useWeapon(target);
         // TODO vérifier : existence de USE_CRITICAL en v4
         if (result != USE_SUCCESS && result != USE_CRITICAL) {
             break;
         }
-        guard++;
+        shots++;
     }
-    // TODO : utiliser les puces offensives selon docs/context/profile.md
+    return shots;
+}
+
+// La cible est-elle attaquable ce tour depuis la position actuelle ?
+function canAttackNow(target) {
+    return canUseWeapon(target) || canUseChip(CHIP_PEBBLE, target) || canUseChip(CHIP_SPARK, target);
+}
+
+// Séquence offensive : caillou, pistolet, puis étincelle avec les PT restants.
+function attackSequence(target) {
+    tryChip(CHIP_PEBBLE, target);
+    shootUntilEmpty(target);
+    spamChip(CHIP_SPARK, target, 5);
 }

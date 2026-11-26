@@ -1,22 +1,40 @@
 // =============================================================
-// KrazyLeek — IA principale (point d'entrée)
-// Rôle : orchestrer les modules, aucune logique métier ici.
-// Stratégie par défaut : avancer, tirer tant que possible, puis reculer.
+// krazyKlick — IA principale (point d'entrée)
+// Build : force, pistolet + caillou / étincelle, soutien bandage / casque / protéines / motivation.
+// Port LeekScript de ai/legacy/krazyklick_v0.py, avec corrections :
+//  - plus de boucle infinie sur l'étincelle
+//  - les PT restants après le pistolet partent en étincelle
+//  - le casque passe après les attaques (on ne sacrifie plus de dégâts)
+//  - recul avec les PM restants après avoir tiré
 // =============================================================
 include("lib/utils");
+include("lib/chips");
 include("lib/targeting");
 include("lib/combat");
+include("lib/survival");
 include("lib/movement");
 
-var me = getEntity();
 var target = chooseTarget();
 
 if (target != null) {
-    // 1. Se rapprocher juste assez pour être à portée
+    // 1. Motivation d'abord : plus de PT pour tout le reste du tour
+    tryChipSelf(CHIP_MOTIVATION);
+    ensureWeapon(WEAPON_PISTOL);
+
+    // 2. Avancer juste assez pour être à portée
     approachForAttack(target);
-    // 2. Dépenser les PT en attaques
-    attackUntilEmpty(target);
-    // 3. Utiliser les PM restants pour se mettre à l'abri
+
+    // 3. Soin si nécessaire
+    healIfNeeded();
+
+    // 4. Attaque : protéines (boost de force) seulement si on frappe ce tour
+    if (canAttackNow(target)) {
+        tryChipSelf(CHIP_PROTEIN);
+        attackSequence(target);
+    }
+
+    // 5. PT restants en défense, PM restants pour reculer
+    defendWithLeftovers();
     retreatFrom(target);
 }
 

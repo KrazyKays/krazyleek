@@ -1,20 +1,30 @@
 // Choix de la cible.
-// Score simple : on préfère l'ennemi le plus faible en PV, puis le plus proche.
+// Les coffres ne sont visés que s'il n'y a aucun autre ennemi.
 
+// TODO vérifier : getType et ENTITY_CHEST en v4
+function isChestEntity(entity) {
+    return getType(entity) == ENTITY_CHEST;
+}
+
+// Plus le score est bas, plus la cible est prioritaire : PV faibles puis proximité.
 function targetScore(enemy) {
-    // Plus le score est bas, plus la cible est prioritaire.
     return getLife(enemy) + distanceTo(enemy) * 10;
 }
 
 function chooseTarget() {
     var best = null;
     var bestScore = 0;
+    var fallbackChest = null;
     for (var enemy in getAliveEnemies()) {
+        if (isChestEntity(enemy)) {
+            if (fallbackChest == null) fallbackChest = enemy;
+            continue;
+        }
         var score = targetScore(enemy);
         if (best == null || score < bestScore) {
             best = enemy;
             bestScore = score;
         }
     }
-    return best;
+    return best != null ? best : fallbackChest;
 }

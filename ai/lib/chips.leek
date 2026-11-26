@@ -1,0 +1,27 @@
+// Utilisation sûre des puces.
+// Les coûts, portées et recharges sont lus en combat par l'API : rien n'est codé en dur.
+
+// Tente d'utiliser une puce sur une cible. Renvoie true si l'action a réussi.
+// canUseChip vérifie PT, recharge, portée et ligne de vue.
+function tryChip(chip, target) {
+    if (!canUseChip(chip, target)) {
+        return false;
+    }
+    var result = useChip(chip, target);
+    // TODO vérifier : existence de USE_CRITICAL en v4
+    return result == USE_SUCCESS || result == USE_CRITICAL;
+}
+
+// Puce sur soi-même (buffs, soins).
+function tryChipSelf(chip) {
+    return tryChip(chip, getEntity());
+}
+
+// Utilise une puce en boucle tant que possible (garde anti-boucle infinie).
+function spamChip(chip, target, maxUses) {
+    var uses = 0;
+    while (uses < maxUses && isAlive(target) && tryChip(chip, target)) {
+        uses++;
+    }
+    return uses;
+}

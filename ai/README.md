@@ -1,13 +1,17 @@
 # IA
 
-- `main.leek` : point d'entrée, orchestre les modules.
+- `main.leek` : point d'entrée de krazyKlick, orchestre les modules.
 - `lib/utils.leek` : debug et mesures.
-- `lib/targeting.leek` : choix de la cible.
-- `lib/combat.leek` : armes et puces.
+- `lib/chips.leek` : utilisation sûre des puces (`tryChip`, `tryChipSelf`, `spamChip`).
+- `lib/targeting.leek` : choix de la cible (coffres en dernier).
+- `lib/combat.leek` : séquence caillou → pistolet → étincelle.
+- `lib/survival.leek` : bandage et casque.
 - `lib/movement.leek` : approche et repli.
+- `legacy/` : anciennes IA (Python), pour référence.
 
 Sur Leek Wars, recréer la même arborescence dans l'éditeur (dossier `lib`) pour que les
 `include("lib/...")` fonctionnent. L'extension `.leek` est locale : sur le site, l'IA s'appelle
-juste `utils`, `targeting`, etc.
+juste `utils`, `chips`, etc.
 
-IA de démarrage générique : à adapter au build décrit dans `docs/context/profile.md`.
+Les coûts, portées et recharges des puces ne sont jamais codés en dur : ils sont lus en combat
+(`canUseChip`, `getChipCost`…).

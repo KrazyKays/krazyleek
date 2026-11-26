@@ -71,3 +71,11 @@ Note : un coup critique renvoie `USE_CRITICAL` *(à vérifier)*.
 | `getOperations()` | Opérations consommées |
 | `debug(x)`, `mark(c, color)`, `markText(c, txt)` | Debug |
 | `say(msg)` | Bulle de dialogue (coûte 1 PT) |
+
+## Constantes utilisées par krazyKlick *(noms à vérifier en jeu)*
+`WEAPON_PISTOL`, `CHIP_PEBBLE` (caillou), `CHIP_SPARK` (étincelle), `CHIP_BANDAGE`,
+`CHIP_HELMET` (casque), `CHIP_PROTEIN` (protéines), `CHIP_MOTIVATION`.
+`getType(e)` et `ENTITY_CHEST` (détection des coffres).
+
+Coûts / portées / recharges : non relevés (leekwars.com inaccessible depuis l'environnement).
+À compléter depuis l'encyclopédie du jeu.

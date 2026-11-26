@@ -1,0 +1,15 @@
+// Soins et défense.
+
+// Seuil de PV perdus avant de se soigner (repris de l'IA Python d'origine).
+global HEAL_THRESHOLD = 28;
+
+function healIfNeeded() {
+    if (getTotalLife() - getLife() >= HEAL_THRESHOLD) {
+        tryChipSelf(CHIP_BANDAGE);
+    }
+}
+
+// Casque avec les PT restants : défense pour le tour adverse.
+function defendWithLeftovers() {
+    tryChipSelf(CHIP_HELMET);
+}

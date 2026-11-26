@@ -6,7 +6,7 @@
 ## Éleveur
 - Talent éleveur : 100
 - Mode joué : **solo** (prioritaire), quelques tournois sans enjeu
-- Langage des IA : **Python** (API `Fight`, `Chip`, `Weapon`…) — ouvert à un autre langage
+- Langage des IA : **LeekScript v4** (migration depuis Python le 2026-11-26)
 
 ## Poireaux
 

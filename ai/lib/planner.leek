@@ -76,18 +76,26 @@ function usesLeft(item, isWeapon, data) {
 
 // Objets offensifs utilisables depuis `from` sur `target` :
 // [objet, estArme, coût, dégâtsParUtilisation, utilisationsMax, coûtChangementArme]
+// Depuis la case actuelle, on utilise les vérifications officielles du jeu (exactes).
+function reachesTarget(item, isWeapon, data, from, target) {
+    if (from == getCell()) {
+        if (isWeapon) return canUseWeapon(item, target);
+        return canUseChip(item, target);
+    }
+    return canHitFrom(data, from, getCell(target));
+}
+
 function candidatesFrom(from, target, strength) {
-    var toCell = getCell(target);
     var result = [];
     for (var w in getWeapons()) {
         var wd = WEAPON_DATA[w];
-        if (wd == null || wd[I_DMG] <= 0 || !canHitFrom(wd, from, toCell)) continue;
+        if (wd == null || wd[I_DMG] <= 0 || !reachesTarget(w, true, wd, from, target)) continue;
         var switchCost = getWeapon() == w ? 0 : 1;
         push(result, [w, true, wd[I_COST], expectedDamage(wd, target, strength), usesLeft(w, true, wd), switchCost]);
     }
     for (var c in getChips()) {
         var cd = CHIP_DATA[c];
-        if (cd == null || cd[I_DMG] <= 0 || !canHitFrom(cd, from, toCell)) continue;
+        if (cd == null || cd[I_DMG] <= 0 || !reachesTarget(c, false, cd, from, target)) continue;
         var n = usesLeft(c, false, cd);
         if (n > 0) push(result, [c, false, cd[I_COST], expectedDamage(cd, target, strength), n, 0]);
     }

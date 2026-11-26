@@ -3,6 +3,7 @@
 // IA générique « planificateur » : elle lit l'équipement réellement porté et les données
 // officielles (lib/items.leek), choisit la case et la combinaison d'attaques qui font le plus
 // de dégâts ce tour, puis se met à couvert avec les PM restants.
+// Hors de portée : marche vers la position d'attaque la plus proche (contourne les murs).
 // Coffres : jamais touchés (ni directement ni par une zone), évités s'ils sont réveillés,
 // achevés seulement si c'est possible dans le tour.
 // =============================================================
@@ -30,24 +31,26 @@ if (target != null) {
         }
     }
 
-    if (attack != null) {
-        // 1. Aller sur la meilleure case d'attaque
-        if (attack[0] != getCell()) moveTowardCell(attack[0]);
-        // 2. Buff éventuel puis attaques
-        executePlan(attack[2], attackTarget);
-    } else {
-        // Hors de portée : buffs de PT (motivation) puis approche à couvert
-        tryChipSelf(CHIP_MOTIVATION);
-        approachSafely(target);
-        // Peut-être à portée après le déplacement : on retente avec 0 PM
-        var late = chooseAttackCell(target);
-        if (late != null && late[0] == getCell()) executePlan(late[2], target);
+    // Hors de portée : marcher vers une position d'attaque, puis réévaluer avec les PM restants.
+    if (attack == null) {
+        approachAttackPosition(target);
+        attack = chooseAttackCell(target);
     }
 
-    // 3. PT restants : soins puis soutien ; PM restants : repli
+    var attacked = false;
+    debug("[plan] tour " + getTurn() + " cible " + getName(attackTarget) + " : "
+        + (attack == null ? "aucune attaque possible" : "case " + attack[0] + ", dégâts prévus " + round(attack[2][1])));
+    if (attack != null) {
+        if (attack[0] != getCell()) moveTowardCell(attack[0]);
+        executePlan(attack[2], attackTarget);
+        attacked = true;
+    }
+
+    // PT restants : soins puis soutien (motivation en premier).
     healIfNeeded();
     useLeftoverSupport();
-    if (isAlive(target)) retreatFrom(target);
+    // Repli uniquement après avoir frappé : sinon on annulerait l'approche.
+    if (attacked && isAlive(target)) retreatFrom(target);
 }
 
 logOperations("fin du tour");

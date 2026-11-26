@@ -20,3 +20,7 @@
    une zone qui déborde, ex. éclair) le réveille et il frappe très fort. Ne jamais l'inclure dans
    une zone d'effet ; ne l'attaquer que pour l'achever (`ai/lib/threat.leek`).
 9. **Coût en opérations mesuré** : planificateur ≈ 40 000 opérations/tour (limite 1 M avec 1 cœur).
+10. **Minimum local derrière un mur** : choisir sa case par distance de Manhattan bloque le poireau
+    contre un obstacle. Utiliser le vrai chemin (`moveToward`, `moveTowardCells`,
+    `getCellsToUseWeapon/Chip`). Ne jamais « reculer » un tour où on n'a pas attaqué.
+    (Combat 54965116, `fights/notes/2026-11-26-defaite-etincelle-derriere-mur.md`.)

@@ -6,22 +6,31 @@ function exposedTo(cell, enemy) {
     return lineOfSight(getCell(enemy), cell, getEntity());
 }
 
-// Aucune attaque possible ce tour : se rapprocher en restant si possible hors de vue.
-function approachSafely(target) {
-    var targetCell = getCell(target);
-    var best = null;
-    var bestScore = 0;
-    for (var entry in reachableCells(getMP())) {
-        var cell = entry[0];
-        var score = getCellDistance(cell, targetCell);
-        if (exposedTo(cell, target)) score += 4; // pénalité : visible par l'ennemi
-        score += chestDangerAt(cell) / 10;       // pénalité : à portée d'un coffre réveillé
-        if (best == null || score < bestScore) {
-            best = cell;
-            bestScore = score;
-        }
+// Cases depuis lesquelles au moins une de nos attaques toucherait la cible
+// (calcul officiel du jeu : portée, alignement, ligne de vue). ~25 000 opérations par objet.
+function attackPositions(target) {
+    var cells = [];
+    for (var w in getWeapons()) {
+        var wd = WEAPON_DATA[w];
+        if (wd != null && wd[I_DMG] > 0) cells = arrayConcat(cells, getCellsToUseWeapon(w, target));
     }
-    if (best != null && best != getCell()) moveTowardCell(best);
+    for (var c in getChips()) {
+        var cd = CHIP_DATA[c];
+        if (cd != null && cd[I_DMG] > 0) cells = arrayConcat(cells, getCellsToUseChip(c, target));
+    }
+    return cells;
+}
+
+// Aucune attaque possible ce tour : marcher (vrai chemin, contourne les murs) vers la
+// position d'attaque la plus proche. Se cacher ne sert à rien contre une étincelle
+// (pas de ligne de vue nécessaire) : on va au contact.
+function approachAttackPosition(target) {
+    var cells = attackPositions(target);
+    if (count(cells) > 0) {
+        moveTowardCells(cells);
+    } else {
+        moveToward(target);
+    }
 }
 
 // Après l'attaque : utiliser les PM restants pour se cacher, sinon s'éloigner.

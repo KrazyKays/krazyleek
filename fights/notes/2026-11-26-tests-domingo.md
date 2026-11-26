@@ -25,3 +25,15 @@ Opérations : ~150 000 à 200 000 par tour (limite 1 M).
 - Même va-et-vient dans 54966684 (cases 431 ↔ 450), gagné quand même.
 - Correction : `retreatFrom` ne fuit que vers une case hors de portée de l'adversaire ET d'où l'on
   peut encore attaquer au tour suivant ; sinon on reste à portée (repli seulement derrière un mur proche).
+
+## Combats 54966975, 54966987, 54966993 (victoires), 54966999 (nul)
+- Le correctif du repli marche : on ne fait plus d'allers-retours.
+- Nouveau défaut, inverse : dans 54966999, l'IA reste immobile 60 tours à 10 cases et ne tire que
+  des étincelles (~70/tour), pendant que Domingo, derrière un mur, se soigne (60–165 PV) : nul,
+  3 081 dégâts infligés, 0 subi. Même schéma dans 54966987 et 54966993 (victoires longues).
+  Cause : l'étincelle (sans ligne de vue) rend toujours une attaque possible, donc on ne bouge plus.
+- Correction : si l'attaque du tour fait < 60 % du potentiel max (`potentialDamage`), les PM restants
+  servent à avancer vers une position d'attaque forte (`advanceTowardStrongPositions`, objets ≥ 50 %
+  des meilleurs dégâts/PT → écarte l'étincelle).
+- 54966987 : tours 11, 12, 15, 16, 19, 20 sans attaque ni déplacement, cause inconnue →
+  logs `[exec]` / `[plan]` ajoutés (debugW) pour la trouver.

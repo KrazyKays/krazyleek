@@ -6,26 +6,55 @@ function exposedTo(cell, enemy) {
     return lineOfSight(getCell(enemy), cell, getEntity());
 }
 
-// Cases depuis lesquelles au moins une de nos attaques toucherait la cible
-// (calcul officiel du jeu : portée, alignement, ligne de vue). ~25 000 opérations par objet.
-function attackPositions(target) {
-    var cells = [];
+// Dégâts moyens de base par PT d'un objet.
+function damagePerTP(data) {
+    return data[I_DMG] / data[I_COST];
+}
+
+// Cases depuis lesquelles nos attaques toucheraient la cible (calcul officiel du jeu :
+// portée, alignement, ligne de vue). ~25 000 opérations par objet.
+// minRatio : ne garder que les objets dont les dégâts/PT valent au moins cette fraction
+// du meilleur objet (0 = tous ; 0,5 = écarte l'étincelle, faible mais sans ligne de vue).
+function attackPositions(target, minRatio) {
+    var bestDpt = 0;
     for (var w in getWeapons()) {
         var wd = WEAPON_DATA[w];
-        if (wd != null && wd[I_DMG] > 0) cells = arrayConcat(cells, getCellsToUseWeapon(w, target));
+        if (wd != null && wd[I_DMG] > 0) bestDpt = max(bestDpt, damagePerTP(wd));
     }
     for (var c in getChips()) {
         var cd = CHIP_DATA[c];
-        if (cd != null && cd[I_DMG] > 0) cells = arrayConcat(cells, getCellsToUseChip(c, target));
+        if (cd != null && cd[I_DMG] > 0) bestDpt = max(bestDpt, damagePerTP(cd));
+    }
+    var cells = [];
+    for (var w in getWeapons()) {
+        var wd = WEAPON_DATA[w];
+        if (wd != null && wd[I_DMG] > 0 && damagePerTP(wd) >= bestDpt * minRatio) {
+            cells = arrayConcat(cells, getCellsToUseWeapon(w, target));
+        }
+    }
+    for (var c in getChips()) {
+        var cd = CHIP_DATA[c];
+        if (cd != null && cd[I_DMG] > 0 && damagePerTP(cd) >= bestDpt * minRatio) {
+            cells = arrayConcat(cells, getCellsToUseChip(c, target));
+        }
     }
     return cells;
+}
+
+// Attaque faible ce tour (ex. étincelle seule derrière un mur) : utiliser les PM restants
+// pour se rapprocher d'une position d'où nos attaques fortes porteront au tour suivant
+// (combat 54966999 : 60 tours d'étincelles immobiles contre un adversaire qui se soignait).
+function advanceTowardStrongPositions(target) {
+    if (getMP() <= 0) return;
+    var cells = attackPositions(target, 0.5);
+    if (count(cells) > 0) moveTowardCells(cells);
 }
 
 // Aucune attaque possible ce tour : marcher (vrai chemin, contourne les murs) vers la
 // position d'attaque la plus proche. Se cacher ne sert à rien contre une étincelle
 // (pas de ligne de vue nécessaire) : on va au contact.
 function approachAttackPosition(target) {
-    var cells = attackPositions(target);
+    var cells = attackPositions(target, 0);
     if (count(cells) > 0) {
         moveTowardCells(cells);
     } else {

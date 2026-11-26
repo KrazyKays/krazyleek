@@ -79,7 +79,9 @@ function usesLeft(item, isWeapon, data) {
 // Objets offensifs utilisables depuis `from` sur `target` :
 // [objet, estArme, coût, dégâtsParUtilisation, utilisationsMax, coûtChangementArme]
 // Depuis la case actuelle, on utilise les vérifications officielles du jeu (exactes).
+// from == null : on ignore la géométrie (calcul du potentiel maximal).
 function reachesTarget(item, isWeapon, data, from, target) {
+    if (from == null) return true;
     if (from == getCell()) {
         if (isWeapon) return canUseWeapon(item, target);
         return canUseChip(item, target);
@@ -124,6 +126,11 @@ function bestCombo(cands, idx, tp, memo) {
     }
     memo[key] = best;
     return best;
+}
+
+// Dégâts max qu'on pourrait faire ce tour si la géométrie le permettait (PT pleins).
+function potentialDamage(target) {
+    return bestCombo(candidatesFrom(null, target, getStrength()), 0, getTotalTP(), [:])[0];
 }
 
 // Coups que l'adversaire peut porter en un tour (meilleur objet répété), pour valoriser
@@ -233,10 +240,21 @@ function executeStep(step, target) {
     for (var i = 0; i < step[2] && isAlive(target); i++) {
         if (step[1]) {
             if (getWeapon() != item) setWeapon(item);
-            if (!canUseWeapon(target)) return;
-            if (useWeapon(target) <= 0) return;
+            if (!canUseWeapon(target)) {
+                debugW("[exec] arme " + getWeaponName(item) + " inutilisable depuis " + getCell());
+                return;
+            }
+            var r = useWeapon(target);
+            if (r <= 0) {
+                debugW("[exec] arme " + getWeaponName(item) + " : code " + r);
+                return;
+            }
         } else {
-            if (!tryChip(item, target)) return;
+            if (!tryChip(item, target)) {
+                debugW("[exec] puce " + getChipName(item) + " inutilisable depuis " + getCell()
+                    + " (recharge " + getCooldown(item) + ", PT " + getTP() + ")");
+                return;
+            }
         }
     }
 }

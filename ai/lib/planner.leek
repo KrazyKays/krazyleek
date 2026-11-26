@@ -6,6 +6,8 @@
 
 // Bonus de force moyen des puces de buff de force (EFFECT_RAW_BUFF_STRENGTH, 2 tours).
 global STRENGTH_BUFFS = [CHIP_PROTEIN: 90];
+// Puces de bouclier absolu sur soi : [bouclier de base, durée en tours] (valeurs officielles).
+global SHIELD_CHIPS = [CHIP_HELMET: [15, 2], CHIP_SHIELD: [20, 3]];
 
 // ---------- Géométrie ----------
 
@@ -124,33 +126,81 @@ function bestCombo(cands, idx, tp, memo) {
     return best;
 }
 
-// Meilleur plan depuis une case : [score, dégâts, étapes, buffDeForce ou null].
-function planFrom(from, target, tp) {
-    var strength = getStrength();
-    var base = bestCombo(candidatesFrom(from, target, strength), 0, tp, [:]);
-    var plan = [base[0], base[0], base[1], null];
+// Coups que l'adversaire peut porter en un tour (meilleur objet répété), pour valoriser
+// les boucliers absolus, qui s'appliquent à CHAQUE coup.
+function estimatedEnemyHits(enemy) {
+    var tp = getTotalTP(enemy);
+    var best = 0;
+    for (var w in getWeapons(enemy)) {
+        var wd = WEAPON_DATA[w];
+        if (wd == null || wd[I_DMG] <= 0) continue;
+        var uses = floor(tp / wd[I_COST]);
+        if (wd[I_USES] > 0) uses = min(uses, wd[I_USES]);
+        best = max(best, uses * max(1, wd[I_HITS]));
+    }
+    for (var c in getChips(enemy)) {
+        var cd = CHIP_DATA[c];
+        if (cd == null || cd[I_DMG] <= 0) continue;
+        var uses = floor(tp / cd[I_COST]);
+        if (cd[I_CD] > 0) uses = min(uses, 1);
+        if (cd[I_USES] > 0) uses = min(uses, cd[I_USES]);
+        best = max(best, uses * max(1, cd[I_HITS]));
+    }
+    return best;
+}
 
-    // Variante : buff de force d'abord, s'il est disponible.
-    for (var buff : var bonus in STRENGTH_BUFFS) {
-        if (!inArray(getChips(), buff) || getCooldown(buff) > 0) continue;
-        var cost = CHIP_DATA[buff][I_COST];
-        if (cost >= tp) continue;
-        var buffed = bestCombo(candidatesFrom(from, target, strength + bonus), 0, tp - cost, [:]);
-        // Le buff dure 2 tours : on compte la moitié du gain en plus pour le tour suivant.
-        var nextTurnGain = buffed[0] * (bonus / (100 + strength + bonus)) * 0.5;
-        if (buffed[0] + nextTurnGain > plan[0]) {
-            plan = [buffed[0] + nextTurnGain, buffed[0], buffed[1], buff];
+// Puces sur soi utilisables maintenant : [puce, coût, bonusForce, valeurBouclier].
+function availableSelfBuffs(target) {
+    var result = [];
+    for (var chip : var bonus in STRENGTH_BUFFS) {
+        if (inArray(getChips(), chip) && getCooldown(chip) == 0) {
+            push(result, [chip, CHIP_DATA[chip][I_COST], bonus, 0]);
         }
     }
-
-    // Un kill vaut plus que des dégâts en trop.
-    var life = getLife(target);
-    if (plan[1] >= life) {
-        plan[0] = life + 1000;
-    } else {
-        plan[0] = min(plan[0], life);
+    var hits = -1;
+    for (var chip : var info in SHIELD_CHIPS) {
+        if (!inArray(getChips(), chip) || getCooldown(chip) > 0) continue;
+        if (hits < 0) hits = estimatedEnemyHits(target);
+        // bouclier × coups par tour × durée, pondéré à 0,7 (l'adversaire ne joue pas toujours tout)
+        var value = info[0] * (1 + getResistance() / 100) * hits * info[1] * 0.7;
+        if (value > 0) push(result, [chip, CHIP_DATA[chip][I_COST], 0, value]);
     }
-    return plan;
+    return result;
+}
+
+// Meilleur plan depuis une case : [score, dégâts, étapes, puces sur soi à lancer d'abord].
+// On essaie toutes les combinaisons de puces sur soi (force, bouclier) : 2^n, n <= 3.
+function planFrom(from, target, tp, buffs) {
+    var strength = getStrength();
+    var subsets = [[]];
+    for (var buff in buffs) {
+        var extended = [];
+        for (var sub in subsets) push(extended, arrayConcat(sub, [buff]));
+        subsets = arrayConcat(subsets, extended);
+    }
+
+    var plan = null;
+    var life = getLife(target);
+    for (var sub in subsets) {
+        var cost = 0;
+        var bonus = 0;
+        var shield = 0;
+        var chips = [];
+        for (var b in sub) {
+            cost += b[1];
+            bonus += b[2];
+            shield += b[3];
+            push(chips, b[0]);
+        }
+        if (cost >= tp) continue;
+        var combo = bestCombo(candidatesFrom(from, target, strength + bonus), 0, tp - cost, [:]);
+        // Un buff de force dure 2 tours : la moitié du gain compte en plus pour le tour suivant.
+        var nextTurnGain = bonus > 0 ? combo[0] * (bonus / (100 + strength + bonus)) * 0.5 : 0;
+        var score = min(combo[0] + nextTurnGain, life) + shield;
+        if (combo[0] >= life) score = life + 1000; // un kill prime sur tout le reste
+        if (plan == null || score > plan[0]) plan = [score, combo[0], combo[1], chips];
+    }
+    return plan == null ? [0, 0, [], []] : plan;
 }
 
 // Choisit la meilleure case d'attaque : [case, coûtPM, plan] ou null si aucune attaque possible.
@@ -158,8 +208,9 @@ function chooseAttackCell(target) {
     var tp = getTP();
     var best = null;
     var bestScore = 0;
+    var buffs = availableSelfBuffs(target);
     for (var entry in reachableCells(getMP())) {
-        var plan = planFrom(entry[0], target, tp);
+        var plan = planFrom(entry[0], target, tp, buffs);
         if (plan[1] <= 0) continue;
         // À dégâts égaux, préférer la case qui garde des PM pour se replier ;
         // retirer les dégâts qu'on prendrait d'un coffre réveillé sur cette case.
@@ -189,9 +240,9 @@ function executeStep(step, target) {
     }
 }
 
-// Ordre : buff, puces, arme déjà en main, puis les autres armes (un seul changement chacune).
+// Ordre : puces sur soi (force, bouclier), puces, arme déjà en main, puis les autres armes (un seul changement chacune).
 function executePlan(plan, target) {
-    if (plan[3] != null) tryChipSelf(plan[3]);
+    for (var chip in plan[3]) tryChipSelf(chip);
     var held = getWeapon();
     for (var step in plan[2]) {
         if (!step[1]) executeStep(step, target);

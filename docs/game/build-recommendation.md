@@ -1,4 +1,4 @@
-# Config recommandée — krazyKlick niveau 30 (force 220, 10 PT, 3 PM)
+# Config recommandée — krazyKlick (force 220, 10 PT, 3 PM)
 
 > Calculs : dégâts moyens de base × (1 + force/100) = × 3,2 (formule confirmée par l'encyclopédie),
 > d'après `docs/data/` (API officielle). 2 emplacements d'armes, 6 de puces (RAM 6).
@@ -55,6 +55,24 @@ Ordre d'achat si budget limité : mitraillette → éclair → flamme.
 
 Soit environ **+45 à +70 % de dégâts par tour**.
 
+## Mise à jour niveau 33 : 10 emplacements de puces (composant RAM)
+
+Les 4 nouveaux emplacements, par ordre de priorité :
+
+| Puce | Prix | Rôle |
+|---|---|---|
+| **Casque** (déjà acheté) | 2 200 | Bouclier absolu 15 **par coup** pendant 2 tours. Contre 4 étincelles/tour : −60 dégâts/tour, soit ~120 dégâts évités pour 3 PT (40/PT, mieux que n'importe quelle attaque). L'IA le lance quand l'adversaire frappe souvent. |
+| **Rocher** | 7 400 | 24,6 dégâts/PT en cercle (portée 2–6) : combo 10 PT éclair + rocher + caillou ≈ 288 dégâts sans besoin d'alignement pour le rocher. |
+| **Étincelle** (déjà achetée) | 2 910 | Seule attaque sans ligne de vue : touche un adversaire caché derrière un mur. |
+| **Bottes en cuir** | 3 800 | +2 PM pendant 2 tours : l'IA les lance quand aucune attaque n'est possible, pour atteindre une position de tir. |
+
+Alternative au 4ᵉ : **Soin** (3 710, soin 38–46, mieux avec de la sagesse).
+
+**Composant à crafter : CD** (niveau 33, +40 sagesse) : soins × 1,4 et vol de vie = 4 % des
+dégâts infligés (~10 PV/tour). Il reste 4 emplacements de composants.
+
+**Fréquence 140** (ventilateur) : contre un adversaire à 100, ~72 % de chances de jouer en premier.
+
 ## Répartition du capital
 
 Situation (déduite) : 195 capital au niveau 30, 5 non dépensés. Force 220 = 200 investis
@@ -72,8 +90,8 @@ Gain par point de capital (objectif : dégâts × survie) :
 | 2ᵉ cœur | inutile : l'IA consomme ~40 000 opérations sur 1 000 000 | 0 |
 | 7ᵉ RAM (20 capital) | 1 puce de plus (ex. garder le casque) | faible pour l'instant |
 
-**Plan conseillé**
-1. **Mettre de côté pour le 11ᵉ PT** (30 capital) : les 5 actuels + 5 niveaux.
+**Plan conseillé** (210 capital au niveau 33)
+1. **11ᵉ PT** (30 capital) dès que possible : au niveau 35 si 20 points sont en réserve au niveau 33.
 2. Ensuite **4ᵉ PM** (20 capital, 4 niveaux).
 3. Ensuite **vie** en continu : 2× plus rentable que la force jusqu'à environ 1 300 PV
    (point où +4 PV et +1 force rapportent autant).

@@ -10,22 +10,22 @@
 
 ## Poireaux
 
-### krazyKlick — niveau 30
+### krazyKlick — niveau 33
+
+Stats au niveau 32 (combat 54965116) + composants RAM et ventilateur (craftés au niveau 33) :
 
 | Vie | Force | Sagesse | Agilité | Résistance | Science | Magie | Fréquence | PT | PM | Cœurs | RAM |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 647 | 220 | 0 | 40 | 0 | 0 | 0 | 100 | 10 | 3 | 1 | 6 |
+| 653 | 220 | 0 | 40 | 0 | 0 | 0 | **140** | 10 | 3 | 1 | **10** |
 
-- Capital non dépensé : 5
-- Emplacements : **2 armes**, 6 puces (RAM 6)
-- Arme : pistolet
-- Puces : caillou, étincelle, bandage, casque, protéines, motivation
-- Composants : ressort (+20 force / +40 agilité, déduit), pomme (+100 PV, déduit)
-- IA utilisée : [`ai/main.leek`](../../ai/main.leek) (LeekScript, testée et fonctionnelle le 2026-11-26).
+- Capital : 210 au total au niveau 33 ; non dépensé : **à confirmer** (20 si rien n'a été dépensé depuis le niveau 30)
+- Emplacements : **2 armes**, **10 puces** (RAM 10), jusqu'à 8 composants
+- Armes : mitraillette, pistolet
+- Puces (6/10) : éclair, flamme, caillou, protéines, motivation, bandage
+- Composants : ressort (+20 force, +40 agilité), pomme (+100 PV), RAM (+4 RAM), ventilateur (+40 fréquence)
+- IA utilisée : [`ai/main.leek`](../../ai/main.leek) (planificateur générique)
   Ancienne IA Python : [`ai/legacy/krazyklick_v0.py`](../../ai/legacy/krazyklick_v0.py)
 - Config cible : voir [`docs/game/build-recommendation.md`](../game/build-recommendation.md)
-- Stratégie actuelle : foncer sur l'ennemi, se buffer (motivation, casque, protéines),
-  soigner si besoin, tirer au pistolet de près, étincelle à distance.
 
 ## Objectifs
 - Court terme : progresser en solo.
@@ -33,4 +33,6 @@
 
 ## Adversaires problématiques
 - **Coffres** : ont tué krazyKlick plusieurs fois en solo → l'IA ne les touche plus (voir `ai/lib/threat.leek`).
+- **Kiteur étincelle derrière un mur** (Prunaux, combat 54965116) : bug d'approche corrigé ;
+  le casque est la parade (bouclier par coup).
 - (à compléter avec des liens de combats)

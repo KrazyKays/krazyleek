@@ -33,6 +33,7 @@ if (target != null) {
 
     // Hors de portée : marcher vers une position d'attaque, puis réévaluer avec les PM restants.
     if (attack == null) {
+        tryChipSelf(CHIP_LEATHER_BOOTS); // +2 PM pour atteindre une position d'attaque
         approachAttackPosition(target);
         attack = chooseAttackCell(target);
     }

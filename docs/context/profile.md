@@ -10,15 +10,15 @@
 
 ## Poireaux
 
-### krazyKlick — niveau 33
+### krazyKlick — niveau 35
 
-Stats au niveau 32 (combat 54965116) + composants RAM et ventilateur (craftés au niveau 33) :
+Stats au niveau 32 (combat 54965116) + RAM et ventilateur (niveau 33) + 11ᵉ PT (niveau 35) :
 
 | Vie | Force | Sagesse | Agilité | Résistance | Science | Magie | Fréquence | PT | PM | Cœurs | RAM |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 653 | 220 | 0 | 40 | 0 | 0 | 0 | **140** | 10 | 3 | 1 | **10** |
+| 662 | 220 | 0 | 40 | 0 | 0 | 0 | **140** | **11** | 3 | 1 | **10** |
 
-- Capital : 210 au total au niveau 33 ; non dépensé : **à confirmer** (20 si rien n'a été dépensé depuis le niveau 30)
+- Capital : 220 au total au niveau 35 ; non dépensé : 0 (estimé, après achat du 11ᵉ PT)
 - Emplacements : **2 armes**, **10 puces** (RAM 10), jusqu'à 8 composants
 - Armes : mitraillette, pistolet
 - Puces (6/10) : éclair, flamme, caillou, protéines, motivation, bandage

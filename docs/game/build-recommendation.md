@@ -91,11 +91,25 @@ Gain par point de capital (objectif : dégâts × survie) :
 | 7ᵉ RAM (20 capital) | 1 puce de plus (ex. garder le casque) | faible pour l'instant |
 
 **Plan conseillé** (210 capital au niveau 33)
-1. **11ᵉ PT** (30 capital) dès que possible : au niveau 35 si 20 points sont en réserve au niveau 33.
-2. Ensuite **4ᵉ PM** (20 capital, 4 niveaux).
+1. ~~**11ᵉ PT** (30 capital)~~ : fait au niveau 35.
+2. Ensuite **4ᵉ PM** (20 capital) : au niveau 39.
 3. Ensuite **vie** en continu : 2× plus rentable que la force jusqu'à environ 1 300 PV
    (point où +4 PV et +1 force rapportent autant).
 4. Force à nouveau quand la vie dépasse ~1 300, ou si la config change.
 
 Pas besoin de restat : la répartition actuelle est déjà équilibrée (simuler 30 capital de vie
 convertis en 1 PT donne ≈ −18 % de PV pour +21 % de dégâts, quasi neutre).
+
+## Niveau 35 : 11 PT
+
+Meilleures combinaisons à 11 PT (calculées automatiquement par l'IA) :
+
+| Situation | Combo | Dégâts moy. |
+|---|---|---|
+| Aligné ≤ 6, éclair dispo | 2 mitraillettes + éclair | ≈ 347 |
+| Pas aligné, rocher + caillou dispo | rocher + caillou + flamme | ≈ 277 |
+| Aligné, avec protéines | protéines + 2 mitraillettes | ≈ 307 ce tour + bonus au tour suivant |
+
+Nouvelle puce débloquée : **Bouclier** (`CHIP_SHIELD`, 13 850 habs) : bouclier absolu 20 pendant 3 tours,
+4 PT, recharge 4. Contre 4 coups/tour : ≈ 240 dégâts évités sur 3 tours (déjà géré par l'IA).
+À prendre à la place des bottes ou de l'étincelle si le budget le permet.

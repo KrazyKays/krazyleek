@@ -64,4 +64,7 @@ if (target != null) {
     if (isAlive(target)) useLeftoverSupport(target);
 }
 
+// Tour 1 : un PT restant sert à saluer (trophée « Bavard » / speaker, 2 500 habs).
+if (getTurn() == 1 && getTP() >= 1) say("Salut ! krazyKlick arrive");
+
 logOperations("fin du tour");

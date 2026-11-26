@@ -16,7 +16,7 @@ function healIfNeeded() {
 
 // Puces de soutien sur soi avec les PT restants, seulement quand elles serviront :
 //  - motivation (+PT pendant 3 tours) : si le combat commence d'ici un tour ;
-//  - boucliers (2–3 tours) : si l'adversaire peut nous frapper à son prochain tour.
+//  - boucliers (2–3 tours) : si l'adversaire va probablement nous frapper à son prochain tour.
 // À appeler APRÈS le repli (la case finale compte pour les boucliers).
 global BUFF_CHIPS = [CHIP_MOTIVATION];
 global DEFENSE_CHIPS = [CHIP_SHIELD, CHIP_HELMET, CHIP_WALL];
@@ -27,7 +27,7 @@ function useLeftoverSupport(enemy) {
             if (inArray(getChips(), chip)) tryChipSelf(chip);
         }
     }
-    if (enemyCanReach(enemy, getCell())) {
+    if (enemyLikelyAttacks(enemy, getCell())) {
         for (var chip in DEFENSE_CHIPS) {
             if (inArray(getChips(), chip)) tryChipSelf(chip);
         }

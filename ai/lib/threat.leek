@@ -90,6 +90,14 @@ function enemyCanReach(enemy, cell) {
     return getCellDistance(getCell(enemy), cell) <= getTotalMP(enemy) + attackRange(enemy);
 }
 
+// L'adversaire va-t-il probablement nous frapper à son prochain tour ? Plus strict que
+// enemyCanReach (marge de 2 cases) : un adversaire tout juste à la limite de portée attend
+// souvent. Sert à déclencher les boucliers au bon moment (combat 54967129 : boucliers lancés
+// à 15 cases au tour 4, expirés au contact au tour 6, défaite à 30 PV près).
+function enemyLikelyAttacks(enemy, cell) {
+    return getCellDistance(getCell(enemy), cell) <= getTotalMP(enemy) + attackRange(enemy) - 2;
+}
+
 // Le combat commence-t-il d'ici un tour ? (pour les buffs de plusieurs tours, ex. motivation)
 function combatSoon(enemy) {
     var reach = max(attackRange(enemy), attackRange(getEntity()));

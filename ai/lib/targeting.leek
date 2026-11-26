@@ -1,0 +1,20 @@
+// Choix de la cible.
+// Score simple : on préfère l'ennemi le plus faible en PV, puis le plus proche.
+
+function targetScore(enemy) {
+    // Plus le score est bas, plus la cible est prioritaire.
+    return getLife(enemy) + distanceTo(enemy) * 10;
+}
+
+function chooseTarget() {
+    var best = null;
+    var bestScore = 0;
+    for (var enemy in getAliveEnemies()) {
+        var score = targetScore(enemy);
+        if (best == null || score < bestScore) {
+            best = enemy;
+            bestScore = score;
+        }
+    }
+    return best;
+}

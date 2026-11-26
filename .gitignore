@@ -1,0 +1,18 @@
+# Secrets — ne jamais committer
+.env
+*.token
+credentials*.json
+.claude/settings.local.json
+
+# Données de combats téléchargées (volumineuses)
+fights/*
+!fights/notes/
+!fights/README.md
+
+# Outils
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+tools/generator/build/
+*.jar

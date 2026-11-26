@@ -1,0 +1,26 @@
+// Attaques : armes puis puces offensives.
+
+// Équipe la première arme disponible si on n'en tient aucune.
+function ensureWeapon() {
+    if (getWeapon() == null) {
+        var weapons = getWeapons();
+        if (count(weapons) > 0) {
+            setWeapon(weapons[0]); // coûte 1 PT
+        }
+    }
+}
+
+// Tire tant que l'arme est utilisable et que la cible est vivante.
+function attackUntilEmpty(target) {
+    ensureWeapon();
+    var guard = 0; // sécurité anti-boucle infinie
+    while (isAlive(target) && canUseWeapon(target) && guard < 10) {
+        var result = useWeapon(target);
+        // TODO vérifier : existence de USE_CRITICAL en v4
+        if (result != USE_SUCCESS && result != USE_CRITICAL) {
+            break;
+        }
+        guard++;
+    }
+    // TODO : utiliser les puces offensives selon docs/context/profile.md
+}

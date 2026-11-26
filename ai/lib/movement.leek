@@ -1,0 +1,17 @@
+// Déplacements.
+
+// Avance vers la cible seulement si elle est hors de portée de l'arme.
+function approachForAttack(target) {
+    var weapon = getWeapon();
+    if (weapon == null || distanceTo(target) > getWeaponMaxRange(weapon) || !canUseWeapon(target)) {
+        moveToward(target);
+    }
+}
+
+// Utilise les PM restants pour s'éloigner (kite basique).
+// TODO : chercher une case hors ligne de vue plutôt que juste s'éloigner.
+function retreatFrom(target) {
+    if (getMP() > 0) {
+        moveAwayFrom(target);
+    }
+}

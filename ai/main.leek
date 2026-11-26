@@ -1,0 +1,23 @@
+// =============================================================
+// KrazyLeek — IA principale (point d'entrée)
+// Rôle : orchestrer les modules, aucune logique métier ici.
+// Stratégie par défaut : avancer, tirer tant que possible, puis reculer.
+// =============================================================
+include("lib/utils");
+include("lib/targeting");
+include("lib/combat");
+include("lib/movement");
+
+var me = getEntity();
+var target = chooseTarget();
+
+if (target != null) {
+    // 1. Se rapprocher juste assez pour être à portée
+    approachForAttack(target);
+    // 2. Dépenser les PT en attaques
+    attackUntilEmpty(target);
+    // 3. Utiliser les PM restants pour se mettre à l'abri
+    retreatFrom(target);
+}
+
+logOperations("fin du tour");

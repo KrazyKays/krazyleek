@@ -1,0 +1,11 @@
+// Utilitaires génériques : debug, mesures.
+
+// Affiche les opérations consommées avec une étiquette.
+function logOperations(label) {
+    debug("[ops] " + label + " : " + getOperations());
+}
+
+// Distance (Manhattan) entre mon poireau et une entité.
+function distanceTo(entity) {
+    return getCellDistance(getCell(), getCell(entity));
+}

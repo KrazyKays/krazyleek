@@ -8,6 +8,7 @@ description: Relire une IA LeekScript (Leek Wars) pour trouver bugs, gaspillage 
 Cible : le fichier passé en argument, sinon `ai/main.leek` et tous les modules qu'il inclut.
 
 ## Checklist
+0. Lancer `python3 tools/check_api.py` et reporter ses alertes.
 1. **API** : chaque fonction appelée existe-t-elle dans `docs/leekscript/api-reference.md` ?
    Signaler toute fonction inconnue ou marquée *(à vérifier)*.
 2. **Opérations** : boucles imbriquées, `getPathLength` ou `lineOfSight` répétés sur beaucoup de

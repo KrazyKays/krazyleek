@@ -12,7 +12,8 @@ Ce repo sert d'atelier pour écrire, tester et optimiser des IA pour [Leek Wars]
 |---|---|
 | `ai/` | Code des IA. `ai/main.leek` = point d'entrée, `ai/lib/` = modules inclus. |
 | `docs/leekscript/` | Référence du langage et de l'API du jeu + pièges connus. |
-| `docs/game/` | Mécaniques de jeu (formules, caractéristiques, tour de jeu). |
+| `docs/game/` | Mécaniques de jeu (formules) et `equipment.md` (valeurs officielles de l'équipement). |
+| `docs/data/` | Données brutes de l'API Leek Wars (puces, armes, constantes, fonctions). |
 | `docs/context/` | Profil du joueur : poireaux, builds, équipement, stratégie. **À lire avant d'écrire une IA.** |
 | `tools/` | Scripts (sync API, simulateur local, analyse de combats). |
 | `fights/` | Données de combats téléchargées (ignorées par git sauf `fights/notes/`). |
@@ -20,7 +21,8 @@ Ce repo sert d'atelier pour écrire, tester et optimiser des IA pour [Leek Wars]
 | `.claude/agents/` | Agents spécialisés (`leek-strategist`). |
 
 ## Règles pour écrire du LeekScript
-1. **Ne jamais inventer une fonction de l'API.** Vérifier dans `docs/leekscript/api-reference.md`.
+1. **Ne jamais inventer une fonction de l'API.** Vérifier dans `docs/leekscript/api-reference.md`
+   ou `docs/data/functions.json`, et lancer `python3 tools/check_api.py` après chaque modification.
    Si une fonction n'y est pas, le signaler et marquer `// TODO vérifier` plutôt que deviner.
    Les entrées marquées *(à vérifier)* dans la doc ne sont pas encore confirmées.
 2. **Budget d'opérations** : chaque tour a une limite d'opérations. Éviter les boucles
@@ -42,6 +44,7 @@ Ce repo sert d'atelier pour écrire, tester et optimiser des IA pour [Leek Wars]
 - [x] Squelette, docs de base, skills de relecture/écriture.
 - [x] Profil joueur rempli (`docs/context/profile.md`).
 - [x] Import de l'IA existante (`ai/legacy/`).
+- [x] `tools/fetch_api_data.py` (données publiques) et `tools/check_api.py` (validation du code).
 - [ ] `tools/` : sync avec l'API Leek Wars (nécessite un token, via le formulaire sécurisé — jamais en clair).
 - [ ] `tools/` : simulateur local (leek-wars-generator) pour des combats en masse.
 - [ ] Analyse automatique des combats + boucle d'optimisation.

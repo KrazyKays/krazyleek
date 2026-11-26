@@ -8,7 +8,6 @@ function tryChip(chip, target) {
         return false;
     }
     var result = useChip(chip, target);
-    // TODO vérifier : existence de USE_CRITICAL en v4
     return result == USE_SUCCESS || result == USE_CRITICAL;
 }
 

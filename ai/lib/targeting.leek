@@ -1,7 +1,6 @@
 // Choix de la cible.
 // Les coffres ne sont visés que s'il n'y a aucun autre ennemi.
 
-// TODO vérifier : getType et ENTITY_CHEST en v4
 function isChestEntity(entity) {
     return getType(entity) == ENTITY_CHEST;
 }

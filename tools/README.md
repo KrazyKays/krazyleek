@@ -1,4 +1,11 @@
-# Outils (à venir)
+# Outils
+
+| Outil | Rôle |
+|---|---|
+| `fetch_api_data.py` | Télécharge puces, armes, constantes et fonctions dans `docs/data/` |
+| `check_api.py` | Vérifie que le code `ai/` n'utilise que des fonctions/constantes existantes et non dépréciées |
+
+## À venir
 
 | Outil | Statut | Prérequis |
 |---|---|---|

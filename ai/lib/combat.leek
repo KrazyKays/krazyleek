@@ -12,7 +12,6 @@ function shootUntilEmpty(target) {
     var shots = 0;
     while (shots < 10 && isAlive(target) && canUseWeapon(target)) {
         var result = useWeapon(target);
-        // TODO vérifier : existence de USE_CRITICAL en v4
         if (result != USE_SUCCESS && result != USE_CRITICAL) {
             break;
         }

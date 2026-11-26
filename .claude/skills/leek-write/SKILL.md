@@ -8,7 +8,7 @@ description: Écrire ou modifier du code LeekScript (IA Leek Wars) dans ai/ en r
 ## Avant d'écrire
 1. Lire `docs/context/profile.md` : build, armes, puces, stratégie. Si le profil est vide et que
    le besoin en dépend, demander les infos manquantes plutôt que supposer.
-2. Lire `docs/leekscript/api-reference.md` et `docs/leekscript/pitfalls.md`.
+2. Lire `docs/game/equipment.md` (coûts, portées, dégâts réels), `docs/leekscript/api-reference.md` et `docs/leekscript/pitfalls.md`.
 3. Lire les modules existants de `ai/lib/` pour réutiliser plutôt que dupliquer.
 
 ## Règles d'écriture
@@ -25,6 +25,7 @@ description: Écrire ou modifier du code LeekScript (IA Leek Wars) dans ai/ en r
 - État persistant entre tours → `global`.
 
 ## Après avoir écrit
+- Lancer `python3 tools/check_api.py` et corriger toute fonction/constante inconnue ou dépréciée.
 - Résumer : fichiers modifiés, logique, hypothèses non vérifiées.
 - Proposer de lancer `/leek-review` sur le code modifié.
 - Rappeler que le code se teste en le copiant dans l'éditeur Leek Wars (tant que `tools/` n'a pas de sync).

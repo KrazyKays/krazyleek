@@ -8,7 +8,7 @@
 | Fonction | Rôle |
 |---|---|
 | `getEntity()` | Id de l'entité courante (mon poireau) |
-| `getLeek()` | Id de mon poireau *(ancien nom, préférer getEntity)* |
+| `getLeek()` | **Dépréciée** → `getEntity()` |
 | `getNearestEnemy()` | Ennemi le plus proche |
 | `getEnemies()` / `getAliveEnemies()` | Ennemis (tous / vivants) |
 | `getAllies()` / `getAliveAllies()` | Alliés |
@@ -44,7 +44,7 @@
 | `getWeapons(e)` | Armes équipées |
 | `useWeapon(target)` | Tirer sur une entité → code retour |
 | `useWeaponOnCell(cell)` | Tirer sur une case |
-| `canUseWeapon(target)` / `canUseWeaponOnCell(w, from, to)` *(signature à vérifier)* | Faisabilité |
+| `canUseWeapon([weapon,] entity)` | Faisabilité (arme optionnelle) |
 | `getWeaponCost(w)`, `getWeaponMinRange(w)`, `getWeaponMaxRange(w)` | Caractéristiques |
 | `getWeaponEffects(w)` | Effets (dégâts min/max…) |
 
@@ -54,15 +54,15 @@
 | `getChips(e)` | Puces équipées |
 | `useChip(chip, target)` / `useChipOnCell(chip, cell)` | Utiliser → code retour |
 | `canUseChip(chip, target)` | Faisabilité |
-| `getChipCooldown(chip)` / `getCooldown(chip)` *(nom à vérifier)* | Recharge restante |
+| `getCooldown(chip[, entity])` | Recharge restante ; `getChipCooldown(chip)` = recharge de base |
 | `getChipCost(chip)`, `getChipMinRange(chip)`, `getChipMaxRange(chip)` | Caractéristiques |
 | `getChipEffects(chip)` | Effets |
 | `summon(chip, cell, aiFunction)` | Invocation (bulbe) |
 
 ## Codes retour d'utilisation
-`USE_SUCCESS`, `USE_FAILED`, `USE_NOT_ENOUGH_TP`, `USE_INVALID_TARGET`,
-`USE_INVALID_POSITION`, `USE_INVALID_COOLDOWN` *(liste à vérifier)*.
-Note : un coup critique renvoie `USE_CRITICAL` *(à vérifier)*.
+`USE_SUCCESS` (1), `USE_CRITICAL` (2, coup critique), `USE_FAILED` (0), `USE_INVALID_TARGET` (-1),
+`USE_NOT_ENOUGH_TP` (-2), `USE_INVALID_COOLDOWN` (-3), `USE_INVALID_POSITION` (-4),
+`USE_TOO_MANY_SUMMONS` (-5), `USE_MAX_USES` (-7), `USE_INVALID_STATE` (-8). Réussite = valeur > 0.
 
 ## Tour et divers
 | Fonction | Rôle |
@@ -72,10 +72,13 @@ Note : un coup critique renvoie `USE_CRITICAL` *(à vérifier)*.
 | `debug(x)`, `mark(c, color)`, `markText(c, txt)` | Debug |
 | `say(msg)` | Bulle de dialogue (coûte 1 PT) |
 
-## Constantes utilisées par krazyKlick *(noms à vérifier en jeu)*
-`WEAPON_PISTOL`, `CHIP_PEBBLE` (caillou), `CHIP_SPARK` (étincelle), `CHIP_BANDAGE`,
-`CHIP_HELMET` (casque), `CHIP_PROTEIN` (protéines), `CHIP_MOTIVATION`.
-`getType(e)` et `ENTITY_CHEST` (détection des coffres).
+## Constantes vérifiées (API officielle)
+- Équipement : `WEAPON_PISTOL`, `CHIP_PEBBLE`, `CHIP_SPARK`, `CHIP_BANDAGE`, `CHIP_HELMET`,
+  `CHIP_PROTEIN`, `CHIP_MOTIVATION` — valeurs détaillées dans `docs/game/equipment.md`.
+- Entités : `getType(e)` → `ENTITY_LEEK`, `ENTITY_BULB`, `ENTITY_TURRET`, `ENTITY_CHEST`, `ENTITY_MOB`, `ENTITY_PLANT`.
+- `OPERATIONS_LIMIT` = 20 000 000.
 
-Coûts / portées / recharges : non relevés (leekwars.com inaccessible depuis l'environnement).
-À compléter depuis l'encyclopédie du jeu.
+## Référence complète
+La liste exhaustive (fonctions, arguments optionnels, coût en opérations, dépréciations) est dans
+`docs/data/functions.json` et `docs/data/constants.json`. Vérifier le code avec :
+`python3 tools/check_api.py`.

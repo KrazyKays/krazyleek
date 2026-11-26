@@ -1,0 +1,7909 @@
+{
+ "functions": [
+  {
+   "arguments_names": [
+    "number"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 1,
+   "name": "abs",
+   "operations": 1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "result",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "argument"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 7,
+   "name": "acos",
+   "operations": 3,
+   "optional": [],
+   "replacement": null,
+   "return_name": "result",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "argument"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 8,
+   "name": "asin",
+   "operations": 3,
+   "optional": [],
+   "replacement": null,
+   "return_name": "result",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "argument"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 9,
+   "name": "atan",
+   "operations": 3,
+   "optional": [],
+   "replacement": null,
+   "return_name": "result",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "y",
+    "x"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 12,
+   "name": "atan2",
+   "operations": 4,
+   "optional": [],
+   "replacement": null,
+   "return_name": "result",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "x"
+   ],
+   "arguments_types": [
+    "6"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 416,
+   "name": "binString",
+   "operations": 9,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "string",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [
+    "x"
+   ],
+   "arguments_types": [
+    "6"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 409,
+   "name": "bitCount",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "bits",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "x"
+   ],
+   "arguments_types": [
+    "6"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 474,
+   "name": "bitLength",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "length",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "x",
+    "bit",
+    "value"
+   ],
+   "arguments_types": [
+    "6",
+    "6",
+    "6"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 469,
+   "name": "setBit",
+   "operations": 1,
+   "optional": [
+    false,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "result",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "x",
+    "bit"
+   ],
+   "arguments_types": [
+    "6",
+    "6"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 475,
+   "name": "testBit",
+   "operations": 1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "set",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "x"
+   ],
+   "arguments_types": [
+    "6"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 412,
+   "name": "bitReverse",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "reversed",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "x"
+   ],
+   "arguments_types": [
+    "6"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 419,
+   "name": "bitsToReal",
+   "operations": 3,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "real",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "x"
+   ],
+   "arguments_types": [
+    "6"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 413,
+   "name": "byteReverse",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "reversed",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "number"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 17,
+   "name": "cbrt",
+   "operations": 5,
+   "optional": [],
+   "replacement": null,
+   "return_name": "result",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "number"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 13,
+   "name": "ceil",
+   "operations": 1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "result",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "angle"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 4,
+   "name": "cos",
+   "operations": 3,
+   "optional": [],
+   "replacement": null,
+   "return_name": "cosine",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "number"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 20,
+   "name": "exp",
+   "operations": 2,
+   "optional": [],
+   "replacement": null,
+   "return_name": "result",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "number"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 14,
+   "name": "floor",
+   "operations": 1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "result",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "x"
+   ],
+   "arguments_types": [
+    "6"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 417,
+   "name": "hexString",
+   "operations": 6,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "string",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [
+    "x",
+    "y"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 25,
+   "name": "hypot",
+   "operations": 2,
+   "optional": [],
+   "replacement": null,
+   "return_name": "hypotenuse",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "x"
+   ],
+   "arguments_types": [
+    "7"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 420,
+   "name": "isFinite",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "finite",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "x"
+   ],
+   "arguments_types": [
+    "7"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 421,
+   "name": "isInfinite",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "infinite",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "x"
+   ],
+   "arguments_types": [
+    "7"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 422,
+   "name": "isNaN",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "nan",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "x",
+    "y"
+   ],
+   "arguments_types": [
+    "6",
+    "6"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 423,
+   "name": "isPermutation",
+   "operations": 10,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "permutation",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "x"
+   ],
+   "arguments_types": [
+    "6"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 411,
+   "name": "leadingZeros",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "zeros",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "number"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 18,
+   "name": "log",
+   "operations": 4,
+   "optional": [],
+   "replacement": null,
+   "return_name": "log",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "number"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 19,
+   "name": "log10",
+   "operations": 5,
+   "optional": [],
+   "replacement": null,
+   "return_name": "log10",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "number"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 382,
+   "name": "log2",
+   "operations": 5,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "log2",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "a",
+    "b"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 3,
+   "name": "max",
+   "operations": 1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "max",
+   "return_type": 1
+  },
+  {
+   "arguments_names": [
+    "a",
+    "b"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 2,
+   "name": "min",
+   "operations": 1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "min",
+   "return_type": 1
+  },
+  {
+   "arguments_names": [
+    "value"
+   ],
+   "arguments_types": [
+    "-1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 201,
+   "name": "number",
+   "operations": 3,
+   "optional": [],
+   "replacement": null,
+   "return_name": "number",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "base",
+    "exp"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 21,
+   "name": "pow",
+   "operations": 7,
+   "optional": [],
+   "replacement": null,
+   "return_name": "result",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 22,
+   "name": "rand",
+   "operations": 3,
+   "optional": [],
+   "replacement": null,
+   "return_name": "number",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "a",
+    "b"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": true,
+   "id": 24,
+   "name": "randFloat",
+   "operations": 3,
+   "optional": [],
+   "replacement": 403,
+   "return_name": "number",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "a",
+    "b"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 23,
+   "name": "randInt",
+   "operations": 2,
+   "optional": [],
+   "replacement": null,
+   "return_name": "number",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "a",
+    "b"
+   ],
+   "arguments_types": [
+    "7",
+    "7"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 403,
+   "name": "randReal",
+   "operations": 3,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "number",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "x"
+   ],
+   "arguments_types": [
+    "7"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 418,
+   "name": "realBits",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "bits",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "x",
+    "s"
+   ],
+   "arguments_types": [
+    "6",
+    "6"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 414,
+   "name": "rotateLeft",
+   "operations": 1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "rotated",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "x",
+    "s"
+   ],
+   "arguments_types": [
+    "6",
+    "6"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 415,
+   "name": "rotateRight",
+   "operations": 1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "rotated",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "number"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 15,
+   "name": "round",
+   "operations": 1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "number",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "number"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 26,
+   "name": "signum",
+   "operations": 1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "sign",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "angle"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 5,
+   "name": "sin",
+   "operations": 3,
+   "optional": [],
+   "replacement": null,
+   "return_name": "sine",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "number"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 16,
+   "name": "sqrt",
+   "operations": 3,
+   "optional": [],
+   "replacement": null,
+   "return_name": "root",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "angle"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 6,
+   "name": "tan",
+   "operations": 4,
+   "optional": [],
+   "replacement": null,
+   "return_name": "tangent",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "radians"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 11,
+   "name": "toDegrees",
+   "operations": 3,
+   "optional": [],
+   "replacement": null,
+   "return_name": "degrees",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "x",
+    "digits"
+   ],
+   "arguments_types": [
+    "1",
+    "6"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 482,
+   "name": "toFixed",
+   "operations": 40,
+   "optional": [],
+   "replacement": null,
+   "return_name": "string",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [
+    "degrees"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 10,
+   "name": "toRadians",
+   "operations": 3,
+   "optional": [],
+   "replacement": null,
+   "return_name": "radians",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "x"
+   ],
+   "arguments_types": [
+    "6"
+   ],
+   "category": 1,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 410,
+   "name": "trailingZeros",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "zeros",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "string",
+    "position"
+   ],
+   "arguments_types": [
+    "2",
+    "1"
+   ],
+   "category": 2,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 27,
+   "name": "charAt",
+   "operations": 4,
+   "optional": [],
+   "replacement": null,
+   "return_name": "char",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [
+    "string",
+    "index"
+   ],
+   "arguments_types": [
+    "2",
+    "6"
+   ],
+   "category": 2,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 424,
+   "name": "codePointAt",
+   "operations": 1,
+   "optional": [
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "codePoint",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "codePoint"
+   ],
+   "arguments_types": [
+    "6"
+   ],
+   "category": 2,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 483,
+   "name": "fromCodePoint",
+   "operations": 6,
+   "optional": [],
+   "replacement": null,
+   "return_name": "string",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [
+    "string",
+    "search"
+   ],
+   "arguments_types": [
+    "2",
+    "2"
+   ],
+   "category": 2,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 40,
+   "name": "contains",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "contains",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "string",
+    "suffix"
+   ],
+   "arguments_types": [
+    "2",
+    "2"
+   ],
+   "category": 2,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 39,
+   "name": "endsWith",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "endsWith",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "string",
+    "search",
+    "start"
+   ],
+   "arguments_types": [
+    "2",
+    "2",
+    "1"
+   ],
+   "category": 2,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 33,
+   "name": "indexOf",
+   "operations": -1,
+   "optional": [
+    false,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "index",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "string"
+   ],
+   "arguments_types": [
+    "2"
+   ],
+   "category": 2,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 28,
+   "name": "length",
+   "operations": 1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "length",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "string",
+    "search",
+    "replace"
+   ],
+   "arguments_types": [
+    "2",
+    "2",
+    "2"
+   ],
+   "category": 2,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 31,
+   "name": "replace",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "string",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [
+    "string",
+    "delimiter",
+    "limit"
+   ],
+   "arguments_types": [
+    "2",
+    "2",
+    "1"
+   ],
+   "category": 2,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 35,
+   "name": "split",
+   "operations": -1,
+   "optional": [
+    false,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "parts",
+   "return_type": 42
+  },
+  {
+   "arguments_names": [
+    "string",
+    "prefix"
+   ],
+   "arguments_types": [
+    "2",
+    "2"
+   ],
+   "category": 2,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 38,
+   "name": "startsWith",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "startsWith",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "value"
+   ],
+   "arguments_types": [
+    "-1"
+   ],
+   "category": 2,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 202,
+   "name": "string",
+   "operations": 6,
+   "optional": [],
+   "replacement": null,
+   "return_name": "string",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [
+    "string",
+    "start",
+    "length"
+   ],
+   "arguments_types": [
+    "2",
+    "1",
+    "1"
+   ],
+   "category": 2,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 30,
+   "name": "substring",
+   "operations": -1,
+   "optional": [
+    false,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "string",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [
+    "string"
+   ],
+   "arguments_types": [
+    "2"
+   ],
+   "category": 2,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 36,
+   "name": "toLower",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "string",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [
+    "string"
+   ],
+   "arguments_types": [
+    "2"
+   ],
+   "category": 2,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 37,
+   "name": "toUpper",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "string",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [
+    "array",
+    "chunkSize"
+   ],
+   "arguments_types": [
+    "4",
+    "6"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 400,
+   "name": "arrayChunk",
+   "operations": 1,
+   "optional": [
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "chunks",
+   "return_type": 44
+  },
+  {
+   "arguments_names": [
+    "array1",
+    "array2"
+   ],
+   "arguments_types": [
+    "4",
+    "4"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 287,
+   "name": "arrayConcat",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "newArray",
+   "return_type": 4
+  },
+  {
+   "arguments_names": [
+    "array"
+   ],
+   "arguments_types": [
+    "4"
+   ],
+   "category": 3,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 396,
+   "name": "arrayClear",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "array",
+    "callback"
+   ],
+   "arguments_types": [
+    "4",
+    "5"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 395,
+   "name": "arrayEvery",
+   "operations": 1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "every",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "array",
+    "callback"
+   ],
+   "arguments_types": [
+    "4",
+    "5"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 280,
+   "name": "arrayFilter",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "newArray",
+   "return_type": 4
+  },
+  {
+   "arguments_names": [
+    "array",
+    "callback"
+   ],
+   "arguments_types": [
+    "4",
+    "5"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 462,
+   "name": "arrayFind",
+   "operations": -1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "element",
+   "return_type": -1
+  },
+  {
+   "arguments_names": [
+    "array",
+    "depth"
+   ],
+   "arguments_types": [
+    "4",
+    "1"
+   ],
+   "category": 3,
+   "complexity": 13,
+   "deprecated": false,
+   "id": 282,
+   "name": "arrayFlatten",
+   "operations": -1,
+   "optional": [
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "newArray",
+   "return_type": 4
+  },
+  {
+   "arguments_names": [
+    "array",
+    "f",
+    "v0"
+   ],
+   "arguments_types": [
+    "4",
+    "5",
+    "-1"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 283,
+   "name": "arrayFoldLeft",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "result",
+   "return_type": -1
+  },
+  {
+   "arguments_names": [
+    "array",
+    "f",
+    "v0"
+   ],
+   "arguments_types": [
+    "4",
+    "5",
+    "-1"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 284,
+   "name": "arrayFoldRight",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "result",
+   "return_type": -1
+  },
+  {
+   "arguments_names": [
+    "array"
+   ],
+   "arguments_types": [
+    "4"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 402,
+   "name": "arrayFrequencies",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "frequencies",
+   "return_type": 806
+  },
+  {
+   "arguments_names": [
+    "array",
+    "index",
+    "defaultValue"
+   ],
+   "arguments_types": [
+    "4",
+    "6",
+    "-1"
+   ],
+   "category": 3,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 406,
+   "name": "arrayGet",
+   "operations": 1,
+   "optional": [
+    false,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "element",
+   "return_type": -1
+  },
+  {
+   "arguments_names": [
+    "array",
+    "callback"
+   ],
+   "arguments_types": [
+    "4",
+    "5"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 286,
+   "name": "arrayIter",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "array",
+    "callback"
+   ],
+   "arguments_types": [
+    "4",
+    "5"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 279,
+   "name": "arrayMap",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "newArray",
+   "return_type": 4
+  },
+  {
+   "arguments_names": [
+    "array"
+   ],
+   "arguments_types": [
+    "4"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 57,
+   "name": "arrayMax",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "element",
+   "return_type": -1
+  },
+  {
+   "arguments_names": [
+    "array"
+   ],
+   "arguments_types": [
+    "4"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 56,
+   "name": "arrayMin",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "element",
+   "return_type": -1
+  },
+  {
+   "arguments_names": [
+    "array",
+    "callback"
+   ],
+   "arguments_types": [
+    "4",
+    "5"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 285,
+   "name": "arrayPartition",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "newArray",
+   "return_type": 44
+  },
+  {
+   "arguments_names": [
+    "array",
+    "count"
+   ],
+   "arguments_types": [
+    "4",
+    "6"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 398,
+   "name": "arrayRandom",
+   "operations": 1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "random",
+   "return_type": 4
+  },
+  {
+   "arguments_names": [
+    "array",
+    "element"
+   ],
+   "arguments_types": [
+    "4",
+    "-1"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 404,
+   "name": "arrayRemoveAll",
+   "operations": -1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "array",
+    "positions"
+   ],
+   "arguments_types": [
+    "4",
+    "6"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 491,
+   "name": "arrayRotate",
+   "operations": 1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "rotated",
+   "return_type": 4
+  },
+  {
+   "arguments_names": [
+    "array",
+    "start",
+    "end",
+    "stride"
+   ],
+   "arguments_types": [
+    "4",
+    "-1",
+    "-1",
+    "6"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 405,
+   "name": "arraySlice",
+   "operations": -1,
+   "optional": [
+    false,
+    false,
+    true,
+    true
+   ],
+   "replacement": null,
+   "return_name": "slice",
+   "return_type": 4
+  },
+  {
+   "arguments_names": [
+    "array",
+    "callback"
+   ],
+   "arguments_types": [
+    "4",
+    "5"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 394,
+   "name": "arraySome",
+   "operations": 1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "some",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "array",
+    "callback"
+   ],
+   "arguments_types": [
+    "4",
+    "5"
+   ],
+   "category": 3,
+   "complexity": 6,
+   "deprecated": false,
+   "id": 288,
+   "name": "arraySort",
+   "operations": -1,
+   "optional": [
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "sortedArray",
+   "return_type": 4
+  },
+  {
+   "arguments_names": [
+    "array"
+   ],
+   "arguments_types": [
+    "4"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 456,
+   "name": "arrayToSet",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "set",
+   "return_type": 9
+  },
+  {
+   "arguments_names": [
+    "array"
+   ],
+   "arguments_types": [
+    "4"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 401,
+   "name": "arrayUnique",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "unique",
+   "return_type": 4
+  },
+  {
+   "arguments_names": [
+    "array"
+   ],
+   "arguments_types": [
+    "41"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 59,
+   "name": "average",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "averageValue",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "array"
+   ],
+   "arguments_types": [
+    "4"
+   ],
+   "category": 3,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 41,
+   "name": "count",
+   "operations": 1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "numberOfElements",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "array",
+    "element"
+   ],
+   "arguments_types": [
+    "4",
+    "-1"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 54,
+   "name": "inArray",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "inArray",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "array"
+   ],
+   "arguments_types": [
+    "4"
+   ],
+   "category": 3,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 62,
+   "name": "isEmpty",
+   "operations": 2,
+   "optional": [],
+   "replacement": null,
+   "return_name": "empty",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "array",
+    "glue"
+   ],
+   "arguments_types": [
+    "4",
+    "2"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 42,
+   "name": "join",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "string",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [
+    "array"
+   ],
+   "arguments_types": [
+    "4"
+   ],
+   "category": 3,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 44,
+   "name": "pop",
+   "operations": 2,
+   "optional": [],
+   "replacement": null,
+   "return_name": "element",
+   "return_type": -1
+  },
+  {
+   "arguments_names": [
+    "array",
+    "position"
+   ],
+   "arguments_types": [
+    "4",
+    "1"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 48,
+   "name": "remove",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "element",
+   "return_type": -1
+  },
+  {
+   "arguments_names": [
+    "array",
+    "element",
+    "start"
+   ],
+   "arguments_types": [
+    "4",
+    "-1",
+    "1"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 53,
+   "name": "search",
+   "operations": -1,
+   "optional": [
+    false,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "pos",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "array"
+   ],
+   "arguments_types": [
+    "4"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 46,
+   "name": "shift",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "element",
+   "return_type": -1
+  },
+  {
+   "arguments_names": [
+    "array",
+    "start",
+    "end"
+   ],
+   "arguments_types": [
+    "4",
+    "1",
+    "1"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": true,
+   "id": 63,
+   "name": "subArray",
+   "operations": -1,
+   "optional": [],
+   "replacement": 405,
+   "return_name": "array",
+   "return_type": 4
+  },
+  {
+   "arguments_names": [
+    "array"
+   ],
+   "arguments_types": [
+    "41"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 58,
+   "name": "sum",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "sum",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "array",
+    "order"
+   ],
+   "arguments_types": [
+    "4",
+    "1"
+   ],
+   "category": 3,
+   "complexity": 6,
+   "deprecated": true,
+   "id": 204,
+   "name": "assocSort",
+   "operations": -1,
+   "optional": [
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "array",
+    "value",
+    "size"
+   ],
+   "arguments_types": [
+    "4",
+    "-1",
+    "1"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 61,
+   "name": "fill",
+   "operations": -1,
+   "optional": [
+    false,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "array",
+    "element",
+    "position"
+   ],
+   "arguments_types": [
+    "4",
+    "-1",
+    "1"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 47,
+   "name": "insert",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "array",
+    "order"
+   ],
+   "arguments_types": [
+    "4",
+    "1"
+   ],
+   "category": 3,
+   "complexity": 6,
+   "deprecated": true,
+   "id": 206,
+   "name": "keySort",
+   "operations": -1,
+   "optional": [
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "array",
+    "element"
+   ],
+   "arguments_types": [
+    "4",
+    "-1"
+   ],
+   "category": 3,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 43,
+   "name": "push",
+   "operations": 2,
+   "optional": [],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "array",
+    "elements"
+   ],
+   "arguments_types": [
+    "4",
+    "4"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 64,
+   "name": "pushAll",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "array",
+    "element"
+   ],
+   "arguments_types": [
+    "4",
+    "-1"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 49,
+   "name": "removeElement",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "array",
+    "key"
+   ],
+   "arguments_types": [
+    "4",
+    "-1"
+   ],
+   "category": 3,
+   "complexity": 1,
+   "deprecated": true,
+   "id": 207,
+   "name": "removeKey",
+   "operations": 5,
+   "optional": [],
+   "replacement": 366,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "array"
+   ],
+   "arguments_types": [
+    "4"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 55,
+   "name": "reverse",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "array"
+   ],
+   "arguments_types": [
+    "4"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 51,
+   "name": "shuffle",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "array",
+    "order"
+   ],
+   "arguments_types": [
+    "4",
+    "1"
+   ],
+   "category": 3,
+   "complexity": 6,
+   "deprecated": false,
+   "id": 162,
+   "name": "sort",
+   "operations": -1,
+   "optional": [
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "array",
+    "element"
+   ],
+   "arguments_types": [
+    "4",
+    "-1"
+   ],
+   "category": 3,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 45,
+   "name": "unshift",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "map"
+   ],
+   "arguments_types": [
+    "8"
+   ],
+   "category": 4,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 370,
+   "name": "mapAverage",
+   "operations": -1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "average",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "map",
+    "value"
+   ],
+   "arguments_types": [
+    "8",
+    "-1"
+   ],
+   "category": 4,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 374,
+   "name": "mapContains",
+   "operations": -1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "contains",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "map",
+    "key"
+   ],
+   "arguments_types": [
+    "8",
+    "-1"
+   ],
+   "category": 4,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 375,
+   "name": "mapContainsKey",
+   "operations": 1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "contains",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "map",
+    "callback"
+   ],
+   "arguments_types": [
+    "8",
+    "5"
+   ],
+   "category": 4,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 393,
+   "name": "mapEvery",
+   "operations": -1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "every",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "map",
+    "callback"
+   ],
+   "arguments_types": [
+    "8",
+    "5"
+   ],
+   "category": 4,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 389,
+   "name": "mapFilter",
+   "operations": -1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "filtered",
+   "return_type": 8
+  },
+  {
+   "arguments_names": [
+    "map",
+    "f",
+    "v"
+   ],
+   "arguments_types": [
+    "8",
+    "5",
+    "-1"
+   ],
+   "category": 4,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 391,
+   "name": "mapFold",
+   "operations": -1,
+   "optional": [
+    false,
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "result",
+   "return_type": -1
+  },
+  {
+   "arguments_names": [
+    "map",
+    "key",
+    "default"
+   ],
+   "arguments_types": [
+    "8",
+    "-1",
+    "-1"
+   ],
+   "category": 4,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 378,
+   "name": "mapGet",
+   "operations": 2,
+   "optional": [
+    false,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "element",
+   "return_type": -1
+  },
+  {
+   "arguments_names": [
+    "map"
+   ],
+   "arguments_types": [
+    "8"
+   ],
+   "category": 4,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 399,
+   "name": "mapIsEmpty",
+   "operations": 2,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "isEmpty",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "map"
+   ],
+   "arguments_types": [
+    "8"
+   ],
+   "category": 4,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 380,
+   "name": "mapKeys",
+   "operations": -1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "keys",
+   "return_type": 4
+  },
+  {
+   "arguments_names": [
+    "map"
+   ],
+   "arguments_types": [
+    "8"
+   ],
+   "category": 4,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 490,
+   "name": "mapKeySet",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "keys",
+   "return_type": 9
+  },
+  {
+   "arguments_names": [
+    "map",
+    "callback"
+   ],
+   "arguments_types": [
+    "8",
+    "5"
+   ],
+   "category": 4,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 368,
+   "name": "mapMap",
+   "operations": -1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "newMap",
+   "return_type": 8
+  },
+  {
+   "arguments_names": [
+    "map"
+   ],
+   "arguments_types": [
+    "8"
+   ],
+   "category": 4,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 372,
+   "name": "mapMax",
+   "operations": -1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "max",
+   "return_type": -1
+  },
+  {
+   "arguments_names": [
+    "map1",
+    "map2"
+   ],
+   "arguments_types": [
+    "8",
+    "8"
+   ],
+   "category": 4,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 388,
+   "name": "mapMerge",
+   "operations": -1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "merged",
+   "return_type": 8
+  },
+  {
+   "arguments_names": [
+    "map"
+   ],
+   "arguments_types": [
+    "8"
+   ],
+   "category": 4,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 371,
+   "name": "mapMin",
+   "operations": -1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "min",
+   "return_type": -1
+  },
+  {
+   "arguments_names": [
+    "map",
+    "key",
+    "value"
+   ],
+   "arguments_types": [
+    "8",
+    "-1",
+    "-1"
+   ],
+   "category": 4,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 383,
+   "name": "mapPut",
+   "operations": 3,
+   "optional": [
+    false,
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "value",
+   "return_type": -1
+  },
+  {
+   "arguments_names": [
+    "map",
+    "key"
+   ],
+   "arguments_types": [
+    "8",
+    "-1"
+   ],
+   "category": 4,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 366,
+   "name": "mapRemove",
+   "operations": 2,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "element",
+   "return_type": -1
+  },
+  {
+   "arguments_names": [
+    "map",
+    "key",
+    "value"
+   ],
+   "arguments_types": [
+    "8",
+    "-1",
+    "-1"
+   ],
+   "category": 4,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 385,
+   "name": "mapReplace",
+   "operations": 3,
+   "optional": [
+    false,
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "value",
+   "return_type": -1
+  },
+  {
+   "arguments_names": [
+    "map1",
+    "map2"
+   ],
+   "arguments_types": [
+    "8",
+    "8"
+   ],
+   "category": 4,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 377,
+   "name": "mapReplaceAll",
+   "operations": -1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "map",
+    "value"
+   ],
+   "arguments_types": [
+    "8",
+    "-1"
+   ],
+   "category": 4,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 373,
+   "name": "mapSearch",
+   "operations": -1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "key",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "map"
+   ],
+   "arguments_types": [
+    "8"
+   ],
+   "category": 4,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 367,
+   "name": "mapSize",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "size",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "map",
+    "callback"
+   ],
+   "arguments_types": [
+    "8",
+    "5"
+   ],
+   "category": 4,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 392,
+   "name": "mapSome",
+   "operations": -1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "some",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "map"
+   ],
+   "arguments_types": [
+    "8"
+   ],
+   "category": 4,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 369,
+   "name": "mapSum",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "sum",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "map"
+   ],
+   "arguments_types": [
+    "8"
+   ],
+   "category": 4,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 379,
+   "name": "mapValues",
+   "operations": -1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "values",
+   "return_type": 4
+  },
+  {
+   "arguments_names": [
+    "map"
+   ],
+   "arguments_types": [
+    "8"
+   ],
+   "category": 4,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 397,
+   "name": "mapClear",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "map",
+    "value"
+   ],
+   "arguments_types": [
+    "8",
+    "-1"
+   ],
+   "category": 4,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 390,
+   "name": "mapFill",
+   "operations": -1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "map",
+    "callback"
+   ],
+   "arguments_types": [
+    "8",
+    "5"
+   ],
+   "category": 4,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 381,
+   "name": "mapIter",
+   "operations": -1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "map",
+    "elements"
+   ],
+   "arguments_types": [
+    "8",
+    "8"
+   ],
+   "category": 4,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 384,
+   "name": "mapPutAll",
+   "operations": -1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "map",
+    "value"
+   ],
+   "arguments_types": [
+    "8",
+    "-1"
+   ],
+   "category": 4,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 387,
+   "name": "mapRemoveAll",
+   "operations": -1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 181,
+   "name": "getAbsoluteShield",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "shield",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 70,
+   "name": "getAgility",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "agility",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": true,
+   "id": 258,
+   "name": "getAIID",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": 496,
+   "return_name": "id",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 260,
+   "name": "getAIName",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "name",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 496,
+   "name": "getAIPath",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "path",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 296,
+   "name": "getBirthTurn",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "turn",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 72,
+   "name": "getCell",
+   "operations": 5,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "cell",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 170,
+   "name": "getChips",
+   "operations": 40,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "chips",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 494,
+   "name": "getComponents",
+   "operations": 40,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "components",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 197,
+   "name": "getCores",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "cores",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 323,
+   "name": "getDamageReturn",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "damageReturn",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 185,
+   "name": "getEffects",
+   "operations": 25,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "effects",
+   "return_type": 44
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 220,
+   "name": "getEntity",
+   "operations": 5,
+   "optional": [],
+   "replacement": null,
+   "return_name": "entity",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 298,
+   "name": "getEntityTurnOrder",
+   "operations": 30,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "turnOrder",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 332,
+   "name": "getFarmerCountry",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "country",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 250,
+   "name": "getFarmerID",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "id",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 252,
+   "name": "getFarmerName",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "name",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": true,
+   "id": 68,
+   "name": "getForce",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": 303,
+   "return_name": "force",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 199,
+   "name": "getFrequency",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "frequency",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "item"
+   ],
+   "arguments_types": [
+    "6"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 461,
+   "name": "getItemUses",
+   "operations": 15,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "uses",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 321,
+   "name": "getLaunchedEffects",
+   "operations": 25,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "effects",
+   "return_type": 44
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": true,
+   "id": 167,
+   "name": "getLeek",
+   "operations": 5,
+   "optional": [],
+   "replacement": 220,
+   "return_name": "entity",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 233,
+   "name": "getLeekID",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "realID",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 179,
+   "name": "getLevel",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "level",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 66,
+   "name": "getLife",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "life",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 306,
+   "name": "getMagic",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "magic",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 78,
+   "name": "getMP",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "mp",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 76,
+   "name": "getName",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "name",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 337,
+   "name": "getPassiveEffects",
+   "operations": 125,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "passiveEffects",
+   "return_type": 44
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 365,
+   "name": "getPower",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "power",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "6"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 452,
+   "name": "getRAM",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "ram",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 183,
+   "name": "getRelativeShield",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "shield",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 308,
+   "name": "getResistance",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "resistance",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 310,
+   "name": "getScience",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "science",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "6"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 460,
+   "name": "getSide",
+   "operations": 5,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "side",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity",
+    "stat"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 477,
+   "name": "getStat",
+   "operations": 15,
+   "optional": [
+    true,
+    false
+   ],
+   "replacement": null,
+   "return_name": "value",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "6"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 454,
+   "name": "getStates",
+   "operations": 25,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "states",
+   "return_type": 96
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 478,
+   "name": "getStats",
+   "operations": 40,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "stats",
+   "return_type": 8
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 303,
+   "name": "getStrength",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "strength",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 294,
+   "name": "getSummoner",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "summoner",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 335,
+   "name": "getSummons",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "summons",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 254,
+   "name": "getTeamID",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "id",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 256,
+   "name": "getTeamName",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "name",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 466,
+   "name": "getCompositionName",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "name",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 82,
+   "name": "getTotalLife",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "life",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 317,
+   "name": "getTotalMP",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "totalMP",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 319,
+   "name": "getTotalTP",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "totalTP",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 80,
+   "name": "getTP",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "tp",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 290,
+   "name": "getType",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "type",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 74,
+   "name": "getWeapon",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "weapon",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 86,
+   "name": "getWeapons",
+   "operations": 50,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "weapon",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 312,
+   "name": "getWisdom",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "wisdom",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 90,
+   "name": "isAlive",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "alive",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 88,
+   "name": "isAlly",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "isAlly",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 89,
+   "name": "isDead",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "dead",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 87,
+   "name": "isEnemy",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "isEnemy",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 333,
+   "name": "isStatic",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "static",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 463,
+   "name": "getBulbType",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "type",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 479,
+   "name": "getPlantType",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "type",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 480,
+   "name": "getPlantTrigger",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "entity",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 481,
+   "name": "getAwakeningZone",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "zone",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 493,
+   "name": "getPlantTriggers",
+   "operations": 25,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "entities",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 464,
+   "name": "getMobType",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "type",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 471,
+   "name": "getChestType",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "type",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 292,
+   "name": "isSummon",
+   "operations": 10,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "summon",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 230,
+   "name": "listen",
+   "operations": 78,
+   "optional": [],
+   "replacement": null,
+   "return_name": "messages",
+   "return_type": 4
+  },
+  {
+   "arguments_names": [
+    "message"
+   ],
+   "arguments_types": [
+    "2"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 83,
+   "name": "say",
+   "operations": 30,
+   "optional": [],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "weapon"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 5,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 84,
+   "name": "setWeapon",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "weapon",
+    "entity"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 6,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 241,
+   "name": "canUseWeapon",
+   "operations": 45,
+   "optional": [
+    true,
+    false
+   ],
+   "replacement": null,
+   "return_name": "canUse",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "weapon",
+    "cell"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 6,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 242,
+   "name": "canUseWeaponOnCell",
+   "operations": 45,
+   "optional": [
+    true,
+    false
+   ],
+   "replacement": null,
+   "return_name": "canUse",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 6,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 349,
+   "name": "getAllWeapons",
+   "operations": 200,
+   "optional": [],
+   "replacement": null,
+   "return_name": "weapons",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [
+    "weapon"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 6,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 274,
+   "name": "getWeaponArea",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "area",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "weapon"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 6,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 96,
+   "name": "getWeaponCost",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "cost",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "weapon",
+    "cell",
+    "from"
+   ],
+   "arguments_types": [
+    "1",
+    "1",
+    "1"
+   ],
+   "category": 6,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 247,
+   "name": "getWeaponEffectiveArea",
+   "operations": 78,
+   "optional": [
+    true,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "cells",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [
+    "weapon"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 6,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 97,
+   "name": "getWeaponEffects",
+   "operations": 125,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "effects",
+   "return_type": 44
+  },
+  {
+   "arguments_names": [
+    "weapon"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 6,
+   "complexity": 1,
+   "deprecated": true,
+   "id": 208,
+   "name": "getWeaponFailure",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "failure",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "weapon"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 6,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 362,
+   "name": "getWeaponLaunchType",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "launchType",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "weapon"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 6,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 329,
+   "name": "getWeaponMaxRange",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "maxRange",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "weapon"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 6,
+   "complexity": 1,
+   "deprecated": true,
+   "id": 95,
+   "name": "getWeaponMaxScope",
+   "operations": 15,
+   "optional": [],
+   "replacement": 329,
+   "return_name": "maxScope",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "weapon"
+   ],
+   "arguments_types": [
+    "6"
+   ],
+   "category": 6,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 458,
+   "name": "getWeaponMaxUses",
+   "operations": 15,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "maxUses",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "weapon"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 6,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 330,
+   "name": "getWeaponMinRange",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "minRange",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "weapon"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 6,
+   "complexity": 1,
+   "deprecated": true,
+   "id": 94,
+   "name": "getWeaponMinScope",
+   "operations": 15,
+   "optional": [],
+   "replacement": 330,
+   "return_name": "minScope",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "weapon"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 6,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 93,
+   "name": "getWeaponName",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "name",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [
+    "weapon"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 6,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 338,
+   "name": "getWeaponPassiveEffects",
+   "operations": 125,
+   "optional": [],
+   "replacement": null,
+   "return_name": "passiveEffects",
+   "return_type": 44
+  },
+  {
+   "arguments_names": [
+    "weapon"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 6,
+   "complexity": 1,
+   "deprecated": true,
+   "id": 98,
+   "name": "isInlineWeapon",
+   "operations": 10,
+   "optional": [],
+   "replacement": 362,
+   "return_name": "isInline",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "value"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 6,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 231,
+   "name": "isWeapon",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "weapon",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 6,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 91,
+   "name": "useWeapon",
+   "operations": 3000,
+   "optional": [],
+   "replacement": null,
+   "return_name": "result",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "cell"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 6,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 92,
+   "name": "useWeaponOnCell",
+   "operations": 3000,
+   "optional": [],
+   "replacement": null,
+   "return_name": "result",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "weapon"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 6,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 314,
+   "name": "weaponNeedLos",
+   "operations": 10,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "needLos",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "chip",
+    "entity"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 7,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 190,
+   "name": "canUseChip",
+   "operations": 45,
+   "optional": [],
+   "replacement": null,
+   "return_name": "canUse",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "chip",
+    "cell"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 7,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 191,
+   "name": "canUseChipOnCell",
+   "operations": 45,
+   "optional": [],
+   "replacement": null,
+   "return_name": "canUse",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "chip"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 7,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 313,
+   "name": "chipNeedLos",
+   "operations": 10,
+   "optional": [],
+   "replacement": null,
+   "return_name": "needLos",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 7,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 348,
+   "name": "getAllChips",
+   "operations": 200,
+   "optional": [],
+   "replacement": null,
+   "return_name": "chips",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [
+    "chip"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 7,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 273,
+   "name": "getChipArea",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "area",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "chip"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 7,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 186,
+   "name": "getChipCooldown",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "cooldown",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "chip"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 7,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 104,
+   "name": "getChipCost",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "cost",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "chip",
+    "cell",
+    "from"
+   ],
+   "arguments_types": [
+    "1",
+    "1",
+    "1"
+   ],
+   "category": 7,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 248,
+   "name": "getChipEffectiveArea",
+   "operations": 78,
+   "optional": [
+    false,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "cells",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [
+    "chip"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 7,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 105,
+   "name": "getChipEffects",
+   "operations": 125,
+   "optional": [],
+   "replacement": null,
+   "return_name": "effects",
+   "return_type": 44
+  },
+  {
+   "arguments_names": [
+    "chip"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 7,
+   "complexity": 1,
+   "deprecated": true,
+   "id": 213,
+   "name": "getChipFailure",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "failure",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "chip"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 7,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 364,
+   "name": "getChipLaunchType",
+   "operations": 15,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "launchType",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "chip"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 7,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 327,
+   "name": "getChipMaxRange",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "maxRange",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "chip"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 7,
+   "complexity": 1,
+   "deprecated": true,
+   "id": 103,
+   "name": "getChipMaxScope",
+   "operations": 15,
+   "optional": [],
+   "replacement": 327,
+   "return_name": "maxScope",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "chip"
+   ],
+   "arguments_types": [
+    "6"
+   ],
+   "category": 7,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 459,
+   "name": "getChipMaxUses",
+   "operations": 15,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "maxUses",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "chip"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 7,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 328,
+   "name": "getChipMinRange",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "minRange",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "chip"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 7,
+   "complexity": 1,
+   "deprecated": true,
+   "id": 102,
+   "name": "getChipMinScope",
+   "operations": 15,
+   "optional": [],
+   "replacement": 328,
+   "return_name": "minScope",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "chip"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 7,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 101,
+   "name": "getChipName",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "name",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [
+    "chip",
+    "entity"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 7,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 272,
+   "name": "getCooldown",
+   "operations": 30,
+   "optional": [
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "cooldown",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "value"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 7,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 232,
+   "name": "isChip",
+   "operations": 10,
+   "optional": [],
+   "replacement": null,
+   "return_name": "chip",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "chip"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 7,
+   "complexity": 1,
+   "deprecated": true,
+   "id": 106,
+   "name": "isInlineChip",
+   "operations": 10,
+   "optional": [],
+   "replacement": 364,
+   "return_name": "isInline",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "entity",
+    "cell",
+    "chip"
+   ],
+   "arguments_types": [
+    "1",
+    "1",
+    "1"
+   ],
+   "category": 7,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 300,
+   "name": "resurrect",
+   "operations": 500,
+   "optional": [
+    false,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "result",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "chip",
+    "cell",
+    "ai",
+    "name"
+   ],
+   "arguments_types": [
+    "1",
+    "1",
+    "5",
+    "2"
+   ],
+   "category": 7,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 297,
+   "name": "summon",
+   "operations": 1750,
+   "optional": [
+    false,
+    false,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "return",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "chip",
+    "entity"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 7,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 99,
+   "name": "useChip",
+   "operations": 3000,
+   "optional": [
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "result",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "chip",
+    "cell"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 7,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 100,
+   "name": "useChipOnCell",
+   "operations": 3000,
+   "optional": [],
+   "replacement": null,
+   "return_name": "result",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "cell"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 8,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 113,
+   "name": "getCellContent",
+   "operations": 6,
+   "optional": [],
+   "replacement": null,
+   "return_name": "content",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "cell1",
+    "cell2"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 8,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 108,
+   "name": "getCellDistance",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "distance",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "x",
+    "y"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 8,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 169,
+   "name": "getCellFromXY",
+   "operations": 5,
+   "optional": [],
+   "replacement": null,
+   "return_name": "cell",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "cell"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 8,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 117,
+   "name": "getCellX",
+   "operations": 5,
+   "optional": [],
+   "replacement": null,
+   "return_name": "x",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "cell"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 8,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 118,
+   "name": "getCellY",
+   "operations": 5,
+   "optional": [],
+   "replacement": null,
+   "return_name": "y",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "cell1",
+    "cell2"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 8,
+   "complexity": 1,
+   "deprecated": true,
+   "id": 107,
+   "name": "getDistance",
+   "operations": 15,
+   "optional": [],
+   "replacement": 108,
+   "return_name": "distance",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "cell"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 8,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 354,
+   "name": "getEntityOnCell",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "entity",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "cell"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 8,
+   "complexity": 1,
+   "deprecated": true,
+   "id": 111,
+   "name": "getLeekOnCell",
+   "operations": 15,
+   "optional": [],
+   "replacement": 354,
+   "return_name": "entity",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 8,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 304,
+   "name": "getMapType",
+   "operations": 5,
+   "optional": [],
+   "replacement": null,
+   "return_name": "mapType",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 8,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 271,
+   "name": "getObstacles",
+   "operations": 85,
+   "optional": [],
+   "replacement": null,
+   "return_name": "obstacles",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [
+    "start",
+    "end",
+    "ignoredCells"
+   ],
+   "arguments_types": [
+    "1",
+    "1",
+    "46"
+   ],
+   "category": 8,
+   "complexity": 7,
+   "deprecated": false,
+   "id": 236,
+   "name": "getPath",
+   "operations": -1,
+   "optional": [
+    false,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "path",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [
+    "cell1",
+    "cell2",
+    "ignoredCells"
+   ],
+   "arguments_types": [
+    "1",
+    "1",
+    "46"
+   ],
+   "category": 8,
+   "complexity": 7,
+   "deprecated": false,
+   "id": 261,
+   "name": "getPathLength",
+   "operations": -1,
+   "optional": [
+    false,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "length",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "cell"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 8,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 114,
+   "name": "isEmptyCell",
+   "operations": 10,
+   "optional": [],
+   "replacement": null,
+   "return_name": "empty",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "cell"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 8,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 344,
+   "name": "isEntity",
+   "operations": 10,
+   "optional": [],
+   "replacement": null,
+   "return_name": "isEntity",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "cell"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 8,
+   "complexity": 1,
+   "deprecated": true,
+   "id": 116,
+   "name": "isLeek",
+   "operations": 10,
+   "optional": [],
+   "replacement": 344,
+   "return_name": "isLeek",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "cell"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 8,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 115,
+   "name": "isObstacle",
+   "operations": 10,
+   "optional": [],
+   "replacement": null,
+   "return_name": "isObstacle",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "cell1",
+    "cell2"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 8,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 112,
+   "name": "isOnSameLine",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "sameLine",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 130,
+   "name": "getAliveAllies",
+   "operations": 100,
+   "optional": [],
+   "replacement": null,
+   "return_name": "allies",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 453,
+   "name": "getAliveAlliesCount",
+   "operations": 100,
+   "optional": [],
+   "replacement": null,
+   "return_name": "allies",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 122,
+   "name": "getAliveEnemies",
+   "operations": 100,
+   "optional": [],
+   "replacement": null,
+   "return_name": "enemies",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 123,
+   "name": "getAliveEnemiesCount",
+   "operations": 25,
+   "optional": [],
+   "replacement": null,
+   "return_name": "numAliveEnemies",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 350,
+   "name": "getAllEffects",
+   "operations": 200,
+   "optional": [],
+   "replacement": null,
+   "return_name": "effects",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 345,
+   "name": "getAlliedTurret",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "alliedTurret",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 193,
+   "name": "getAllies",
+   "operations": 100,
+   "optional": [],
+   "replacement": null,
+   "return_name": "allies",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 132,
+   "name": "getAlliesCount",
+   "operations": 25,
+   "optional": [],
+   "replacement": null,
+   "return_name": "numAllies",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 140,
+   "name": "getAlliesLife",
+   "operations": 50,
+   "optional": [],
+   "replacement": null,
+   "return_name": "life",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "chip"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 343,
+   "name": "getBulbChips",
+   "operations": 40,
+   "optional": [],
+   "replacement": null,
+   "return_name": "chips",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [
+    "chip"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 472,
+   "name": "getBulbStats",
+   "operations": 40,
+   "optional": [],
+   "replacement": null,
+   "return_name": "stats",
+   "return_type": 8
+  },
+  {
+   "arguments_names": [
+    "chip"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": true,
+   "id": 473,
+   "name": "getBulbCharacteristics",
+   "operations": 40,
+   "optional": [],
+   "replacement": 472,
+   "return_name": "characteristics",
+   "return_type": 8
+  },
+  {
+   "arguments_names": [
+    "chip",
+    "entity",
+    "ignoredCells"
+   ],
+   "arguments_types": [
+    "1",
+    "1",
+    "46"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 270,
+   "name": "getCellsToUseChip",
+   "operations": 25834,
+   "optional": [
+    false,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "cells",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [
+    "chip",
+    "cell",
+    "ignoredCells"
+   ],
+   "arguments_types": [
+    "1",
+    "1",
+    "46"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 269,
+   "name": "getCellsToUseChipOnCell",
+   "operations": 25834,
+   "optional": [
+    false,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "cells",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [
+    "weapon",
+    "entity",
+    "ignoredCells"
+   ],
+   "arguments_types": [
+    "1",
+    "1",
+    "46"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 216,
+   "name": "getCellsToUseWeapon",
+   "operations": 25834,
+   "optional": [
+    true,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "cells",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [
+    "weapon",
+    "cell",
+    "ignoredCells"
+   ],
+   "arguments_types": [
+    "1",
+    "1",
+    "46"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 267,
+   "name": "getCellsToUseWeaponOnCell",
+   "operations": 25834,
+   "optional": [
+    true,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "cell",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [
+    "chip",
+    "entity",
+    "ignoredCells"
+   ],
+   "arguments_types": [
+    "1",
+    "1",
+    "46"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 266,
+   "name": "getCellToUseChip",
+   "operations": 38080,
+   "optional": [
+    false,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "cell",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "chip",
+    "cell",
+    "ignoredCells"
+   ],
+   "arguments_types": [
+    "1",
+    "1",
+    "46"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 265,
+   "name": "getCellToUseChipOnCell",
+   "operations": 38080,
+   "optional": [
+    false,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "cell",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "weapon",
+    "entity",
+    "ignoredCells"
+   ],
+   "arguments_types": [
+    "1",
+    "1",
+    "46"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 264,
+   "name": "getCellToUseWeapon",
+   "operations": 38080,
+   "optional": [
+    true,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "cell",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "weapon",
+    "cell",
+    "ignoredCells"
+   ],
+   "arguments_types": [
+    "1",
+    "1",
+    "46"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 263,
+   "name": "getCellToUseWeaponOnCell",
+   "operations": 38080,
+   "optional": [
+    true,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "cell",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "chip",
+    "cell"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 160,
+   "name": "getChipTargets",
+   "operations": 40,
+   "optional": [],
+   "replacement": null,
+   "return_name": "targets",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 131,
+   "name": "getDeadAllies",
+   "operations": 100,
+   "optional": [],
+   "replacement": null,
+   "return_name": "deadAllies",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 484,
+   "name": "getDeadAlliesCount",
+   "operations": 25,
+   "optional": [],
+   "replacement": null,
+   "return_name": "numDeadAllies",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 124,
+   "name": "getDeadEnemies",
+   "operations": 100,
+   "optional": [],
+   "replacement": null,
+   "return_name": "deadEnemies",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 125,
+   "name": "getDeadEnemiesCount",
+   "operations": 25,
+   "optional": [],
+   "replacement": null,
+   "return_name": "numDeadEnemies",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 126,
+   "name": "getEnemies",
+   "operations": 100,
+   "optional": [],
+   "replacement": null,
+   "return_name": "enemies",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 127,
+   "name": "getEnemiesCount",
+   "operations": 25,
+   "optional": [],
+   "replacement": null,
+   "return_name": "numEnemies",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 139,
+   "name": "getEnemiesLife",
+   "operations": 50,
+   "optional": [],
+   "replacement": null,
+   "return_name": "life",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 346,
+   "name": "getEnemyTurret",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "enemyTurret",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 129,
+   "name": "getFarthestAlly",
+   "operations": 31,
+   "optional": [],
+   "replacement": null,
+   "return_name": "farthestAlly",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 120,
+   "name": "getFarthestEnemy",
+   "operations": 31,
+   "optional": [],
+   "replacement": null,
+   "return_name": "farthestEnemy",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 455,
+   "name": "getFightBoss",
+   "operations": 10,
+   "optional": [],
+   "replacement": null,
+   "return_name": "boss",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 194,
+   "name": "getFightContext",
+   "operations": 10,
+   "optional": [],
+   "replacement": null,
+   "return_name": "context",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 347,
+   "name": "getFightID",
+   "operations": 5,
+   "optional": [],
+   "replacement": null,
+   "return_name": "id",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 476,
+   "name": "isBatchFight",
+   "operations": 10,
+   "optional": [],
+   "replacement": null,
+   "return_name": "batch",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 195,
+   "name": "getFightType",
+   "operations": 10,
+   "optional": [],
+   "replacement": null,
+   "return_name": "fightType",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 487,
+   "name": "getInventory",
+   "operations": 10,
+   "optional": [],
+   "replacement": null,
+   "return_name": "inventory",
+   "return_type": -1
+  },
+  {
+   "arguments_names": [
+    "loadout",
+    "changeStats"
+   ],
+   "arguments_types": [
+    "-1",
+    "3"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 467,
+   "name": "setLoadout",
+   "operations": 100,
+   "optional": [
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "success",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 468,
+   "name": "getWinner",
+   "operations": 5,
+   "optional": [],
+   "replacement": null,
+   "return_name": "winner",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 128,
+   "name": "getNearestAlly",
+   "operations": 25,
+   "optional": [],
+   "replacement": null,
+   "return_name": "nearestAlly",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 209,
+   "name": "getNearestAllyTo",
+   "operations": 35,
+   "optional": [],
+   "replacement": null,
+   "return_name": "ally",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "cell"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 210,
+   "name": "getNearestAllyToCell",
+   "operations": 35,
+   "optional": [],
+   "replacement": null,
+   "return_name": "ally",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 119,
+   "name": "getNearestEnemy",
+   "operations": 25,
+   "optional": [],
+   "replacement": null,
+   "return_name": "nearestEnemy",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 211,
+   "name": "getNearestEnemyTo",
+   "operations": 35,
+   "optional": [],
+   "replacement": null,
+   "return_name": "enemy",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "cell"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 212,
+   "name": "getNearestEnemyToCell",
+   "operations": 35,
+   "optional": [],
+   "replacement": null,
+   "return_name": "enemy",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 133,
+   "name": "getNextPlayer",
+   "operations": 20,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "player",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 134,
+   "name": "getPreviousPlayer",
+   "operations": 20,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "player",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 121,
+   "name": "getTurn",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "turn",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "weapon",
+    "cell"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 239,
+   "name": "getWeaponTargets",
+   "operations": 40,
+   "optional": [
+    true,
+    false
+   ],
+   "replacement": null,
+   "return_name": "targets",
+   "return_type": 46
+  },
+  {
+   "arguments_names": [
+    "start",
+    "end",
+    "entityToIgnore"
+   ],
+   "arguments_types": [
+    "1",
+    "1",
+    "1"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 235,
+   "name": "lineOfSight",
+   "operations": 31,
+   "optional": [
+    false,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "los",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "entity",
+    "mp"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 150,
+   "name": "moveAwayFrom",
+   "operations": 500,
+   "optional": [
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "mp",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "cell",
+    "mp"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 152,
+   "name": "moveAwayFromCell",
+   "operations": 500,
+   "optional": [
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "mp",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "cells",
+    "mp"
+   ],
+   "arguments_types": [
+    "41",
+    "1"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 154,
+   "name": "moveAwayFromCells",
+   "operations": 500,
+   "optional": [
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "mp",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entities",
+    "mp"
+   ],
+   "arguments_types": [
+    "46",
+    "1"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 358,
+   "name": "moveAwayFromEntities",
+   "operations": 500,
+   "optional": [
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "mp",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entities",
+    "mp"
+   ],
+   "arguments_types": [
+    "41",
+    "1"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": true,
+   "id": 156,
+   "name": "moveAwayFromLeeks",
+   "operations": 500,
+   "optional": [
+    false,
+    true
+   ],
+   "replacement": 358,
+   "return_name": "mp",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "cell1",
+    "cell2",
+    "mp"
+   ],
+   "arguments_types": [
+    "1",
+    "1",
+    "1"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 158,
+   "name": "moveAwayFromLine",
+   "operations": 500,
+   "optional": [
+    false,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "mp",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entity",
+    "mp"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 142,
+   "name": "moveToward",
+   "operations": 500,
+   "optional": [
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "mp",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "cell",
+    "mp"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 144,
+   "name": "moveTowardCell",
+   "operations": 500,
+   "optional": [
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "mp",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "cells",
+    "mp"
+   ],
+   "arguments_types": [
+    "46",
+    "1"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 148,
+   "name": "moveTowardCells",
+   "operations": 500,
+   "optional": [
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "mp",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "entities",
+    "mp"
+   ],
+   "arguments_types": [
+    "46",
+    "1"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 356,
+   "name": "moveTowardEntities",
+   "operations": 500,
+   "optional": [
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "mp",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "leeks",
+    "mp"
+   ],
+   "arguments_types": [
+    "46",
+    "1"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": true,
+   "id": 146,
+   "name": "moveTowardLeeks",
+   "operations": 500,
+   "optional": [
+    false,
+    true
+   ],
+   "replacement": 356,
+   "return_name": "mp",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "cell1",
+    "cell2",
+    "mp"
+   ],
+   "arguments_types": [
+    "1",
+    "1",
+    "1"
+   ],
+   "category": 9,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 164,
+   "name": "moveTowardLine",
+   "operations": 500,
+   "optional": [
+    false,
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "mp",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 359,
+   "name": "clearMarks",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "value",
+    "level"
+   ],
+   "arguments_types": [
+    "-1",
+    "1"
+   ],
+   "category": 10,
+   "complexity": 13,
+   "deprecated": false,
+   "id": 363,
+   "name": "clone",
+   "operations": -1,
+   "optional": [
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "copy",
+   "return_type": -1
+  },
+  {
+   "arguments_names": [
+    "object"
+   ],
+   "arguments_types": [
+    "-1"
+   ],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 161,
+   "name": "debug",
+   "operations": 100,
+   "optional": [],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "object",
+    "color"
+   ],
+   "arguments_types": [
+    "-1",
+    "1"
+   ],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 324,
+   "name": "debugC",
+   "operations": 100,
+   "optional": [],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "object"
+   ],
+   "arguments_types": [
+    "-1"
+   ],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 166,
+   "name": "debugE",
+   "operations": 100,
+   "optional": [],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "object"
+   ],
+   "arguments_types": [
+    "-1"
+   ],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 165,
+   "name": "debugW",
+   "operations": 100,
+   "optional": [],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "key"
+   ],
+   "arguments_types": [
+    "2"
+   ],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 277,
+   "name": "deleteRegister",
+   "operations": 16,
+   "optional": [],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 353,
+   "name": "getDate",
+   "operations": 50,
+   "optional": [],
+   "replacement": null,
+   "return_name": "date",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": true,
+   "id": 192,
+   "name": "getInstructionsCount",
+   "operations": 1,
+   "optional": [],
+   "replacement": 301,
+   "return_name": "instructions",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 451,
+   "name": "getMaxOperations",
+   "operations": 1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "operations",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 408,
+   "name": "getMaxRAM",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "ram",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 301,
+   "name": "getOperations",
+   "operations": 1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "operations",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "key"
+   ],
+   "arguments_types": [
+    "2"
+   ],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 275,
+   "name": "getRegister",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "value",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 276,
+   "name": "getRegisters",
+   "operations": 25,
+   "optional": [],
+   "replacement": null,
+   "return_name": "registers",
+   "return_type": 42
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 495,
+   "name": "getSourceFile",
+   "operations": 1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "path",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 492,
+   "name": "getSourceLine",
+   "operations": 1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "line",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "path"
+   ],
+   "arguments_types": [
+    "2"
+   ],
+   "category": 10,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 485,
+   "name": "getLoadout",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "loadout",
+   "return_type": -1
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 352,
+   "name": "getTime",
+   "operations": 50,
+   "optional": [],
+   "replacement": null,
+   "return_name": "time",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 351,
+   "name": "getTimestamp",
+   "operations": 5,
+   "optional": [],
+   "replacement": null,
+   "return_name": "timestamp",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 407,
+   "name": "getUsedRAM",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "ram",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "ai"
+   ],
+   "arguments_types": [
+    "2"
+   ],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 200,
+   "name": "include",
+   "operations": 1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "json"
+   ],
+   "arguments_types": [
+    "2"
+   ],
+   "category": 10,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 326,
+   "name": "jsonDecode",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "object",
+   "return_type": -1
+  },
+  {
+   "arguments_names": [
+    "object"
+   ],
+   "arguments_types": [
+    "-1"
+   ],
+   "category": 10,
+   "complexity": 13,
+   "deprecated": false,
+   "id": 325,
+   "name": "jsonEncode",
+   "operations": -1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "json",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [
+    "cells",
+    "color",
+    "duration"
+   ],
+   "arguments_types": [
+    "-1",
+    "1",
+    "1"
+   ],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 223,
+   "name": "mark",
+   "operations": 164,
+   "optional": [
+    false,
+    true,
+    true
+   ],
+   "replacement": null,
+   "return_name": "success",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "cells",
+    "text",
+    "color",
+    "duration"
+   ],
+   "arguments_types": [
+    "-1",
+    "2",
+    "1",
+    "1"
+   ],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 342,
+   "name": "markText",
+   "operations": 164,
+   "optional": [
+    false,
+    true,
+    true,
+    true
+   ],
+   "replacement": null,
+   "return_name": "success",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [],
+   "arguments_types": [],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 262,
+   "name": "pause",
+   "operations": 30,
+   "optional": [],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "path"
+   ],
+   "arguments_types": [
+    "2"
+   ],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 486,
+   "name": "fileRead",
+   "operations": 1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "content",
+   "return_type": 2
+  },
+  {
+   "arguments_names": [
+    "title",
+    "message"
+   ],
+   "arguments_types": [
+    "2",
+    "2"
+   ],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 488,
+   "name": "sendNotification",
+   "operations": 50,
+   "optional": [
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "sent",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "key",
+    "value"
+   ],
+   "arguments_types": [
+    "2",
+    "2"
+   ],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 278,
+   "name": "setRegister",
+   "operations": 50,
+   "optional": [],
+   "replacement": null,
+   "return_name": "success",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "cell",
+    "color"
+   ],
+   "arguments_types": [
+    "1",
+    "1"
+   ],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 238,
+   "name": "show",
+   "operations": 8,
+   "optional": [
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "value"
+   ],
+   "arguments_types": [
+    "-1"
+   ],
+   "category": 10,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 226,
+   "name": "typeOf",
+   "operations": 1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "type",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "message"
+   ],
+   "arguments_types": [
+    "4"
+   ],
+   "category": 11,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 175,
+   "name": "getMessageAuthor",
+   "operations": 5,
+   "optional": [],
+   "replacement": null,
+   "return_name": "entity",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "message"
+   ],
+   "arguments_types": [
+    "4"
+   ],
+   "category": 11,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 177,
+   "name": "getMessageParams",
+   "operations": 5,
+   "optional": [],
+   "replacement": null,
+   "return_name": "params",
+   "return_type": -1
+  },
+  {
+   "arguments_names": [
+    "entity"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 11,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 174,
+   "name": "getMessages",
+   "operations": -1,
+   "optional": [
+    true
+   ],
+   "replacement": null,
+   "return_name": "messages",
+   "return_type": 44
+  },
+  {
+   "arguments_names": [
+    "message"
+   ],
+   "arguments_types": [
+    "4"
+   ],
+   "category": 11,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 176,
+   "name": "getMessageType",
+   "operations": 5,
+   "optional": [],
+   "replacement": null,
+   "return_name": "type",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "type",
+    "params"
+   ],
+   "arguments_types": [
+    "1",
+    "-1"
+   ],
+   "category": 11,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 172,
+   "name": "sendAll",
+   "operations": 40,
+   "optional": [],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "entity",
+    "type",
+    "params"
+   ],
+   "arguments_types": [
+    "1",
+    "1",
+    "-1"
+   ],
+   "category": 11,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 171,
+   "name": "sendTo",
+   "operations": 15,
+   "optional": [],
+   "replacement": null,
+   "return_name": "sent",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "color"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 12,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 229,
+   "name": "getBlue",
+   "operations": 1,
+   "optional": [],
+   "replacement": null,
+   "return_name": "blue",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "red",
+    "green",
+    "blue"
+   ],
+   "arguments_types": [
+    "1",
+    "1",
+    "1"
+   ],
+   "category": 12,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 224,
+   "name": "getColor",
+   "operations": 7,
+   "optional": [],
+   "replacement": null,
+   "return_name": "color",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "color"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 12,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 228,
+   "name": "getGreen",
+   "operations": 2,
+   "optional": [],
+   "replacement": null,
+   "return_name": "green",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "color"
+   ],
+   "arguments_types": [
+    "1"
+   ],
+   "category": 12,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 227,
+   "name": "getRed",
+   "operations": 2,
+   "optional": [],
+   "replacement": null,
+   "return_name": "red",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "set"
+   ],
+   "arguments_types": [
+    "9"
+   ],
+   "category": 13,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 429,
+   "name": "setClear",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "set",
+   "return_type": 9
+  },
+  {
+   "arguments_names": [
+    "set",
+    "element"
+   ],
+   "arguments_types": [
+    "9",
+    "-1"
+   ],
+   "category": 13,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 430,
+   "name": "setContains",
+   "operations": 1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "contains",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "set1",
+    "set2"
+   ],
+   "arguments_types": [
+    "9",
+    "9"
+   ],
+   "category": 13,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 436,
+   "name": "setDifference",
+   "operations": 1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "difference",
+   "return_type": 9
+  },
+  {
+   "arguments_names": [
+    "set1",
+    "set2"
+   ],
+   "arguments_types": [
+    "9",
+    "9"
+   ],
+   "category": 13,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 437,
+   "name": "setDisjunction",
+   "operations": 1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "disjunction",
+   "return_type": 9
+  },
+  {
+   "arguments_names": [
+    "set1",
+    "set2"
+   ],
+   "arguments_types": [
+    "9",
+    "9"
+   ],
+   "category": 13,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 435,
+   "name": "setIntersection",
+   "operations": 1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "intersection",
+   "return_type": 9
+  },
+  {
+   "arguments_names": [
+    "set"
+   ],
+   "arguments_types": [
+    "9"
+   ],
+   "category": 13,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 432,
+   "name": "setIsEmpty",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "empty",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "set1",
+    "set2"
+   ],
+   "arguments_types": [
+    "9",
+    "9"
+   ],
+   "category": 13,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 433,
+   "name": "setIsSubsetOf",
+   "operations": 1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "subset",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "set",
+    "element"
+   ],
+   "arguments_types": [
+    "9",
+    "-1"
+   ],
+   "category": 13,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 425,
+   "name": "setPut",
+   "operations": 3,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "added",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "set",
+    "elements"
+   ],
+   "arguments_types": [
+    "9",
+    "9"
+   ],
+   "category": 13,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 489,
+   "name": "setPutAll",
+   "operations": 1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "",
+   "return_type": 0
+  },
+  {
+   "arguments_names": [
+    "set",
+    "element"
+   ],
+   "arguments_types": [
+    "9",
+    "-1"
+   ],
+   "category": 13,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 426,
+   "name": "setRemove",
+   "operations": 2,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "existed",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "set",
+    "callback"
+   ],
+   "arguments_types": [
+    "9",
+    "5"
+   ],
+   "category": 13,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 470,
+   "name": "setFilter",
+   "operations": -1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "filtered",
+   "return_type": 9
+  },
+  {
+   "arguments_names": [
+    "set"
+   ],
+   "arguments_types": [
+    "9"
+   ],
+   "category": 13,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 431,
+   "name": "setSize",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "size",
+   "return_type": 6
+  },
+  {
+   "arguments_names": [
+    "set"
+   ],
+   "arguments_types": [
+    "9"
+   ],
+   "category": 13,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 438,
+   "name": "setToArray",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "array",
+   "return_type": 4
+  },
+  {
+   "arguments_names": [
+    "set1",
+    "set2"
+   ],
+   "arguments_types": [
+    "9",
+    "9"
+   ],
+   "category": 13,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 434,
+   "name": "setUnion",
+   "operations": 1,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "union",
+   "return_type": 9
+  },
+  {
+   "arguments_names": [
+    "interval"
+   ],
+   "arguments_types": [
+    "10"
+   ],
+   "category": 14,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 443,
+   "name": "intervalAverage",
+   "operations": 3,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "average",
+   "return_type": 7
+  },
+  {
+   "arguments_names": [
+    "interval1",
+    "interval2"
+   ],
+   "arguments_types": [
+    "10",
+    "10"
+   ],
+   "category": 14,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 446,
+   "name": "intervalCombine",
+   "operations": 3,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "combination",
+   "return_type": 10
+  },
+  {
+   "arguments_names": [
+    "interval1",
+    "interval2"
+   ],
+   "arguments_types": [
+    "10",
+    "10"
+   ],
+   "category": 14,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 445,
+   "name": "intervalIntersection",
+   "operations": 3,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "intersection",
+   "return_type": 10
+  },
+  {
+   "arguments_names": [
+    "interval"
+   ],
+   "arguments_types": [
+    "10"
+   ],
+   "category": 14,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 440,
+   "name": "intervalIsBounded",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "bounded",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "interval"
+   ],
+   "arguments_types": [
+    "10"
+   ],
+   "category": 14,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 450,
+   "name": "intervalIsClosed",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "closed",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "interval"
+   ],
+   "arguments_types": [
+    "10"
+   ],
+   "category": 14,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 439,
+   "name": "intervalIsEmpty",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "empty",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "interval"
+   ],
+   "arguments_types": [
+    "10"
+   ],
+   "category": 14,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 442,
+   "name": "intervalIsLeftBounded",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "bounded",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "interval"
+   ],
+   "arguments_types": [
+    "10"
+   ],
+   "category": 14,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 449,
+   "name": "intervalIsLeftClosed",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "closed",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "interval"
+   ],
+   "arguments_types": [
+    "10"
+   ],
+   "category": 14,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 441,
+   "name": "intervalIsRightBounded",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "bounded",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "interval"
+   ],
+   "arguments_types": [
+    "10"
+   ],
+   "category": 14,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 448,
+   "name": "intervalIsRightClosed",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "closed",
+   "return_type": 3
+  },
+  {
+   "arguments_names": [
+    "interval"
+   ],
+   "arguments_types": [
+    "10"
+   ],
+   "category": 14,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 428,
+   "name": "intervalMax",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "max",
+   "return_type": 1
+  },
+  {
+   "arguments_names": [
+    "interval"
+   ],
+   "arguments_types": [
+    "10"
+   ],
+   "category": 14,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 427,
+   "name": "intervalMin",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "min",
+   "return_type": 1
+  },
+  {
+   "arguments_names": [
+    "interval"
+   ],
+   "arguments_types": [
+    "10"
+   ],
+   "category": 14,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 444,
+   "name": "intervalSize",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "size",
+   "return_type": 1
+  },
+  {
+   "arguments_names": [
+    "interval",
+    "step"
+   ],
+   "arguments_types": [
+    "10",
+    "1"
+   ],
+   "category": 14,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 447,
+   "name": "intervalToArray",
+   "operations": 1,
+   "optional": [
+    false,
+    true
+   ],
+   "replacement": null,
+   "return_name": "array",
+   "return_type": 4
+  },
+  {
+   "arguments_names": [
+    "interval"
+   ],
+   "arguments_types": [
+    "10"
+   ],
+   "category": 14,
+   "complexity": 4,
+   "deprecated": false,
+   "id": 457,
+   "name": "intervalToSet",
+   "operations": 1,
+   "optional": [
+    false
+   ],
+   "replacement": null,
+   "return_name": "set",
+   "return_type": 9
+  },
+  {
+   "arguments_names": [
+    "interval",
+    "value"
+   ],
+   "arguments_types": [
+    "10",
+    "1"
+   ],
+   "category": 14,
+   "complexity": 1,
+   "deprecated": false,
+   "id": 465,
+   "name": "intervalContains",
+   "operations": 2,
+   "optional": [
+    false,
+    false
+   ],
+   "replacement": null,
+   "return_name": "result",
+   "return_type": 3
+  }
+ ]
+}

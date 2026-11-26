@@ -1,12 +1,17 @@
 # IA
 
 - `main.leek` : point d'entrée de krazyKlick, orchestre les modules.
+- `lib/items.leek` : **généré** par `tools/gen_items.py` (données officielles des armes et puces).
 - `lib/utils.leek` : debug et mesures.
 - `lib/chips.leek` : utilisation sûre des puces (`tryChip`, `tryChipSelf`, `spamChip`).
 - `lib/targeting.leek` : choix de la cible (coffres en dernier).
-- `lib/combat.leek` : séquence caillou → pistolet → étincelle.
-- `lib/survival.leek` : bandage et casque.
-- `lib/movement.leek` : approche et repli.
+- `lib/planner.leek` : choix de la case et de la combinaison d'attaques (sac à dos sur les PT).
+- `lib/survival.leek` : soins et puces de soutien avec les PT restants.
+- `lib/movement.leek` : approche à couvert et repli hors de vue.
+
+L'IA lit l'équipement réellement porté : acheter/équiper une arme ou une puce ne demande
+aucune modification du code (seules les puces de buff/soutien sont listées explicitement
+dans `planner.leek` et `survival.leek`).
 - `legacy/` : anciennes IA (Python), pour référence.
 
 Sur Leek Wars, recréer la même arborescence dans l'éditeur (dossier `lib`, fichiers nommés

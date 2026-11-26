@@ -1,15 +1,24 @@
-// Soins et défense.
+// Soins, défense et buffs de PT avec les PT restants.
+// Dépend de lib/items.leek et lib/chips.leek.
 
-// Seuil de PV perdus avant de se soigner (repris de l'IA Python d'origine).
-global HEAL_THRESHOLD = 28;
-
+// Soigne avec les puces de soin équipées tant que les PV manquants le justifient.
 function healIfNeeded() {
-    if (getTotalLife() - getLife() >= HEAL_THRESHOLD) {
-        tryChipSelf(CHIP_BANDAGE);
+    var mult = 1 + getWisdom() / 100;
+    for (var chip in getChips()) {
+        var data = CHIP_DATA[chip];
+        if (data == null || data[I_HEAL] <= 0) continue;
+        // On ne soigne que si le soin moyen ne déborde pas des PV max.
+        if (getTotalLife() - getLife() >= data[I_HEAL] * mult) {
+            tryChipSelf(chip);
+        }
     }
 }
 
-// Casque avec les PT restants : défense pour le tour adverse.
-function defendWithLeftovers() {
-    tryChipSelf(CHIP_HELMET);
+// Puces de soutien sur soi, dans l'ordre de priorité, si des PT restent.
+global SUPPORT_CHIPS = [CHIP_MOTIVATION, CHIP_HELMET, CHIP_WALL, CHIP_LEATHER_BOOTS];
+
+function useLeftoverSupport() {
+    for (var chip in SUPPORT_CHIPS) {
+        if (inArray(getChips(), chip)) tryChipSelf(chip);
+    }
 }

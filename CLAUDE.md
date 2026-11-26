@@ -44,6 +44,8 @@ Ce repo sert d'atelier pour écrire, tester et optimiser des IA pour [Leek Wars]
 - [x] Squelette, docs de base, skills de relecture/écriture.
 - [x] Profil joueur rempli (`docs/context/profile.md`).
 - [x] Import de l'IA existante (`ai/legacy/`).
+- [x] IA planificateur générique (`ai/lib/planner.leek`) + config recommandée (`docs/game/build-recommendation.md`).
+- [x] `tools/gen_items.py` : génère `ai/lib/items.leek` (ne jamais l'éditer à la main).
 - [x] `tools/fetch_api_data.py` (données publiques) et `tools/check_api.py` (validation du code).
 - [ ] `tools/` : sync avec l'API Leek Wars (nécessite un token, via le formulaire sécurisé — jamais en clair).
 - [ ] `tools/` : simulateur local (leek-wars-generator) pour des combats en masse.

@@ -22,6 +22,7 @@
 - Composants : ressort, pomme
 - IA utilisée : [`ai/main.leek`](../../ai/main.leek) (LeekScript, testée et fonctionnelle le 2026-11-26).
   Ancienne IA Python : [`ai/legacy/krazyklick_v0.py`](../../ai/legacy/krazyklick_v0.py)
+- Config cible : voir [`docs/game/build-recommendation.md`](../game/build-recommendation.md)
 - Stratégie actuelle : foncer sur l'ennemi, se buffer (motivation, casque, protéines),
   soigner si besoin, tirer au pistolet de près, étincelle à distance.
 

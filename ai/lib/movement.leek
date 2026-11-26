@@ -1,17 +1,42 @@
-// Déplacements.
+// Déplacements : approche à couvert et repli.
+// Dépend de lib/planner.leek (reachableCells).
 
-// Avance vers la cible seulement si elle est hors de portée de l'arme.
-function approachForAttack(target) {
-    var weapon = getWeapon();
-    if (weapon == null || distanceTo(target) > getWeaponMaxRange(weapon) || !canUseWeapon(target)) {
-        moveToward(target);
-    }
+// L'ennemi a-t-il une ligne de vue sur cette case ?
+function exposedTo(cell, enemy) {
+    return lineOfSight(getCell(enemy), cell, getEntity());
 }
 
-// Utilise les PM restants pour s'éloigner (kite basique).
-// TODO : chercher une case hors ligne de vue plutôt que juste s'éloigner.
-function retreatFrom(target) {
-    if (getMP() > 0) {
-        moveAwayFrom(target);
+// Aucune attaque possible ce tour : se rapprocher en restant si possible hors de vue.
+function approachSafely(target) {
+    var targetCell = getCell(target);
+    var best = null;
+    var bestScore = 0;
+    for (var entry in reachableCells(getMP())) {
+        var cell = entry[0];
+        var score = getCellDistance(cell, targetCell);
+        if (exposedTo(cell, target)) score += 4; // pénalité : visible par l'ennemi
+        if (best == null || score < bestScore) {
+            best = cell;
+            bestScore = score;
+        }
     }
+    if (best != null && best != getCell()) moveTowardCell(best);
+}
+
+// Après l'attaque : utiliser les PM restants pour se cacher, sinon s'éloigner.
+function retreatFrom(target) {
+    if (getMP() <= 0) return;
+    var targetCell = getCell(target);
+    var best = null;
+    var bestScore = 0;
+    for (var entry in reachableCells(getMP())) {
+        var cell = entry[0];
+        var score = getCellDistance(cell, targetCell);
+        if (!exposedTo(cell, target)) score += 20; // bonus : hors de vue
+        if (best == null || score > bestScore) {
+            best = cell;
+            bestScore = score;
+        }
+    }
+    if (best != null && best != getCell()) moveTowardCell(best);
 }

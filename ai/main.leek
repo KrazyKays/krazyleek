@@ -1,41 +1,40 @@
 // =============================================================
 // krazyKlick — IA principale (point d'entrée)
-// Build : force, pistolet + caillou / étincelle, soutien bandage / casque / protéines / motivation.
-// Port LeekScript de ai/legacy/krazyklick_v0.py, avec corrections :
-//  - plus de boucle infinie sur l'étincelle
-//  - les PT restants après le pistolet partent en étincelle
-//  - le casque passe après les attaques (on ne sacrifie plus de dégâts)
-//  - recul avec les PM restants après avoir tiré
+// IA générique « planificateur » : elle lit l'équipement réellement porté et les données
+// officielles (lib/items.leek), choisit la case et la combinaison d'attaques qui font le plus
+// de dégâts ce tour, puis se met à couvert avec les PM restants.
 // =============================================================
+include("lib/items.leek");
 include("lib/utils.leek");
 include("lib/chips.leek");
 include("lib/targeting.leek");
-include("lib/combat.leek");
+include("lib/planner.leek");
 include("lib/survival.leek");
 include("lib/movement.leek");
 
 var target = chooseTarget();
 
 if (target != null) {
-    // 1. Motivation d'abord : plus de PT pour tout le reste du tour
-    tryChipSelf(CHIP_MOTIVATION);
-    ensureWeapon(WEAPON_PISTOL);
+    var attack = chooseAttackCell(target);
 
-    // 2. Avancer juste assez pour être à portée
-    approachForAttack(target);
-
-    // 3. Soin si nécessaire
-    healIfNeeded();
-
-    // 4. Attaque : protéines (boost de force) seulement si on frappe ce tour
-    if (canAttackNow(target)) {
-        tryChipSelf(CHIP_PROTEIN);
-        attackSequence(target);
+    if (attack != null) {
+        // 1. Aller sur la meilleure case d'attaque
+        if (attack[0] != getCell()) moveTowardCell(attack[0]);
+        // 2. Buff éventuel puis attaques
+        executePlan(attack[2], target);
+    } else {
+        // Hors de portée : buffs de PT (motivation) puis approche à couvert
+        tryChipSelf(CHIP_MOTIVATION);
+        approachSafely(target);
+        // Peut-être à portée après le déplacement : on retente avec 0 PM
+        var late = chooseAttackCell(target);
+        if (late != null && late[0] == getCell()) executePlan(late[2], target);
     }
 
-    // 5. PT restants en défense, PM restants pour reculer
-    defendWithLeftovers();
-    retreatFrom(target);
+    // 3. PT restants : soins puis soutien ; PM restants : repli
+    healIfNeeded();
+    useLeftoverSupport();
+    if (isAlive(target)) retreatFrom(target);
 }
 
 logOperations("fin du tour");

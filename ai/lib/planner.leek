@@ -1,0 +1,193 @@
+// Planificateur d'attaque générique.
+// Pour chaque case atteignable ce tour, calcule la meilleure combinaison d'armes et de puces
+// (sac à dos sur les PT), puis choisit la case qui maximise les dégâts.
+// S'adapte automatiquement à l'équipement : il n'y a rien à changer si on achète une arme.
+// Dépend de lib/items.leek (données officielles générées).
+
+// Bonus de force moyen des puces de buff de force (EFFECT_RAW_BUFF_STRENGTH, 2 tours).
+global STRENGTH_BUFFS = [CHIP_PROTEIN: 90];
+
+// ---------- Géométrie ----------
+
+// Le type de lancer autorise-t-il un tir de `from` vers `to` ?
+function launchAllows(launchType, from, to) {
+    var dx = abs(getCellX(from) - getCellX(to));
+    var dy = abs(getCellY(from) - getCellY(to));
+    var line = isOnSameLine(from, to); // fonction officielle pour l'alignement
+    var diag = dx == dy;
+    if (launchType == LAUNCH_TYPE_LINE) return line;
+    if (launchType == LAUNCH_TYPE_DIAGONAL) return diag;
+    if (launchType == LAUNCH_TYPE_STAR) return line || diag;
+    if (launchType == LAUNCH_TYPE_STAR_INVERTED) return !line && !diag;
+    if (launchType == LAUNCH_TYPE_DIAGONAL_INVERTED) return !diag;
+    if (launchType == LAUNCH_TYPE_LINE_INVERTED) return !line;
+    return true; // LAUNCH_TYPE_CIRCLE
+}
+
+// Peut-on toucher `toCell` depuis `from` avec un objet décrit par `data` ?
+function canHitFrom(data, from, toCell) {
+    var d = getCellDistance(from, toCell);
+    if (d < data[I_MIN] || d > data[I_MAX]) return false;
+    // Objet à zone : ne pas tirer trop près pour ne pas se toucher soi-même (marge prudente).
+    if (data[I_AREA] > 1 && d <= 2) return false;
+    if (!launchAllows(data[I_LAUNCH], from, toCell)) return false;
+    // On ignore son propre poireau : on aura quitté sa case actuelle.
+    if (data[I_LOS] && !lineOfSight(from, toCell, getEntity())) return false;
+    return true;
+}
+
+// Cases atteignables avec `mp` PM (case actuelle incluse), sous forme [case, coûtEnPM].
+function reachableCells(mp) {
+    var me = getCell();
+    var x0 = getCellX(me);
+    var y0 = getCellY(me);
+    var cells = [[me, 0]];
+    for (var dx = -mp; dx <= mp; dx++) {
+        for (var dy = -mp; dy <= mp; dy++) {
+            var manhattan = abs(dx) + abs(dy);
+            if (manhattan == 0 || manhattan > mp) continue;
+            var c = getCellFromXY(x0 + dx, y0 + dy);
+            if (c == null || c < 0 || isObstacle(c) || !isEmptyCell(c)) continue;
+            var len = getPathLength(me, c);
+            if (len != null && len <= mp) push(cells, [c, len]);
+        }
+    }
+    return cells;
+}
+
+// ---------- Valeur des actions ----------
+
+// Dégâts moyens d'une utilisation sur la cible (force, boucliers de la cible).
+function expectedDamage(data, target, strength) {
+    if (data[I_DMG] <= 0) return 0;
+    var hits = max(1, data[I_HITS]);
+    var perHit = data[I_DMG] / hits * (1 + strength / 100);
+    var reduced = perHit * (1 - getRelativeShield(target) / 100) - getAbsoluteShield(target);
+    return max(0, reduced) * hits;
+}
+
+// Nombre d'utilisations encore possibles ce tour.
+function usesLeft(item, isWeapon, data) {
+    if (!isWeapon && getCooldown(item) > 0) return 0;
+    if (!isWeapon && data[I_CD] > 0) return 1;
+    return data[I_USES] < 0 ? 20 : data[I_USES];
+}
+
+// Objets offensifs utilisables depuis `from` sur `target` :
+// [objet, estArme, coût, dégâtsParUtilisation, utilisationsMax, coûtChangementArme]
+function candidatesFrom(from, target, strength) {
+    var toCell = getCell(target);
+    var result = [];
+    for (var w in getWeapons()) {
+        var wd = WEAPON_DATA[w];
+        if (wd == null || wd[I_DMG] <= 0 || !canHitFrom(wd, from, toCell)) continue;
+        var switchCost = getWeapon() == w ? 0 : 1;
+        push(result, [w, true, wd[I_COST], expectedDamage(wd, target, strength), usesLeft(w, true, wd), switchCost]);
+    }
+    for (var c in getChips()) {
+        var cd = CHIP_DATA[c];
+        if (cd == null || cd[I_DMG] <= 0 || !canHitFrom(cd, from, toCell)) continue;
+        var n = usesLeft(c, false, cd);
+        if (n > 0) push(result, [c, false, cd[I_COST], expectedDamage(cd, target, strength), n, 0]);
+    }
+    return result;
+}
+
+// ---------- Sac à dos sur les PT (programmation dynamique mémoïsée) ----------
+
+// Renvoie [dégâts, étapes] ; étape = [objet, estArme, nombre].
+function bestCombo(cands, idx, tp, memo) {
+    if (idx >= count(cands) || tp <= 0) return [0, []];
+    var key = idx * 1000 + tp;
+    if (memo[key] != null) return memo[key];
+    var c = cands[idx];
+    var best = bestCombo(cands, idx + 1, tp, memo);
+    for (var n = 1; n <= c[4]; n++) {
+        var spent = c[2] * n + c[5];
+        if (spent > tp) break;
+        var rest = bestCombo(cands, idx + 1, tp - spent, memo);
+        var dmg = rest[0] + c[3] * n;
+        if (dmg > best[0]) {
+            best = [dmg, arrayConcat([[c[0], c[1], n]], rest[1])];
+        }
+    }
+    memo[key] = best;
+    return best;
+}
+
+// Meilleur plan depuis une case : [score, dégâts, étapes, buffDeForce ou null].
+function planFrom(from, target, tp) {
+    var strength = getStrength();
+    var base = bestCombo(candidatesFrom(from, target, strength), 0, tp, [:]);
+    var plan = [base[0], base[0], base[1], null];
+
+    // Variante : buff de force d'abord, s'il est disponible.
+    for (var buff : var bonus in STRENGTH_BUFFS) {
+        if (!inArray(getChips(), buff) || getCooldown(buff) > 0) continue;
+        var cost = CHIP_DATA[buff][I_COST];
+        if (cost >= tp) continue;
+        var buffed = bestCombo(candidatesFrom(from, target, strength + bonus), 0, tp - cost, [:]);
+        // Le buff dure 2 tours : on compte la moitié du gain en plus pour le tour suivant.
+        var nextTurnGain = buffed[0] * (bonus / (100 + strength + bonus)) * 0.5;
+        if (buffed[0] + nextTurnGain > plan[0]) {
+            plan = [buffed[0] + nextTurnGain, buffed[0], buffed[1], buff];
+        }
+    }
+
+    // Un kill vaut plus que des dégâts en trop.
+    var life = getLife(target);
+    if (plan[1] >= life) {
+        plan[0] = life + 1000;
+    } else {
+        plan[0] = min(plan[0], life);
+    }
+    return plan;
+}
+
+// Choisit la meilleure case d'attaque : [case, coûtPM, plan] ou null si aucune attaque possible.
+function chooseAttackCell(target) {
+    var tp = getTP();
+    var best = null;
+    var bestScore = 0;
+    for (var entry in reachableCells(getMP())) {
+        var plan = planFrom(entry[0], target, tp);
+        if (plan[1] <= 0) continue;
+        // À dégâts égaux, préférer la case qui garde des PM pour se replier.
+        var score = plan[0] - entry[1] * 0.5;
+        if (best == null || score > bestScore) {
+            best = [entry[0], entry[1], plan];
+            bestScore = score;
+        }
+    }
+    return best;
+}
+
+// ---------- Exécution ----------
+
+function executeStep(step, target) {
+    var item = step[0];
+    for (var i = 0; i < step[2] && isAlive(target); i++) {
+        if (step[1]) {
+            if (getWeapon() != item) setWeapon(item);
+            if (!canUseWeapon(target)) return;
+            if (useWeapon(target) <= 0) return;
+        } else {
+            if (!tryChip(item, target)) return;
+        }
+    }
+}
+
+// Ordre : buff, puces, arme déjà en main, puis les autres armes (un seul changement chacune).
+function executePlan(plan, target) {
+    if (plan[3] != null) tryChipSelf(plan[3]);
+    var held = getWeapon();
+    for (var step in plan[2]) {
+        if (!step[1]) executeStep(step, target);
+    }
+    for (var step in plan[2]) {
+        if (step[1] && step[0] == held) executeStep(step, target);
+    }
+    for (var step in plan[2]) {
+        if (step[1] && step[0] != held) executeStep(step, target);
+    }
+}

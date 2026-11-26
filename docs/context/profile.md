@@ -1,32 +1,32 @@
 # Profil joueur
 
-> À remplir : c'est la source de vérité pour adapter les IA. Mettre à jour à chaque changement de build.
+> Source de vérité pour adapter les IA. Mettre à jour à chaque changement de build.
+> Dernière mise à jour : 2026-11-26.
 
 ## Éleveur
-- Niveau / talent :
-- Mode joué : solo / éleveur / équipe
-- Version LeekScript : v4
+- Talent éleveur : 100
+- Mode joué : **solo** (prioritaire), quelques tournois sans enjeu
+- Langage des IA : **Python** (API `Fight`, `Chip`, `Weapon`…) — ouvert à un autre langage
 
 ## Poireaux
 
-### Poireau 1 — `<nom>`
-- Niveau :
-- Caractéristiques :
+### krazyKlick — niveau 30
 
-| Vie | Force | Sagesse | Agilité | Résistance | Science | Magie | Fréquence | PT | PM |
-|---|---|---|---|---|---|---|---|---|---|
-|   |   |   |   |   |   |   |   |   |   |
+| Vie | Force | Sagesse | Agilité | Résistance | Science | Magie | Fréquence | PT | PM | Cœurs | RAM |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 647 | 220 | 0 | 40 | 0 | 0 | 0 | 100 | 10 | 3 | 1 | 6 |
 
-- Armes équipées :
-- Puces équipées :
-- IA utilisée :
-- Stratégie visée : (agressif / kite / tank / soin / poison / invocations…)
-
-<!-- Dupliquer la section pour chaque poireau -->
+- Capital non dépensé : 5
+- Arme : pistolet
+- Puces : caillou, étincelle, bandage, casque, protéines, motivation
+- Composants : ressort, pomme
+- IA utilisée : générée par ChatGPT puis modifiée (Python), voir [`ai/legacy/krazyklick_v0.py`](../../ai/legacy/krazyklick_v0.py)
+- Stratégie actuelle : foncer sur l'ennemi, se buffer (motivation, casque, protéines),
+  soigner si besoin, tirer au pistolet de près, étincelle à distance.
 
 ## Objectifs
-- Court terme :
-- Long terme :
+- Court terme : progresser en solo.
+- Long terme : à définir.
 
 ## Adversaires problématiques
-- (types de builds contre lesquels on perd, avec liens de combats)
+- (à compléter avec des liens de combats)

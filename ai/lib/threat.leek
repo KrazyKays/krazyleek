@@ -68,3 +68,30 @@ function finishableChest() {
     }
     return null;
 }
+
+// ---------- Portée d'un adversaire ----------
+
+// Portée max de ses attaques (armes et puces offensives).
+function attackRange(entity) {
+    var range = 0;
+    for (var w in getWeapons(entity)) {
+        var wd = WEAPON_DATA[w];
+        if (wd != null && wd[I_DMG] > 0) range = max(range, wd[I_MAX] + areaRadius(wd[I_AREA]));
+    }
+    for (var c in getChips(entity)) {
+        var cd = CHIP_DATA[c];
+        if (cd != null && cd[I_DMG] > 0) range = max(range, cd[I_MAX] + areaRadius(cd[I_AREA]));
+    }
+    return range;
+}
+
+// L'adversaire peut-il frapper `cell` à son prochain tour (déplacement + portée) ?
+function enemyCanReach(enemy, cell) {
+    return getCellDistance(getCell(enemy), cell) <= getTotalMP(enemy) + attackRange(enemy);
+}
+
+// Le combat commence-t-il d'ici un tour ? (pour les buffs de plusieurs tours, ex. motivation)
+function combatSoon(enemy) {
+    var reach = max(attackRange(enemy), attackRange(getEntity()));
+    return getCellDistance(getCell(enemy), getCell()) <= getTotalMP() + getTotalMP(enemy) + reach;
+}

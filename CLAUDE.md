@@ -49,4 +49,5 @@ Ce repo sert d'atelier pour écrire, tester et optimiser des IA pour [Leek Wars]
 - [x] `tools/fetch_api_data.py` (données publiques) et `tools/check_api.py` (validation du code).
 - [ ] `tools/` : sync avec l'API Leek Wars (nécessite un token, via le formulaire sécurisé — jamais en clair).
 - [ ] `tools/` : simulateur local (leek-wars-generator) pour des combats en masse.
-- [ ] Analyse automatique des combats + boucle d'optimisation.
+- [x] Analyse de combats : `tools/analyze_fight.py <id>` (+ notes dans `fights/notes/`).
+- [ ] Boucle d'optimisation automatique.

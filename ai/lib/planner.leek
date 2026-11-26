@@ -157,7 +157,8 @@ function availableSelfBuffs(target) {
             push(result, [chip, CHIP_DATA[chip][I_COST], bonus, 0]);
         }
     }
-    var hits = -1;
+    // Un bouclier ne vaut rien si l'adversaire ne peut pas nous atteindre au prochain tour.
+    var hits = enemyCanReach(target, getCell()) ? -1 : 0;
     for (var chip : var info in SHIELD_CHIPS) {
         if (!inArray(getChips(), chip) || getCooldown(chip) > 0) continue;
         if (hits < 0) hits = estimatedEnemyHits(target);

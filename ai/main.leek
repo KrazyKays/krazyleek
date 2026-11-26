@@ -33,7 +33,7 @@ if (target != null) {
 
     // Hors de portée : marcher vers une position d'attaque, puis réévaluer avec les PM restants.
     if (attack == null) {
-        tryChipSelf(CHIP_LEATHER_BOOTS); // +2 PM pour atteindre une position d'attaque
+        if (combatSoon(target)) tryChipSelf(CHIP_LEATHER_BOOTS); // +2 PM pour atteindre une position d'attaque
         approachAttackPosition(target);
         attack = chooseAttackCell(target);
     }
@@ -47,11 +47,11 @@ if (target != null) {
         attacked = true;
     }
 
-    // PT restants : soins puis soutien (motivation en premier).
-    healIfNeeded();
-    useLeftoverSupport();
     // Repli uniquement après avoir frappé : sinon on annulerait l'approche.
     if (attacked && isAlive(target)) retreatFrom(target);
+    // PT restants : soins, puis motivation / boucliers s'ils serviront (depuis la case finale).
+    healIfNeeded();
+    if (isAlive(target)) useLeftoverSupport(target);
 }
 
 logOperations("fin du tour");

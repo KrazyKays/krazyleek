@@ -14,11 +14,22 @@ function healIfNeeded() {
     }
 }
 
-// Puces de soutien sur soi, dans l'ordre de priorité, si des PT restent.
-global SUPPORT_CHIPS = [CHIP_MOTIVATION, CHIP_SHIELD, CHIP_HELMET, CHIP_WALL, CHIP_LEATHER_BOOTS];
+// Puces de soutien sur soi avec les PT restants, seulement quand elles serviront :
+//  - motivation (+PT pendant 3 tours) : si le combat commence d'ici un tour ;
+//  - boucliers (2–3 tours) : si l'adversaire peut nous frapper à son prochain tour.
+// À appeler APRÈS le repli (la case finale compte pour les boucliers).
+global BUFF_CHIPS = [CHIP_MOTIVATION];
+global DEFENSE_CHIPS = [CHIP_SHIELD, CHIP_HELMET, CHIP_WALL];
 
-function useLeftoverSupport() {
-    for (var chip in SUPPORT_CHIPS) {
-        if (inArray(getChips(), chip)) tryChipSelf(chip);
+function useLeftoverSupport(enemy) {
+    if (combatSoon(enemy)) {
+        for (var chip in BUFF_CHIPS) {
+            if (inArray(getChips(), chip)) tryChipSelf(chip);
+        }
+    }
+    if (enemyCanReach(enemy, getCell())) {
+        for (var chip in DEFENSE_CHIPS) {
+            if (inArray(getChips(), chip)) tryChipSelf(chip);
+        }
     }
 }

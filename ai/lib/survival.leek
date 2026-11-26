@@ -15,7 +15,7 @@ function healIfNeeded() {
 }
 
 // Puces de soutien sur soi, dans l'ordre de priorité, si des PT restent.
-global SUPPORT_CHIPS = [CHIP_MOTIVATION, CHIP_HELMET, CHIP_WALL, CHIP_LEATHER_BOOTS];
+global SUPPORT_CHIPS = [CHIP_MOTIVATION, CHIP_SHIELD, CHIP_HELMET, CHIP_WALL, CHIP_LEATHER_BOOTS];
 
 function useLeftoverSupport() {
     for (var chip in SUPPORT_CHIPS) {

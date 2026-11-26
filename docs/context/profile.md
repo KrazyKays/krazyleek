@@ -21,7 +21,8 @@ Stats au niveau 32 (combat 54965116) + RAM et ventilateur (niveau 33) + 11ᵉ PT
 - Capital : 220 au total au niveau 35 ; non dépensé : 0 (estimé, après achat du 11ᵉ PT)
 - Emplacements : **2 armes**, **10 puces** (RAM 10), jusqu'à 8 composants
 - Armes : mitraillette, pistolet
-- Puces (6/10) : éclair, flamme, caillou, protéines, motivation, bandage
+- Puces (10/10, supposé d'après les recommandations) : éclair, flamme, caillou, rocher, étincelle, protéines,
+  motivation, bandage, casque, **bouclier** (remplace les bottes en cuir au niveau 35)
 - Composants : ressort (+20 force, +40 agilité), pomme (+100 PV), RAM (+4 RAM), ventilateur (+40 fréquence)
 - IA utilisée : [`ai/main.leek`](../../ai/main.leek) (planificateur générique)
   Ancienne IA Python : [`ai/legacy/krazyklick_v0.py`](../../ai/legacy/krazyklick_v0.py)

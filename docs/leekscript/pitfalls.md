@@ -14,3 +14,5 @@
    avant de continuer à tirer.
 6. **`global` initialisée une seule fois** : une `global` avec une valeur calculée (ex. `getCell()`)
    garde la valeur du premier tour.
+7. **`include` sans extension** : `include("lib/utils")` → fichier introuvable.
+   Il faut écrire `include("lib/utils.leek")`.

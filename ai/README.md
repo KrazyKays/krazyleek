@@ -9,9 +9,9 @@
 - `lib/movement.leek` : approche et repli.
 - `legacy/` : anciennes IA (Python), pour référence.
 
-Sur Leek Wars, recréer la même arborescence dans l'éditeur (dossier `lib`) pour que les
-`include("lib/...")` fonctionnent. L'extension `.leek` est locale : sur le site, l'IA s'appelle
-juste `utils`, `chips`, etc.
+Sur Leek Wars, recréer la même arborescence dans l'éditeur (dossier `lib`, fichiers nommés
+`utils.leek`, `chips.leek`…). Les `include` doivent contenir le chemin **avec l'extension** :
+`include("lib/utils.leek")` (confirmé en jeu le 2026-11-26).
 
 Les coûts, portées et recharges des puces ne sont jamais codés en dur : ils sont lus en combat
 (`canUseChip`, `getChipCost`…).

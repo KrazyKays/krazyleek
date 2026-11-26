@@ -20,7 +20,8 @@
 - Arme : pistolet
 - Puces : caillou, étincelle, bandage, casque, protéines, motivation
 - Composants : ressort, pomme
-- IA utilisée : générée par ChatGPT puis modifiée (Python), voir [`ai/legacy/krazyklick_v0.py`](../../ai/legacy/krazyklick_v0.py)
+- IA utilisée : [`ai/main.leek`](../../ai/main.leek) (LeekScript, testée et fonctionnelle le 2026-11-26).
+  Ancienne IA Python : [`ai/legacy/krazyklick_v0.py`](../../ai/legacy/krazyklick_v0.py)
 - Stratégie actuelle : foncer sur l'ennemi, se buffer (motivation, casque, protéines),
   soigner si besoin, tirer au pistolet de près, étincelle à distance.
 

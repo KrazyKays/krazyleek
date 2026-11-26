@@ -7,12 +7,12 @@
 //  - le casque passe après les attaques (on ne sacrifie plus de dégâts)
 //  - recul avec les PM restants après avoir tiré
 // =============================================================
-include("lib/utils");
-include("lib/chips");
-include("lib/targeting");
-include("lib/combat");
-include("lib/survival");
-include("lib/movement");
+include("lib/utils.leek");
+include("lib/chips.leek");
+include("lib/targeting.leek");
+include("lib/combat.leek");
+include("lib/survival.leek");
+include("lib/movement.leek");
 
 var target = chooseTarget();
 

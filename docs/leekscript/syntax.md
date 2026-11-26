@@ -66,9 +66,9 @@ var t = new Target(enemy, 42);
 
 ## Inclusion de modules
 ```leekscript
-include("lib/movement");   // nom de l'IA telle qu'elle existe sur Leek Wars
+include("lib/movement.leek");   // chemin relatif + extension .leek (obligatoire)
 ```
-- *(à vérifier)* : résolution des chemins relatifs dans les dossiers de l'éditeur.
+- Confirmé en jeu : sans l'extension `.leek`, le fichier inclus n'est pas trouvé.
 - Un module inclus est exécuté à l'endroit de l'`include` ; y déclarer surtout des fonctions.
 
 ## Debug

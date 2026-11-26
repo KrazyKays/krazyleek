@@ -17,3 +17,11 @@ Opérations : ~150 000 à 200 000 par tour (limite 1 M).
 
 ## Normal
 - Tours d'approche sans action (aucune cible à portée) : 11–13 PT non utilisés, inévitable.
+
+## Combats 54966684 (victoire T11) et 54966751 (nul à 64 tours)
+- 54966751 : Domingo campe dans un coin derrière des murs et se soigne ~60 PV/tour (soin + boucliers).
+  Nous : étincelle ×3 (~100) puis repli de 3 cases ; tour suivant : retour sans attaque.
+  → ~50 dégâts/tour en moyenne < soins adverses → nul (1 801 infligés / 220 subis).
+- Même va-et-vient dans 54966684 (cases 431 ↔ 450), gagné quand même.
+- Correction : `retreatFrom` ne fuit que vers une case hors de portée de l'adversaire ET d'où l'on
+  peut encore attaquer au tour suivant ; sinon on reste à portée (repli seulement derrière un mur proche).

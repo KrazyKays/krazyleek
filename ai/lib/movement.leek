@@ -33,19 +33,33 @@ function approachAttackPosition(target) {
     }
 }
 
-// Après l'attaque : utiliser les PM restants pour se cacher, sinon s'éloigner.
+// Après l'attaque : se replier seulement si c'est utile, sans perdre l'initiative.
+// Priorités pour chaque case atteignable (case actuelle incluse) :
+//  1. hors de portée de l'adversaire à son prochain tour (+100) ;
+//  2. assez proche pour pouvoir encore attaquer au tour suivant (+50) ;
+//  3. hors de sa ligne de vue (+10), loin des coffres réveillés, peu de PM dépensés.
+// Si l'adversaire nous atteint de partout, on reste à portée de tir au lieu de fuir
+// (combat 54966751 : fuir 3 cases puis revenir = une attaque tous les deux tours).
+function retreatScore(cell, pathLen, target, myReach) {
+    var targetCell = getCell(target);
+    var score = 0;
+    if (!enemyCanReach(target, cell)) score += 100;
+    if (getCellDistance(cell, targetCell) <= myReach) score += 50;
+    if (!exposedTo(cell, target)) score += 10;
+    score -= chestDangerAt(cell) / 5;
+    score -= pathLen * 0.5;
+    return score;
+}
+
 function retreatFrom(target) {
     if (getMP() <= 0) return;
-    var targetCell = getCell(target);
+    var myReach = attackRange(getEntity()) + getTotalMP();
     var best = null;
     var bestScore = 0;
     for (var entry in reachableCells(getMP())) {
-        var cell = entry[0];
-        var score = getCellDistance(cell, targetCell);
-        if (!exposedTo(cell, target)) score += 20; // bonus : hors de vue
-        score -= chestDangerAt(cell) / 5;          // pénalité : à portée d'un coffre réveillé
+        var score = retreatScore(entry[0], entry[1], target, myReach);
         if (best == null || score > bestScore) {
-            best = cell;
+            best = entry[0];
             bestScore = score;
         }
     }

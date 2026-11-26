@@ -17,9 +17,10 @@
 | 647 | 220 | 0 | 40 | 0 | 0 | 0 | 100 | 10 | 3 | 1 | 6 |
 
 - Capital non dépensé : 5
+- Emplacements : **2 armes**, 6 puces (RAM 6)
 - Arme : pistolet
 - Puces : caillou, étincelle, bandage, casque, protéines, motivation
-- Composants : ressort, pomme
+- Composants : ressort (+20 force / +40 agilité, déduit), pomme (+100 PV, déduit)
 - IA utilisée : [`ai/main.leek`](../../ai/main.leek) (LeekScript, testée et fonctionnelle le 2026-11-26).
   Ancienne IA Python : [`ai/legacy/krazyklick_v0.py`](../../ai/legacy/krazyklick_v0.py)
 - Config cible : voir [`docs/game/build-recommendation.md`](../game/build-recommendation.md)
@@ -31,4 +32,5 @@
 - Long terme : à définir.
 
 ## Adversaires problématiques
+- **Coffres** : ont tué krazyKlick plusieurs fois en solo → l'IA ne les touche plus (voir `ai/lib/threat.leek`).
 - (à compléter avec des liens de combats)

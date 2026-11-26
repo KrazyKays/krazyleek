@@ -1,5 +1,5 @@
 // Déplacements : approche à couvert et repli.
-// Dépend de lib/planner.leek (reachableCells).
+// Dépend de lib/planner.leek (reachableCells) et lib/threat.leek (chestDangerAt).
 
 // L'ennemi a-t-il une ligne de vue sur cette case ?
 function exposedTo(cell, enemy) {
@@ -15,6 +15,7 @@ function approachSafely(target) {
         var cell = entry[0];
         var score = getCellDistance(cell, targetCell);
         if (exposedTo(cell, target)) score += 4; // pénalité : visible par l'ennemi
+        score += chestDangerAt(cell) / 10;       // pénalité : à portée d'un coffre réveillé
         if (best == null || score < bestScore) {
             best = cell;
             bestScore = score;
@@ -33,6 +34,7 @@ function retreatFrom(target) {
         var cell = entry[0];
         var score = getCellDistance(cell, targetCell);
         if (!exposedTo(cell, target)) score += 20; // bonus : hors de vue
+        score -= chestDangerAt(cell) / 5;          // pénalité : à portée d'un coffre réveillé
         if (best == null || score > bestScore) {
             best = cell;
             bestScore = score;

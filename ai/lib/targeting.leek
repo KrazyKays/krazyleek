@@ -1,9 +1,5 @@
-// Choix de la cible.
-// Les coffres ne sont visés que s'il n'y a aucun autre ennemi.
-
-function isChestEntity(entity) {
-    return getType(entity) == ENTITY_CHEST;
-}
+// Choix de la cible : uniquement les vrais adversaires, jamais les coffres
+// (voir lib/threat.leek : un coffre n'est attaqué que si on peut l'achever dans le tour).
 
 // Plus le score est bas, plus la cible est prioritaire : PV faibles puis proximité.
 function targetScore(enemy) {
@@ -13,17 +9,13 @@ function targetScore(enemy) {
 function chooseTarget() {
     var best = null;
     var bestScore = 0;
-    var fallbackChest = null;
     for (var enemy in getAliveEnemies()) {
-        if (isChestEntity(enemy)) {
-            if (fallbackChest == null) fallbackChest = enemy;
-            continue;
-        }
+        if (isChest(enemy)) continue;
         var score = targetScore(enemy);
         if (best == null || score < bestScore) {
             best = enemy;
             bestScore = score;
         }
     }
-    return best != null ? best : fallbackChest;
+    return best;
 }

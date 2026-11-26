@@ -16,3 +16,7 @@
    garde la valeur du premier tour.
 7. **`include` sans extension** : `include("lib/utils")` → fichier introuvable.
    Il faut écrire `include("lib/utils.leek")`.
+8. **Réveiller un coffre** : un coffre à 100 % de PV est inoffensif ; une seule touche (y compris
+   une zone qui déborde, ex. éclair) le réveille et il frappe très fort. Ne jamais l'inclure dans
+   une zone d'effet ; ne l'attaquer que pour l'achever (`ai/lib/threat.leek`).
+9. **Coût en opérations mesuré** : planificateur ≈ 40 000 opérations/tour (limite 1 M avec 1 cœur).

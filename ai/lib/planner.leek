@@ -28,8 +28,9 @@ function launchAllows(launchType, from, to) {
 function canHitFrom(data, from, toCell) {
     var d = getCellDistance(from, toCell);
     if (d < data[I_MIN] || d > data[I_MAX]) return false;
-    // Objet à zone : ne pas tirer trop près pour ne pas se toucher soi-même (marge prudente).
-    if (data[I_AREA] > 1 && d <= 2) return false;
+    // Objet à zone : ne pas se toucher soi-même, ne pas réveiller un coffre.
+    if (d <= areaRadius(data[I_AREA])) return false;
+    if (wouldWakeChest(data, toCell)) return false;
     if (!launchAllows(data[I_LAUNCH], from, toCell)) return false;
     // On ignore son propre poireau : on aura quitté sa case actuelle.
     if (data[I_LOS] && !lineOfSight(from, toCell, getEntity())) return false;
@@ -152,8 +153,11 @@ function chooseAttackCell(target) {
     for (var entry in reachableCells(getMP())) {
         var plan = planFrom(entry[0], target, tp);
         if (plan[1] <= 0) continue;
-        // À dégâts égaux, préférer la case qui garde des PM pour se replier.
-        var score = plan[0] - entry[1] * 0.5;
+        // À dégâts égaux, préférer la case qui garde des PM pour se replier ;
+        // retirer les dégâts qu'on prendrait d'un coffre réveillé sur cette case.
+        var danger = chestDangerAt(entry[0]);
+        if (danger >= getLife()) continue; // case mortelle : jamais
+        var score = plan[0] - entry[1] * 0.5 - danger;
         if (best == null || score > bestScore) {
             best = [entry[0], entry[1], plan];
             bestScore = score;

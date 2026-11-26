@@ -4,7 +4,8 @@
 - `lib/items.leek` : **généré** par `tools/gen_items.py` (données officielles des armes et puces).
 - `lib/utils.leek` : debug et mesures.
 - `lib/chips.leek` : utilisation sûre des puces (`tryChip`, `tryChipSelf`, `spamChip`).
-- `lib/targeting.leek` : choix de la cible (coffres en dernier).
+- `lib/threat.leek` : coffres (ne jamais les réveiller, éviter les coffres réveillés, les achever si possible).
+- `lib/targeting.leek` : choix de la cible (jamais un coffre).
 - `lib/planner.leek` : choix de la case et de la combinaison d'attaques (sac à dos sur les PT).
 - `lib/survival.leek` : soins et puces de soutien avec les PT restants.
 - `lib/movement.leek` : approche à couvert et repli hors de vue.

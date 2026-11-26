@@ -1,0 +1,70 @@
+// Coffres et menaces.
+// Règles officielles (encyclopédie « Coffres ») :
+//  - un coffre ne fait RIEN tant qu'il a 100 % de ses PV ;
+//  - une fois touché : il se soigne, se protège, puis attaque une entité au hasard à sa portée ;
+//  - coffre en bois 2 000 PV / force 500, fer 5 000 / 1 000, diamant 20 000 / 2 000.
+// Avec ~650 PV, un coffre réveillé nous tue en 1 à 3 tours : on ne le touche jamais,
+// sauf si on peut l'achever dans le tour (récompense : 30 000 à 3 500 000 habs).
+// Dépend de lib/items.leek et de canHitFrom/launchAllows (lib/planner.leek).
+
+function isChest(entity) {
+    return getType(entity) == ENTITY_CHEST;
+}
+
+function isAwakeChest(entity) {
+    return isChest(entity) && getLife(entity) < getTotalLife(entity);
+}
+
+function aliveChests() {
+    return arrayFilter(getAliveEnemies(), isChest);
+}
+
+// Rayon (distance de Manhattan, estimation prudente) d'une zone d'effet.
+function areaRadius(area) {
+    if (area == AREA_CIRCLE_1 || area == AREA_X_1) return area == AREA_X_1 ? 2 : 1;
+    if (area == AREA_CIRCLE_2 || area == AREA_PLUS_2 || area == AREA_SQUARE_1) return 2;
+    if (area == AREA_CIRCLE_3 || area == AREA_PLUS_3) return 3;
+    if (area == AREA_X_2 || area == AREA_SQUARE_2) return 4;
+    if (area == AREA_X_3) return 6;
+    return 0; // AREA_POINT et zones spéciales
+}
+
+// Un tir zone sur `targetCell` toucherait-il un coffre endormi ? (on ne doit pas le réveiller)
+function wouldWakeChest(data, targetCell) {
+    var radius = areaRadius(data[I_AREA]);
+    if (radius == 0) return false;
+    for (var chest in aliveChests()) {
+        if (!isAwakeChest(chest) && getCellDistance(getCell(chest), targetCell) <= radius) return true;
+    }
+    return false;
+}
+
+// Dégâts qu'on risque de subir sur `cell` de la part des coffres réveillés (estimation haute).
+function chestDangerAt(cell) {
+    var danger = 0;
+    for (var chest in aliveChests()) {
+        if (!isAwakeChest(chest)) continue;
+        var from = getCell(chest);
+        var strength = getStrength(chest);
+        for (var chip in getChips(chest)) {
+            var data = CHIP_DATA[chip];
+            if (data == null || data[I_DMG] <= 0) continue;
+            // Portée élargie du rayon de zone : il peut viser une case voisine et nous toucher.
+            var d = getCellDistance(from, cell);
+            var radius = areaRadius(data[I_AREA]);
+            if (d < data[I_MIN] - radius || d > data[I_MAX] + radius) continue;
+            if (data[I_LOS] && !lineOfSight(from, cell, getEntity())) continue;
+            danger += expectedDamage(data, getEntity(), strength);
+        }
+    }
+    return danger;
+}
+
+// Coffre qu'on peut achever ce tour : [coffre, attaque] ou null.
+function finishableChest() {
+    for (var chest in aliveChests()) {
+        var attack = chooseAttackCell(chest);
+        if (attack != null && attack[2][1] >= getLife(chest)) return [chest, attack];
+    }
+    return null;
+}

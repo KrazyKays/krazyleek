@@ -3,10 +3,13 @@
 // IA générique « planificateur » : elle lit l'équipement réellement porté et les données
 // officielles (lib/items.leek), choisit la case et la combinaison d'attaques qui font le plus
 // de dégâts ce tour, puis se met à couvert avec les PM restants.
+// Coffres : jamais touchés (ni directement ni par une zone), évités s'ils sont réveillés,
+// achevés seulement si c'est possible dans le tour.
 // =============================================================
 include("lib/items.leek");
 include("lib/utils.leek");
 include("lib/chips.leek");
+include("lib/threat.leek");
 include("lib/targeting.leek");
 include("lib/planner.leek");
 include("lib/survival.leek");
@@ -16,12 +19,22 @@ var target = chooseTarget();
 
 if (target != null) {
     var attack = chooseAttackCell(target);
+    var attackTarget = target;
+
+    // Si on ne tue pas l'adversaire ce tour, achever un coffre rapporte gros.
+    if (attack == null || attack[2][1] < getLife(target)) {
+        var chestKill = finishableChest();
+        if (chestKill != null) {
+            attackTarget = chestKill[0];
+            attack = chestKill[1];
+        }
+    }
 
     if (attack != null) {
         // 1. Aller sur la meilleure case d'attaque
         if (attack[0] != getCell()) moveTowardCell(attack[0]);
         // 2. Buff éventuel puis attaques
-        executePlan(attack[2], target);
+        executePlan(attack[2], attackTarget);
     } else {
         // Hors de portée : buffs de PT (motivation) puis approche à couvert
         tryChipSelf(CHIP_MOTIVATION);

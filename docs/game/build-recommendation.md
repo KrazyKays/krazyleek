@@ -1,7 +1,7 @@
 # Config recommandée — krazyKlick niveau 30 (force 220, 10 PT, 3 PM)
 
-> Calculs : dégâts moyens de base × (1 + force/100) = × 3,2, d'après `docs/data/` (API officielle).
-> Formule force non encore confirmée en jeu ; les comparaisons relatives restent valables.
+> Calculs : dégâts moyens de base × (1 + force/100) = × 3,2 (formule confirmée par l'encyclopédie),
+> d'après `docs/data/` (API officielle). 2 emplacements d'armes, 6 de puces (RAM 6).
 
 ## Tout ce qui est accessible au niveau ≤ 30 (dégâts par PT)
 
@@ -43,7 +43,7 @@ Les puces piquant, capsaïcine, sucre, pop-corn, apocalypse… ne sont pas en ve
 Budget total : **13 530 habs** (moins la revente du casque et de l'étincelle).
 Ordre d'achat si budget limité : mitraillette → éclair → flamme.
 
-**Capital (5 points)** : en force, ta stat principale.
+**Capital** : voir la section « Répartition du capital » plus bas.
 
 ## Gain attendu sur un tour à 10 PT
 
@@ -54,3 +54,30 @@ Ordre d'achat si budget limité : mitraillette → éclair → flamme.
 | Pas aligné, 2–7 cases | caillou + 2 pistolets ≈ 170 | 2 flammes + caillou ≈ **250** |
 
 Soit environ **+45 à +70 % de dégâts par tour**.
+
+## Répartition du capital
+
+Situation (déduite) : 195 capital au niveau 30, 5 non dépensés. Force 220 = 200 investis
+(100 capital, au ratio 2:1) + 20 du ressort ; vie 647 = 187 de base + 100 de la pomme + 360 investis
+(90 capital). La force est donc au bout du ratio avantageux : **chaque point coûte maintenant 1 capital**.
+
+Gain par point de capital (objectif : dégâts × survie) :
+
+| Investissement | Effet | Gain / capital |
+|---|---|---|
+| Vie | +4 PV sur 647 | **+0,62 %** de survie |
+| Force | +1 sur 320 (100 + force) | +0,31 % de dégâts |
+| 11ᵉ PT (30 capital) | permet mitraillette ×2 + éclair (11 PT) | ≈ +21 % de dégâts → **+0,7 %** |
+| 4ᵉ PM (20 capital) | plus d'options pour s'aligner / se cacher / jouer avant | non chiffré, fort au bas niveau |
+| 2ᵉ cœur | inutile : l'IA consomme ~40 000 opérations sur 1 000 000 | 0 |
+| 7ᵉ RAM (20 capital) | 1 puce de plus (ex. garder le casque) | faible pour l'instant |
+
+**Plan conseillé**
+1. **Mettre de côté pour le 11ᵉ PT** (30 capital) : les 5 actuels + 5 niveaux.
+2. Ensuite **4ᵉ PM** (20 capital, 4 niveaux).
+3. Ensuite **vie** en continu : 2× plus rentable que la force jusqu'à environ 1 300 PV
+   (point où +4 PV et +1 force rapportent autant).
+4. Force à nouveau quand la vie dépasse ~1 300, ou si la config change.
+
+Pas besoin de restat : la répartition actuelle est déjà équilibrée (simuler 30 capital de vie
+convertis en 1 PT donne ≈ −18 % de PV pour +21 % de dégâts, quasi neutre).

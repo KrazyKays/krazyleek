@@ -76,6 +76,7 @@ function retreatScore(cell, pathLen, target, myReach) {
     if (getCellDistance(cell, targetCell) <= myReach) score += 50;
     if (!exposedTo(cell, target)) score += 10;
     score -= chestDangerAt(cell) / 5;
+    score -= otherThreats(cell, target) * 30; // équipe : autres adversaires à portée (0 en solo)
     score -= pathLen * 0.5;
     return score;
 }

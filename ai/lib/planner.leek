@@ -36,6 +36,7 @@ function canHitFrom(data, from, toCell) {
     // Objet à zone : ne pas se toucher soi-même, ne pas réveiller un coffre.
     if (d <= areaRadius(data[I_AREA])) return false;
     if (wouldWakeChest(data, toCell)) return false;
+    if (wouldHitAlly(data, from, toCell)) return false; // équipe uniquement (toujours faux en solo)
     if (!launchAllows(data[I_LAUNCH], from, toCell)) return false;
     // On ignore son propre poireau : on aura quitté sa case actuelle.
     if (data[I_LOS] && !lineOfSight(from, toCell, getEntity())) return false;
@@ -90,6 +91,7 @@ function usesLeft(item, isWeapon, data) {
 function reachesTarget(item, isWeapon, data, from, target) {
     if (from == null) return true;
     if (from == getCell()) {
+        if (wouldHitAlly(data, from, getCell(target))) return false; // équipe uniquement
         if (isWeapon) return canUseWeapon(item, target);
         return canUseChip(item, target);
     }

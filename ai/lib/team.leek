@@ -1,0 +1,101 @@
+// Combats d'équipe (éleveur, équipe, tournois d'équipe…).
+// RÈGLE : tout ce module est inactif en solo. TEAM_ALLIES est vide quand on n'a aucun allié
+// (hors nous-même), donc chaque fonction ci-dessous renvoie immédiatement la valeur « solo ».
+// Dépend de lib/items.leek, lib/threat.leek (areaRadius).
+
+// Alliés vivants hors nous-même (invocations alliées comprises : à ne pas toucher non plus).
+global TEAM_ALLIES = [];
+// Coéquipiers poireaux (hors invocations) : à soigner, à suivre.
+global TEAM_MATES = [];
+
+// À appeler en début de tour (main.leek).
+function refreshTeam() {
+    var me = getEntity();
+    TEAM_ALLIES = arrayFilter(getAliveAllies(), function(a) { return a != me; });
+    TEAM_MATES = arrayFilter(TEAM_ALLIES, function(a) { return !isSummon(a); });
+}
+
+function inTeamFight() {
+    return count(TEAM_MATES) > 0;
+}
+
+// ---------- Tirs amis ----------
+
+// La case `cell` est-elle sur la trajectoire d'un laser tiré de `from` vers `target` ?
+// (AREA_LASER_LINE : touche tout ce qui est aligné dans la direction du tir, jusqu'à la portée max.)
+function onLaserPath(from, target, cell, maxRange) {
+    var dx1 = getCellX(target) - getCellX(from);
+    var dy1 = getCellY(target) - getCellY(from);
+    var dx2 = getCellX(cell) - getCellX(from);
+    var dy2 = getCellY(cell) - getCellY(from);
+    if (dx1 * dy2 - dy1 * dx2 != 0) return false; // pas colinéaire
+    if (dx1 * dx2 + dy1 * dy2 <= 0) return false; // direction opposée
+    return getCellDistance(from, cell) <= maxRange;
+}
+
+// Un tir de `data` depuis `from` sur `targetCell` toucherait-il un allié ?
+function wouldHitAlly(data, from, targetCell) {
+    if (count(TEAM_ALLIES) == 0) return false; // solo : jamais
+    var area = data[I_AREA];
+    var radius = areaRadius(area);
+    for (var ally in TEAM_ALLIES) {
+        var c = getCell(ally);
+        if (radius > 0 && getCellDistance(c, targetCell) <= radius) return true;
+        if (area == AREA_LASER_LINE && onLaserPath(from, targetCell, c, data[I_MAX])) return true;
+    }
+    return false;
+}
+
+// ---------- Concentration des tirs ----------
+
+// Cible annoncée par un coéquipier ce tour-ci ou au précédent (MESSAGE_ATTACK), ou null.
+function announcedTarget() {
+    if (!inTeamFight()) return null;
+    var target = null;
+    for (var msg in getMessages()) {
+        if (getMessageType(msg) != MESSAGE_ATTACK) continue;
+        var t = getMessageParams(msg);
+        if (t != null && isAlive(t) && isEnemy(t) && !isSummon(t) && getType(t) != ENTITY_CHEST) target = t;
+    }
+    return target;
+}
+
+// Annonce notre cible aux coéquipiers (ils peuvent la suivre s'ils utilisent la même IA).
+function announceTarget(target) {
+    if (inTeamFight() && target != null) sendAll(MESSAGE_ATTACK, target);
+}
+
+// ---------- Soins des alliés ----------
+
+// Avec les PT restants : soigner le coéquipier qui a perdu le plus de PV (si le soin ne déborde pas).
+function healAllies() {
+    if (!inTeamFight()) return;
+    var mult = 1 + getWisdom() / 100;
+    for (var chip in getChips()) {
+        var data = CHIP_DATA[chip];
+        if (data == null || data[I_HEAL] <= 0) continue;
+        var best = null;
+        var bestMissing = 0;
+        for (var mate in TEAM_MATES) {
+            var missing = getTotalLife(mate) - getLife(mate);
+            if (missing >= data[I_HEAL] * mult && missing > bestMissing && canUseChip(chip, mate)) {
+                best = mate;
+                bestMissing = missing;
+            }
+        }
+        if (best != null) useChip(chip, best);
+    }
+}
+
+// ---------- Menace de plusieurs adversaires ----------
+
+// Nombre d'adversaires (poireaux) autres que `target` capables de frapper `cell` au prochain tour.
+function otherThreats(cell, target) {
+    if (!inTeamFight()) return 0;
+    var n = 0;
+    for (var enemy in getAliveEnemies()) {
+        if (enemy == target || isSummon(enemy) || getType(enemy) == ENTITY_CHEST) continue;
+        if (enemyCanReach(enemy, cell)) n++;
+    }
+    return n;
+}

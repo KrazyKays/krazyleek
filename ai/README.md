@@ -5,7 +5,8 @@
 - `lib/utils.leek` : debug et mesures.
 - `lib/chips.leek` : utilisation sûre des puces (`tryChip`, `tryChipSelf`, `spamChip`).
 - `lib/threat.leek` : coffres (ne jamais les réveiller, éviter les coffres réveillés, les achever si possible).
-- `lib/targeting.leek` : choix de la cible (jamais un coffre).
+- `lib/team.leek` : combats d'équipe (tirs amis, cible commune par messages, soins des alliés, menaces multiples). **Inactif en solo.**
+- `lib/targeting.leek` : choix de la cible (jamais un coffre, invocations en dernier).
 - `lib/planner.leek` : choix de la case et de la combinaison d'attaques (sac à dos sur les PT).
 - `lib/survival.leek` : soins et puces de soutien avec les PT restants.
 - `lib/movement.leek` : approche à couvert et repli hors de vue.

@@ -28,5 +28,9 @@ function chooseTarget() {
             bestScore = score;
         }
     }
-    return best != null ? best : bestSummon;
+    if (best == null) return bestSummon;
+    // Équipe : suivre la cible annoncée par un coéquipier si elle n'est pas beaucoup moins bonne.
+    var focus = announcedTarget();
+    if (focus != null && focus != best && targetScore(focus) <= bestScore + 200) return focus;
+    return best;
 }

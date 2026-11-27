@@ -29,3 +29,6 @@
 12. **Plan sans dégâts jeté** : filtrer les cases sur « dégâts > 0 » élimine les plans purement défensifs
     (Solidification + Bouclier) que le planificateur a pourtant jugés meilleurs → « aucune attaque possible »
     et tour vide. Garder une case si elle a des dégâts OU des puces sur soi (combat 54977580, tours 4, 6, 8).
+13. **Tirs amis** : les effets de dégâts ciblent aussi les alliés (cibles 31). L'éclair (zone cercle 1)
+    et surtout le **laser** (`AREA_LASER_LINE` : touche tout ce qui est aligné dans la direction du tir,
+    jusqu'à la portée max) peuvent blesser un coéquipier. Vérifié par `wouldHitAlly` (lib/team.leek).

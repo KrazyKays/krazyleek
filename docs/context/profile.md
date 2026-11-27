@@ -24,7 +24,8 @@ Stats au niveau 43 (combat 54978528) :
 - Puces (10/10) : éclair, flamme, caillou, rocher, protéines, motivation, bandage, casque, bouclier, **Solidification**
 - Composants (4/8) : ressort (+20 force, +40 agilité), pomme (+100 PV), RAM (+4 RAM), ventilateur (+40 fréquence)
   Recettes possédées non craftées : CD (manque 3 jus de poireau), noyau XN.a-56 (+4 cœurs)
-  Pas encore obtenues : plaque de fer, batterie, carte mère (recettes aléatoires en fin de combat)
+  Recette obtenue, ressources manquantes : **plaque de fer** (30 rochers, 50 briques, 20 cailloux, 40 écrous)
+  Pas encore obtenues : batterie, carte mère (recettes aléatoires en fin de combat)
 - IA utilisée : [`ai/main.leek`](../../ai/main.leek) (planificateur générique)
   Ancienne IA Python : [`ai/legacy/krazyklick_v0.py`](../../ai/legacy/krazyklick_v0.py)
 - Config cible : voir [`docs/game/build-recommendation.md`](../game/build-recommendation.md)

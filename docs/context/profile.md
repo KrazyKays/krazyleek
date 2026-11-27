@@ -22,7 +22,8 @@ Stats au niveau 42 (combat 54977555) :
 - Emplacements : **2 armes**, **10 puces** (RAM 10), jusqu'à 8 composants
 - Armes : laser, mitraillette
 - Puces (10/10) : éclair, flamme, caillou, rocher, protéines, motivation, bandage, casque, bouclier, **Solidification**
-- Composants : ressort (+20 force, +40 agilité), pomme (+100 PV), RAM (+4 RAM), ventilateur (+40 fréquence)
+- Composants (4/8) : ressort (+20 force, +40 agilité), pomme (+100 PV), RAM (+4 RAM), ventilateur (+40 fréquence)
+  En attente : CD (manque 3 jus de poireau), plaque de fer (recette pas encore obtenue)
 - IA utilisée : [`ai/main.leek`](../../ai/main.leek) (planificateur générique)
   Ancienne IA Python : [`ai/legacy/krazyklick_v0.py`](../../ai/legacy/krazyklick_v0.py)
 - Config cible : voir [`docs/game/build-recommendation.md`](../game/build-recommendation.md)

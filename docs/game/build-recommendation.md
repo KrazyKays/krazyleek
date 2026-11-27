@@ -150,3 +150,14 @@ bouclier, Solidification ; composants ressort, pomme, RAM, ventilateur (**4/8**)
 | 45 | Double pistolet (17/PT) | ne pas acheter |
 
 Capital : continuer la vie (743 PV, 4 PV/capital) jusqu'à ~1 000 PV, puis réévaluer force / 12ᵉ PT (35 capital).
+
+### Composants : comment les obtenir (encyclopédie « Components » / « Resources »)
+- Les **recettes (schémas) tombent au hasard en fin de combat** (tous types de combats) : on ne peut pas
+  choisir quand on « débloque » la plaque de fer. Les composants ne sont pas vendus au marché.
+- **Jus de poireau** : ressource rare, **une chance par poireau tué** (tous combats sauf boss).
+  → Gagner des combats en tuant l'adversaire ; les combats à plusieurs poireaux adverses (éleveur, BR)
+  donnent plusieurs chances.
+- Goulot d'étranglement : le jus de poireau sert au CD (3), au noyau XN (3) et à la **batterie (8, niv. 47)**.
+  Priorité : CD dès 3 jus (gain immédiat), puis garder 8 jus pour la batterie (+1 PT).
+- Ressources « communes » par type de carte : rocher/sable (désert), branche/feuille (forêt),
+  glaçon (glacier), caillou/eau de mer (plage), écrou/plaque de métal (usine), brique (temple, tournois).

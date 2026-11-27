@@ -189,7 +189,8 @@ def diagnose(fight, leeks, me, foe, dealt, taken, healed, used_chips, engaged_id
     if draw:
         signals.append("match nul : on n'a pas réussi à conclure")
     unused_def = (my_items & DEFENSIVE) - used_chips[me]
-    if not won and unused_def and taken[me] >= m["life"] * 0.5:
+    poisoner = f.get("magic", 0) > f["strength"]  # contre le poison, les boucliers ne servent pas
+    if not won and unused_def and taken[me] >= m["life"] * 0.5 and not poisoner:
         signals.append("puces défensives jamais lancées : " + ", ".join(sorted(unused_def)))
     close = not won and not draw and foe_left <= f["life"] * 0.25
 

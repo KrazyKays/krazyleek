@@ -175,3 +175,13 @@ Défaites récentes contre des niveaux 50 à **5–6 PM** (+ bottes) qui frappen
 | — | Double pistolet (niv. 45) | non (17 dégâts/PT) |
 
 Tous ces changements sont gérés par l'IA sans modification (étincelle, PM supplémentaires).
+
+## Niveau 47
+
+- **Batterie** (composant, débloquée) : +1 PT, +10 rés., +10 fréquence — dès que la recette tombe
+  (8 jus de poireau, 10 briques, 1 sel, 1 feuille de poireau, 10 écrous, 100 habs).
+- Morus (niv. 46, magie) : non (build force).
+- **Capital : passer au 5ᵉ PM maintenant** (40 capital) plutôt que de la vie. Les 8 dernières défaites
+  sont contre des niveaux 50 à 5–6 PM qui frappent puis sortent de portée ; à 858 PV, +160 PV changent
+  peu face à 800+ de poison, alors que +1 PM ouvre des positions de tir chaque tour.
+  Option immédiate : potion de restat (gratuite) pour convertir 40 capital de vie → 5ᵉ PM.

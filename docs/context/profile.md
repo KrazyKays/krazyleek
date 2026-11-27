@@ -10,18 +10,18 @@
 
 ## Poireaux
 
-### krazyKlick — niveau 45
+### krazyKlick — niveau 47
 
-Stats au niveau 45 (combat 54979702) :
+Stats au niveau 47 (combat 54984587) :
 
 | Vie | Force | Sagesse | Agilité | Résistance | Science | Magie | Fréquence | PT | PM | Cœurs | RAM |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 812 | 220 | 0 | 40 | 0 | 0 | 0 | **140** | **11** | **4** | 1 | **10** |
+| 858 | 220 | 0 | 40 | 0 | 0 | 0 | **140** | **11** | **4** | 1 | **10** |
 
-- Capital : 270 au total au niveau 45 ; tout le reste en vie
+- Capital : 280 au total au niveau 47 ; tout le reste en vie
 - Emplacements : **2 armes**, **10 puces** (RAM 10), jusqu'à 8 composants
 - Armes : laser, mitraillette
-- Puces (10/10) : éclair, flamme, caillou, rocher, protéines, motivation, bandage, casque, bouclier, **Solidification**
+- Puces (10/10) : éclair, flamme, caillou, rocher, protéines, motivation, **étincelle**, casque, bouclier, Solidification (bandage retiré au niv. 46)
 - Composants (4/8) : ressort (+20 force, +40 agilité), pomme (+100 PV), RAM (+4 RAM), ventilateur (+40 fréquence)
   Recettes possédées non craftées : CD (manque 3 jus de poireau), noyau XN.a-56 (+4 cœurs)
   Recette obtenue, ressources manquantes : **plaque de fer** (30 rochers, 50 briques, 20 cailloux, 40 écrous)

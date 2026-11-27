@@ -26,3 +26,9 @@ non encore installé).
 - Nous lui infligeons 531 dégâts pour 497 PV… mais il se soigne de **484 PV** (Connaissance + Soin :
   303 en un seul tour) et nous tue à la Stalactite (259) + laser.
 - Réponse : dégâts en rafale pour passer ses soins → Stalactite (niv. 50) ; Libération (niv. 60).
+
+## 54984573 — Meshuggah777 (poison) et 54984587 — DraculaZagne (niv. 50, 6 PM, Stalactite) : NIVEAU / BUILD
+- Meshuggah777 : 812 PV de poison en 3 tours (Venin empilé : 98 + 104 + 128 par tour). Aucune erreur IA
+  (Solidification non lancée = correct contre du poison ; le diagnostic ne le signale plus comme erreur).
+- DraculaZagne : 14 PT, 6 PM + bottes, Stalactite (205, 214) ; il frappe puis recule à 10–11 cases.
+  L'étincelle nous a permis de frapper quand même chaque tour (~50–90). Il lui restait ~155 PV.

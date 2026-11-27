@@ -224,4 +224,4 @@ jusqu'à ~1 300 PV (meilleur gain par point), puis 12ᵉ PT (35, Stalactite + la
   résistance + boucliers) pour les combats éleveur, où l'IA alliée (`lib/team.leek`) sait déjà éviter
   de toucher un coéquipier. Option alternative : 2ᵉ attaquant force pour doubler les combats solo.
 - **IA** : `ai/main.leek` est générique (lit l'équipement porté) → on peut l'assigner aux deux poireaux.
-  Code à prévoir si soutien : soigner/protéger l'allié le plus bas (aujourd'hui les soins ciblent surtout soi).
+  `healAllies()` (lib/team.leek) soigne déjà le coéquipier le plus blessé ; à prévoir si soutien : boucliers sur l'allié.

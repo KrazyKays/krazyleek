@@ -6,3 +6,7 @@
   portée → impasse contre les murs. **Correction** : loin de sa portée (distance > sa portée + ses PM + nos PM),
   approche normale par le vrai chemin ; l'attente ne joue qu'à la limite.
 - T6–T8 : étincelles seules (5–30) à 3–8 cases, sans ligne de vue pour le reste ; acceptable.
+
+## Après correctif — 54994378 (krazyKlick) et 54994351 (KrazyKeel) : 2 VICTOIRES propres
+- 54994378 : 599–0 en 3 tours (étincelles ×4 à 10 cases au T2, puis flamme + Stalactite). Approche sans perte.
+- 54994351 : KrazyKeel attend à 9 cases au T5, avance d'une case et tire le premier ; 100–20.

@@ -38,6 +38,12 @@ if (target != null) {
             + " tour(s)) : on attend à l'abri");
         attack = null;
         retreatFrom(target);
+        // Pas réellement à l'abri (il nous atteint quand même) : autant frapper avec ce qui reste.
+        if (enemyCanReach(target, getCell())) {
+            debug("[plan] pas d'abri réel : on attaque quand même");
+            waiting = false;
+            attack = chooseAttackCell(target);
+        }
     }
 
     // Hors de portée : marcher vers une position d'attaque, puis réévaluer avec les PM restants.

@@ -215,8 +215,9 @@ jusqu'à ~1 300 PV (meilleur gain par point), puis 12ᵉ PT (35, Stalactite + la
 ## Niveau 51 : création d'un 2ᵉ poireau (2026-11-27)
 - **krazyKlick** : setup inchangé (restat déjà fait au niv. 51). Rien de neuf avant le niv. 53 (Altération,
   peu utile pour nous), 56 (Goutte) et surtout **60 (Libération, 90 000 habs)** → garder des habs.
-- **Budget** : le 2ᵉ poireau entre en concurrence avec la Libération. Ordre conseillé : 1) Libération
-  pour krazyKlick, 2) équiper le nouveau avec des objets bon marché (< 10 000 habs chacun jusqu'au niv. 20).
+- **Budget** : 1 500 000 habs (trophées, 2026-11-27) → l'argent n'est plus une contrainte :
+  Libération au niv. 60 et équipement complet du 2ᵉ poireau à chaque palier. La limite devient le
+  niveau (déblocages) et les ressources de craft des composants.
 - **Équipement** : un objet de l'inventaire ne s'équipe que sur un poireau à la fois *(à vérifier en jeu)* :
   racheter des exemplaires bon marché (mitraillette 3 080, caillou 3 290, protéines 3 520, casque 2 200,
   bandage 2 000) plutôt que déséquiper krazyKlick.

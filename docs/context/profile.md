@@ -5,6 +5,7 @@
 
 ## Éleveur
 - Talent éleveur : 100
+- Habs : ≈ 1 500 000 (trophées, 2026-11-27)
 - Mode joué : **solo** (prioritaire), quelques tournois sans enjeu
 - Langage des IA : **LeekScript v4** (migration depuis Python le 2026-11-26)
 

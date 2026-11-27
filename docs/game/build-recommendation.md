@@ -236,6 +236,6 @@ jusqu'à ~1 300 PV (meilleur gain par point), puis 12ᵉ PT (35, Stalactite + la
 - Achats aux paliers : `shock` (2), bandage (3), caillou (4), protéines (6), mitraillette (8), casque (10),
   rocher (13), motivation (14), soin (20), éclair (24), flamme (29), Connaissance (32), bouclier (35),
   Solidification (40). Composants : pomme (5), ressort (7), RAM (11).
-- Combats : les 50 combats/jour sont partagés. **Acheter les +50** (habs abondants). Mettre l'essentiel des combats
+- Combats : 50/jour partagés + 50 achetables une fois par jour (à faire chaque jour, habs abondants). Mettre l'essentiel des combats
   solo sur KrazyKeel (montée rapide aux bas niveaux) ; tester les combats éleveur (les 2 poireaux gagnent
   de l'XP en un seul combat) — avec 2 poireaux contre 4, et un écart de 50 niveaux, à évaluer sur quelques combats.

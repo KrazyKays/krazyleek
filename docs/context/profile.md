@@ -16,9 +16,9 @@ Stats au niveau 47 (combat 54984587) :
 
 | Vie | Force | Sagesse | Agilité | Résistance | Science | Magie | Fréquence | PT | PM | Cœurs | RAM |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 858 | 220 | 0 | 40 | 0 | 0 | 0 | **140** | **11** | **4** | 1 | **10** |
+| 881 | 220 | 0 | 40 | 0 | 0 | 0 | **140** | **11** | **4** | 1 | **10** |
 
-- Capital : 285 au total au niveau 48 (répartition du dernier point à confirmer : vie ou 5ᵉ PM)
+- Capital : 285 au total au niveau 48 ; tout le reste en vie (881 PV estimés). Habs : largement assez pour la Stalactite
 - Emplacements : **2 armes**, **10 puces** (RAM 10), jusqu'à 8 composants
 - Armes : laser, mitraillette
 - Puces (10/10) : éclair, flamme, caillou, rocher, protéines, motivation, **étincelle**, casque, bouclier, Solidification (bandage retiré au niv. 46)

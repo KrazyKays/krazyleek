@@ -19,7 +19,7 @@ function healIfNeeded() {
 //  - boucliers (2–3 tours) : si l'adversaire va probablement nous frapper à son prochain tour.
 // À appeler APRÈS le repli (la case finale compte pour les boucliers).
 global BUFF_CHIPS = [CHIP_MOTIVATION];
-global DEFENSE_CHIPS = [CHIP_SHIELD, CHIP_HELMET, CHIP_WALL];
+global DEFENSE_CHIPS = [CHIP_ARMOR, CHIP_SHIELD, CHIP_HELMET, CHIP_WALL];
 
 function useLeftoverSupport(enemy) {
     if (combatSoon(enemy)) {
@@ -28,6 +28,17 @@ function useLeftoverSupport(enemy) {
         }
     }
     if (enemyLikelyAttacks(enemy, getCell())) {
+        // Résistance d'abord si on peut enchaîner avec un bouclier dans la foulée.
+        for (var res : var bonus in RESISTANCE_BUFFS) {
+            if (!inArray(getChips(), res) || getCooldown(res) > 0) continue;
+            for (var sh : var info in SHIELD_CHIPS) {
+                if (inArray(getChips(), sh) && getCooldown(sh) == 0
+                        && getTP() >= CHIP_DATA[res][I_COST] + CHIP_DATA[sh][I_COST]) {
+                    tryChipSelf(res);
+                    break;
+                }
+            }
+        }
         for (var chip in DEFENSE_CHIPS) {
             if (!inArray(getChips(), chip)) continue;
             // Bouclier absolu annulé par la vulnérabilité adverse : inutile.

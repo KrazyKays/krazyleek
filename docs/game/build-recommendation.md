@@ -113,3 +113,18 @@ Meilleures combinaisons à 11 PT (calculées automatiquement par l'IA) :
 Nouvelle puce débloquée : **Bouclier** (`CHIP_SHIELD`, 13 850 habs) : bouclier absolu 20 pendant 3 tours,
 4 PT, recharge 4. Contre 4 coups/tour : ≈ 240 dégâts évités sur 3 tours (déjà géré par l'IA).
 À prendre à la place des bottes ou de l'étincelle si le budget le permet.
+
+## Niveau 40 : nouvelles puces à envisager
+
+| Priorité | Objet | Prix | Pourquoi |
+|---|---|---|---|
+| 1 | **Solidification** (`CHIP_SOLIDIFICATION`) | 24 400 | +180–200 résistance 3 tours (6 PT, recharge 5). Résistance 0 → ~190 : **boucliers × 2,9**. Solidification + Bouclier (10 PT) = **58 par coup pendant 3 tours** ; le casque lancé au tour suivant = 43 par coup. Contre 3–4 coups/tour : ~400–600 dégâts évités. C'est exactement ce qui nous a battus (combat 54977259). |
+| 2 | **Laser** (`WEAPON_LASER`, arme) | 12 120 | 6 PT, portée 2–9 en ligne, ≈ 163 dégâts (27/PT), 2 tirs. Remplace le pistolet (18,7/PT) ; portée 9 utile contre les kiteurs. |
+| option | **+1 RAM en capital** | 20 capital | 11ᵉ emplacement de puce : garder tout le kit actuel en ajoutant Solidification. |
+
+**Que retirer pour Solidification** (si pas de RAM en plus) : l'**étincelle** (12,8 dégâts/PT ; depuis la correction
+des déplacements, l'IA va chercher la ligne de vue au lieu de rester derrière un mur).
+
+L'IA gère déjà tout : elle évalue Solidification + boucliers ensemble (ordre : résistance puis boucliers),
+tient compte de la vulnérabilité adverse et ne lance rien si l'adversaire ne va pas frapper.
+Limite : la vulnérabilité du fusil à pompe (25) se soustrait toujours, mais 58 − 25 = 33 par coup reste utile.

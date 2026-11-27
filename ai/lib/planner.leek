@@ -7,7 +7,10 @@
 // Bonus de force moyen des puces de buff de force (EFFECT_RAW_BUFF_STRENGTH, 2 tours).
 global STRENGTH_BUFFS = [CHIP_PROTEIN: 90];
 // Puces de bouclier absolu sur soi : [bouclier de base, durée en tours] (valeurs officielles).
-global SHIELD_CHIPS = [CHIP_HELMET: [15, 2], CHIP_SHIELD: [20, 3]];
+global SHIELD_CHIPS = [CHIP_HELMET: [15, 2], CHIP_SHIELD: [20, 3], CHIP_ARMOR: [25, 4]];
+// Buffs de résistance (EFFECT_RAW_BUFF_RESISTANCE) : bonus moyen. Ils multiplient les boucliers
+// lancés APRÈS eux (bouclier × (1 + résistance/100)), d'où leur place en tête de liste.
+global RESISTANCE_BUFFS = [CHIP_SOLIDIFICATION: 190];
 
 // ---------- Géométrie ----------
 
@@ -156,22 +159,33 @@ function estimatedEnemyHits(enemy) {
     return best;
 }
 
-// Puces sur soi utilisables maintenant : [puce, coût, bonusForce, valeurBouclier].
+// Puces sur soi utilisables maintenant :
+// [puce, coût, bonusForce, bouclierDeBase, durée, bonusRésistance, coupsAdverses, vulnérabilitéAdverse]
+// Ordre : résistance d'abord, puis force, puis boucliers (ordre de lancement).
 function availableSelfBuffs(target) {
     var result = [];
-    for (var chip : var bonus in STRENGTH_BUFFS) {
-        if (inArray(getChips(), chip) && getCooldown(chip) == 0) {
-            push(result, [chip, CHIP_DATA[chip][I_COST], bonus, 0]);
+    // Un bouclier ne vaut rien si l'adversaire ne va pas nous frapper au prochain tour.
+    var threatened = enemyLikelyAttacks(target, getCell());
+    var hits = threatened ? estimatedEnemyHits(target) : 0;
+    var vuln = threatened ? enemyAbsVulnerability(target) : 0;
+    if (hits > 0) {
+        for (var chip : var bonus in RESISTANCE_BUFFS) {
+            if (inArray(getChips(), chip) && getCooldown(chip) == 0) {
+                push(result, [chip, CHIP_DATA[chip][I_COST], 0, 0, 0, bonus, hits, vuln]);
+            }
         }
     }
-    // Un bouclier ne vaut rien si l'adversaire ne peut pas nous atteindre au prochain tour.
-    var hits = enemyLikelyAttacks(target, getCell()) ? -1 : 0;
-    for (var chip : var info in SHIELD_CHIPS) {
-        if (!inArray(getChips(), chip) || getCooldown(chip) > 0) continue;
-        if (hits < 0) hits = estimatedEnemyHits(target);
-        // bouclier × coups par tour × durée, pondéré à 0,7 (l'adversaire ne joue pas toujours tout)
-        var value = effectiveShieldPerHit(info[0], target) * hits * info[1] * 0.7;
-        if (value > 0) push(result, [chip, CHIP_DATA[chip][I_COST], 0, value]);
+    for (var chip : var bonus in STRENGTH_BUFFS) {
+        if (inArray(getChips(), chip) && getCooldown(chip) == 0) {
+            push(result, [chip, CHIP_DATA[chip][I_COST], bonus, 0, 0, 0, hits, vuln]);
+        }
+    }
+    if (hits > 0) {
+        for (var chip : var info in SHIELD_CHIPS) {
+            if (inArray(getChips(), chip) && getCooldown(chip) == 0) {
+                push(result, [chip, CHIP_DATA[chip][I_COST], 0, info[0], info[1], 0, hits, vuln]);
+            }
+        }
     }
     return result;
 }
@@ -189,19 +203,34 @@ function planFrom(from, target, tp, buffs) {
 
     var plan = null;
     var life = getLife(target);
+    var candCache = [:];
+    var memoCache = [:];
     for (var sub in subsets) {
         var cost = 0;
         var bonus = 0;
-        var shield = 0;
+        var resBonus = 0;
         var chips = [];
         for (var b in sub) {
             cost += b[1];
             bonus += b[2];
-            shield += b[3];
+            resBonus += b[5];
             push(chips, b[0]);
         }
+        // Valeur des boucliers : par coup (résistance comprise, moins la vulnérabilité adverse)
+        // × coups adverses par tour × durée, pondérée à 0,7 (l'adversaire ne joue pas toujours tout).
+        var shield = 0;
+        var resMult = 1 + (getResistance() + resBonus) / 100;
+        for (var b in sub) {
+            if (b[3] > 0) shield += max(0, b[3] * resMult - b[7]) * b[6] * b[4] * 0.7;
+        }
         if (cost >= tp) continue;
-        var combo = bestCombo(candidatesFrom(from, target, strength + bonus), 0, tp - cost, [:]);
+        // Cache : candidats et mémo du sac à dos ne dépendent que du bonus de force
+        // (la mémo couvre tous les budgets de PT) → coût quasi nul par combinaison.
+        if (candCache[bonus] == null) {
+            candCache[bonus] = candidatesFrom(from, target, strength + bonus);
+            memoCache[bonus] = [:];
+        }
+        var combo = bestCombo(candCache[bonus], 0, tp - cost, memoCache[bonus]);
         // Un buff de force dure 2 tours : la moitié du gain compte en plus pour le tour suivant.
         var nextTurnGain = bonus > 0 ? combo[0] * (bonus / (100 + strength + bonus)) * 0.5 : 0;
         var score = min(combo[0] + nextTurnGain, life) + shield;

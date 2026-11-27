@@ -87,6 +87,9 @@ function holdOutsideReach(target) {
     if (HOLD_COUNT >= 2) return false; // il ne vient pas : on y va
     if (attackRange(getEntity()) + getMP() <= attackRange(target)) return false;
     var targetCell = getCell(target);
+    // Encore loin : on ne peut pas entrer dans sa portée ce tour → approche normale par le vrai chemin
+    // (combat 54994330 : choix « à vol d'oiseau » à 16 cases, bloqué par les murs 2 tours de suite).
+    if (getCellDistance(getCell(), targetCell) > getTotalMP(target) + attackRange(target) + getMP()) return false;
     var best = null;
     var bestDist = 0;
     var closest = null; // case la plus proche sans contrainte de sécurité

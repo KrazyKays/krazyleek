@@ -69,6 +69,35 @@ function isStuck() {
     return POS_HISTORY[n - 1] == POS_HISTORY[n - 3] || POS_HISTORY[n - 2] == POS_HISTORY[n - 4];
 }
 
+// Duel d'approche : celui qui entre le premier dans la portée de l'autre prend la première salve
+// (combat 54991303, pistolet contre pistolet : avancé à 10 cases = sa portée + PM, il tire en premier,
+// défaite 51–100). Si aucune attaque n'est possible ce tour, s'arrêter juste hors de sa portée ;
+// il doit alors entrer dans la nôtre pour nous toucher. Seulement si notre portée + PM dépasse la sienne
+// (sinon un tireur à longue portée nous pilonnerait de loin). L'anti-boucle (isStuck) relance l'assaut
+// si les deux camps attendent.
+function holdOutsideReach(target) {
+    if (attackRange(getEntity()) + getMP() <= attackRange(target)) return false;
+    if (!enemyCanReach(target, getCell()) && getCellDistance(getCell(), getCell(target))
+            <= getTotalMP(target) + attackRange(target) + 1) {
+        return true; // déjà à la bonne distance : ne pas bouger
+    }
+    var targetCell = getCell(target);
+    var best = null;
+    var bestDist = 0;
+    for (var entry in reachableCells(getMP())) {
+        if (enemyCanReach(target, entry[0])) continue;
+        var d = getCellDistance(entry[0], targetCell) * 10 + entry[1];
+        if (best == null || d < bestDist) {
+            best = entry[0];
+            bestDist = d;
+        }
+    }
+    if (best == null) return false; // aucune case sûre : approche normale
+    debug("[move] on attend hors de sa portée (case " + best + ")");
+    if (best != getCell()) moveTowardCell(best);
+    return true;
+}
+
 // Aucune attaque possible ce tour : marcher (vrai chemin du jeu, qui contourne les murs) vers la
 // position d'attaque la plus proche. Pas de calcul « à vol d'oiseau » : il fait tourner en rond
 // autour des murs (combat 54979521).
@@ -78,6 +107,7 @@ function approachAttackPosition(target) {
         moveToward(target);
         return;
     }
+    if (holdOutsideReach(target)) return;
     var cells = attackPositions(target, 0);
     if (count(cells) > 0) {
         moveTowardCells(cells);

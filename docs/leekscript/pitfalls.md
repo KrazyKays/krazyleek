@@ -41,3 +41,7 @@
 - `api/fight/get/<id>` répond **409 `fight_with_secret_trophy`** pour un combat qui contient un trophée secret :
   l'analyse automatique est impossible sans être connecté. Récupérer le JSON depuis le navigateur et le passer
   à `tools/analyze_fight.py <fichier.json>`.
+
+## Tactique
+- **Approche** : avancer jusqu'à « portée adverse + PM adverses » sans pouvoir tirer offre la première salve
+  à l'adversaire (54991303). S'arrêter une case avant (`holdOutsideReach`).

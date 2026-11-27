@@ -64,11 +64,12 @@ if (target != null) {
         executePlan(attack[2], attackTarget);
         attacked = true;
     }
+    var dealtDamage = attacked && attack[2][1] > 0;
 
     // Après avoir frappé : si l'attaque était faible (< 60 % du potentiel), avancer vers une
     // meilleure position ; sinon se replier intelligemment. Jamais de repli sans attaque.
     if (attacked && isAlive(target)) {
-        if (attackTarget == target && attack[2][1] < potential * 0.6) {
+        if (dealtDamage && attackTarget == target && attack[2][1] < potential * 0.6) {
             advanceTowardStrongPositions(target);
         } else {
             retreatFrom(target);

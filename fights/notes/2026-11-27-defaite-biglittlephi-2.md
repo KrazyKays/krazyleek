@@ -14,3 +14,9 @@
 
 ## Correction
 - Attente du bouclier : si après le repli il peut encore nous atteindre, on attaque quand même.
+
+## Cause des tours vides (confirmée par les logs : « aucune attaque possible » aux T4, T6, T8)
+Le meilleur plan était défensif (Solidification + Bouclier, 10 PT, 0 dégât) ; `chooseAttackCell` jetait les
+plans sans dégâts → aucun plan → pas de déplacement (déjà sur une case d'attaque) → en fin de tour, après le
+bandage, 9 PT < 10 pour Solidification + Bouclier, et bouclier/casque seuls annulés par le fusil à pompe (−25).
+Corrigé : un plan est gardé s'il a des dégâts ou des puces sur soi.

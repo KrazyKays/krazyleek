@@ -264,7 +264,9 @@ function chooseAttackCell(target) {
     var buffs = availableSelfBuffs(target);
     for (var entry in reachableCells(getMP())) {
         var plan = planFrom(entry[0], target, tp, buffs);
-        if (plan[1] <= 0) continue;
+        // Un plan vaut s'il fait des dégâts OU s'il lance des puces sur soi rentables (boucliers…).
+        // Avant : un plan « Solidification + Bouclier sans dégâts » était jeté → tour vide (54977580).
+        if (plan[1] <= 0 && count(plan[3]) == 0) continue;
         // À dégâts égaux, préférer la case qui garde des PM pour se replier ;
         // retirer les dégâts qu'on prendrait d'un coffre réveillé sur cette case.
         var danger = chestDangerAt(entry[0]);

@@ -76,7 +76,8 @@ def main(argv):
         eq = l.get("equipment", {})
         w = [weapon_by_item[x]["name"] for x in eq.get("weapons", []) if x in weapon_by_item]
         print(f"  {l['name']:12} PV {l['life']} F {l['strength']} Sa {l['wisdom']} Ag {l['agility']} "
-              f"Ré {l['resistance']} Fr {l['frequency']} PT {l['tp']} PM {l['mp']} | armes {w}")
+              f"Ré {l['resistance']} Sc {l.get('science', 0)} Ma {l.get('magic', 0)} Fr {l['frequency']} "
+              f"PT {l['tp']} PM {l['mp']} | armes {w}")
     print()
 
     turn, current, spent = 1, None, 0

@@ -150,17 +150,26 @@ function unshieldedPotential(target) {
     return value;
 }
 
-// Coups que l'adversaire peut porter en un tour (meilleur objet répété), pour valoriser
-// les boucliers absolus, qui s'appliquent à CHAQUE coup.
-function estimatedEnemyHits(enemy) {
+// Profil de frappe directe de l'adversaire sur un tour : [nombre de coups, dégâts moyens par coup],
+// pour l'objet qui fait le plus de dégâts directs par tour (répété autant que ses PT le permettent).
+// Les boucliers absolus ne réduisent que les dégâts directs, et au plus de la valeur du coup :
+// contre un poireau poison à 0 de force (combat 54978580), ils ne valent rien.
+function enemyHitProfile(enemy) {
     var tp = getTotalTP(enemy);
-    var best = 0;
+    var strength = getStrength(enemy);
+    var bestTotal = 0;
+    var best = [0, 0];
     for (var w in getWeapons(enemy)) {
         var wd = WEAPON_DATA[w];
         if (wd == null || wd[I_DMG] <= 0) continue;
         var uses = floor(tp / wd[I_COST]);
         if (wd[I_USES] > 0) uses = min(uses, wd[I_USES]);
-        best = max(best, uses * max(1, wd[I_HITS]));
+        var hits = uses * max(1, wd[I_HITS]);
+        var perHit = wd[I_DMG] / max(1, wd[I_HITS]) * (1 + strength / 100);
+        if (hits * perHit > bestTotal) {
+            bestTotal = hits * perHit;
+            best = [hits, perHit];
+        }
     }
     for (var c in getChips(enemy)) {
         var cd = CHIP_DATA[c];
@@ -168,36 +177,49 @@ function estimatedEnemyHits(enemy) {
         var uses = floor(tp / cd[I_COST]);
         if (cd[I_CD] > 0) uses = min(uses, 1);
         if (cd[I_USES] > 0) uses = min(uses, cd[I_USES]);
-        best = max(best, uses * max(1, cd[I_HITS]));
+        var hits = uses * max(1, cd[I_HITS]);
+        var perHit = cd[I_DMG] / max(1, cd[I_HITS]) * (1 + strength / 100);
+        if (hits * perHit > bestTotal) {
+            bestTotal = hits * perHit;
+            best = [hits, perHit];
+        }
     }
     return best;
 }
 
+function estimatedEnemyHits(enemy) {
+    return enemyHitProfile(enemy)[0];
+}
+
 // Puces sur soi utilisables maintenant :
-// [puce, coût, bonusForce, bouclierDeBase, durée, bonusRésistance, coupsAdverses, vulnérabilitéAdverse]
+// [puce, coût, bonusForce, bouclierDeBase, durée, bonusRésistance, coupsAdverses, vulnérabilitéAdverse,
+//  dégâtsParCoupAdverse]
 // Ordre : résistance d'abord, puis force, puis boucliers (ordre de lancement).
 function availableSelfBuffs(target) {
     var result = [];
     // Un bouclier ne vaut rien si l'adversaire ne va pas nous frapper au prochain tour.
     var threatened = enemyLikelyAttacks(target, getCell());
-    var hits = threatened ? estimatedEnemyHits(target) : 0;
+    var profile = threatened ? enemyHitProfile(target) : [0, 0];
+    var hits = profile[0];
     var vuln = threatened ? enemyAbsVulnerability(target) : 0;
+    // Coups trop faibles pour qu'un bouclier serve (ex. build poison sans force).
+    if (profile[1] < 10) hits = 0;
     if (hits > 0) {
         for (var chip : var bonus in RESISTANCE_BUFFS) {
             if (inArray(getChips(), chip) && getCooldown(chip) == 0) {
-                push(result, [chip, CHIP_DATA[chip][I_COST], 0, 0, 0, bonus, hits, vuln]);
+                push(result, [chip, CHIP_DATA[chip][I_COST], 0, 0, 0, bonus, hits, vuln, profile[1]]);
             }
         }
     }
     for (var chip : var bonus in STRENGTH_BUFFS) {
         if (inArray(getChips(), chip) && getCooldown(chip) == 0) {
-            push(result, [chip, CHIP_DATA[chip][I_COST], bonus, 0, 0, 0, hits, vuln]);
+            push(result, [chip, CHIP_DATA[chip][I_COST], bonus, 0, 0, 0, hits, vuln, profile[1]]);
         }
     }
     if (hits > 0) {
         for (var chip : var info in SHIELD_CHIPS) {
             if (inArray(getChips(), chip) && getCooldown(chip) == 0) {
-                push(result, [chip, CHIP_DATA[chip][I_COST], 0, info[0], info[1], 0, hits, vuln]);
+                push(result, [chip, CHIP_DATA[chip][I_COST], 0, info[0], info[1], 0, hits, vuln, profile[1]]);
             }
         }
     }
@@ -236,7 +258,8 @@ function planFrom(from, target, tp, buffs) {
         var shield = 0;
         var resMult = 1 + (getResistance() + resBonus) / 100;
         for (var b in sub) {
-            if (b[3] > 0) shield += max(0, b[3] * resMult - b[7]) * b[6] * b[4] * 0.7;
+            // Un bouclier n'absorbe pas plus que la valeur du coup : min(bouclier, dégâts par coup).
+            if (b[3] > 0) shield += min(max(0, b[3] * resMult - b[7]), b[8]) * b[6] * b[4] * 0.7;
         }
         // Course aux PV : un PV sauvé vaut (PV adverses / nos PV) PV infligés. Contre un tank
         // à 1 258 PV quand on en a 743, protéger rapporte 1,7× plus (combat 54977572).

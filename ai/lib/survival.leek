@@ -27,7 +27,8 @@ function useLeftoverSupport(enemy) {
             if (inArray(getChips(), chip)) tryChipSelf(chip);
         }
     }
-    if (enemyLikelyAttacks(enemy, getCell())) {
+    // Boucliers inutiles contre des coups directs insignifiants (build poison).
+    if (enemyLikelyAttacks(enemy, getCell()) && enemyHitProfile(enemy)[1] >= 10) {
         // Résistance d'abord si on peut enchaîner avec un bouclier dans la foulée.
         for (var res : var bonus in RESISTANCE_BUFFS) {
             if (!inArray(getChips(), res) || getCooldown(res) > 0) continue;

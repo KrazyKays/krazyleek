@@ -32,3 +32,9 @@ non encore installé).
   (Solidification non lancée = correct contre du poison ; le diagnostic ne le signale plus comme erreur).
 - DraculaZagne : 14 PT, 6 PM + bottes, Stalactite (205, 214) ; il frappe puis recule à 10–11 cases.
   L'étincelle nous a permis de frapper quand même chaque tour (~50–90). Il lui restait ~155 PV.
+
+## 54984717 — Tintamarre (niv. 50, force 220 + sagesse 100) : NIVEAU / BUILD
+- Même force et mêmes PM que nous ; différence : Stalactite (219), épée large au contact, et des soins
+  massifs (Connaissance + Soin : 205 PV en un tour ; ~380 PV soignés au total).
+- Nous : 694 dégâts pour 623 PV adverses — gagné sans ses soins. Pas d'erreur IA notable.
+- Leçon : la sagesse adverse (soins + vol de vie) rallonge les combats ; il faut du burst (Stalactite, niv. 50).

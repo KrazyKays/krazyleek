@@ -45,3 +45,5 @@
 ## Tactique
 - **Approche** : avancer jusqu'à « portée adverse + PM adverses » sans pouvoir tirer offre la première salve
   à l'adversaire (54991303). S'arrêter une case avant (`holdOutsideReach`).
+- **Anti-boucle insuffisant** : `isStuck` détecte un retour sur une case déjà occupée, pas une dérive d'une
+  case par tour (54991925). Toute logique d'attente doit avoir sa propre limite de tours.

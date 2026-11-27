@@ -58,7 +58,10 @@ global LAST_DAMAGE_TURN = 0;
 // À appeler en fin de tour (main.leek).
 function recordTurn(dealtDamage) {
     push(POS_HISTORY, getCell());
-    if (dealtDamage) LAST_DAMAGE_TURN = getTurn();
+    if (dealtDamage) {
+        LAST_DAMAGE_TURN = getTurn();
+        HOLD_COUNT = 0;
+    }
 }
 
 // Coincé dans une boucle : 3 tours sans dégâts et retour sur une case d'il y a 2 tours
@@ -75,25 +78,36 @@ function isStuck() {
 // il doit alors entrer dans la nôtre pour nous toucher. Seulement si notre portée + PM dépasse la sienne
 // (sinon un tireur à longue portée nous pilonnerait de loin). L'anti-boucle (isStuck) relance l'assaut
 // si les deux camps attendent.
+global HOLD_COUNT = 0; // tours d'attente consécutifs sans dégâts (remis à 0 par recordTurn)
+
 function holdOutsideReach(target) {
+    // Équipe : pas d'attente, nos alliés se battent pendant ce temps (combat 54991925 : 8 tours à
+    // 8 cases avec 11–13 PT inutilisés, en dérivant d'une case par tour, l'anti-boucle ne voyait rien).
+    if (inTeamFight()) return false;
+    if (HOLD_COUNT >= 2) return false; // il ne vient pas : on y va
     if (attackRange(getEntity()) + getMP() <= attackRange(target)) return false;
-    if (!enemyCanReach(target, getCell()) && getCellDistance(getCell(), getCell(target))
-            <= getTotalMP(target) + attackRange(target) + 1) {
-        return true; // déjà à la bonne distance : ne pas bouger
-    }
     var targetCell = getCell(target);
     var best = null;
     var bestDist = 0;
+    var closest = null; // case la plus proche sans contrainte de sécurité
+    var closestDist = 0;
     for (var entry in reachableCells(getMP())) {
-        if (enemyCanReach(target, entry[0])) continue;
         var d = getCellDistance(entry[0], targetCell) * 10 + entry[1];
+        if (closest == null || d < closestDist) {
+            closest = entry[0];
+            closestDist = d;
+        }
+        if (enemyCanReach(target, entry[0])) continue;
         if (best == null || d < bestDist) {
             best = entry[0];
             bestDist = d;
         }
     }
     if (best == null) return false; // aucune case sûre : approche normale
-    debug("[move] on attend hors de sa portée (case " + best + ")");
+    if (best != closest) {
+        HOLD_COUNT++; // la limite de sa portée nous arrête vraiment
+        debug("[move] on attend hors de sa portée (case " + best + ", attente " + HOLD_COUNT + "/2)");
+    }
     if (best != getCell()) moveTowardCell(best);
     return true;
 }

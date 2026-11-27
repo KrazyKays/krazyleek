@@ -170,7 +170,7 @@ function availableSelfBuffs(target) {
         if (!inArray(getChips(), chip) || getCooldown(chip) > 0) continue;
         if (hits < 0) hits = estimatedEnemyHits(target);
         // bouclier × coups par tour × durée, pondéré à 0,7 (l'adversaire ne joue pas toujours tout)
-        var value = info[0] * (1 + getResistance() / 100) * hits * info[1] * 0.7;
+        var value = effectiveShieldPerHit(info[0], target) * hits * info[1] * 0.7;
         if (value > 0) push(result, [chip, CHIP_DATA[chip][I_COST], 0, value]);
     }
     return result;

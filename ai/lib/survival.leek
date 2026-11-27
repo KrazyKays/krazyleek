@@ -29,7 +29,11 @@ function useLeftoverSupport(enemy) {
     }
     if (enemyLikelyAttacks(enemy, getCell())) {
         for (var chip in DEFENSE_CHIPS) {
-            if (inArray(getChips(), chip)) tryChipSelf(chip);
+            if (!inArray(getChips(), chip)) continue;
+            // Bouclier absolu annulé par la vulnérabilité adverse : inutile.
+            var info = SHIELD_CHIPS[chip];
+            if (info != null && effectiveShieldPerHit(info[0], enemy) <= 0) continue;
+            tryChipSelf(chip);
         }
     }
 }

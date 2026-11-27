@@ -10,15 +10,15 @@
 
 ## Poireaux
 
-### krazyKlick — niveau 35
+### krazyKlick — niveau 40
 
-Stats au niveau 32 (combat 54965116) + RAM et ventilateur (niveau 33) + 11ᵉ PT (niveau 35) :
+Stats au niveau 40 (combat 54977259) :
 
 | Vie | Force | Sagesse | Agilité | Résistance | Science | Magie | Fréquence | PT | PM | Cœurs | RAM |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 662 | 220 | 0 | 40 | 0 | 0 | 0 | **140** | **11** | 3 | 1 | **10** |
+| 677 | 220 | 0 | 40 | 0 | 0 | 0 | **140** | **11** | **4** | 1 | **10** |
 
-- Capital : 220 au total au niveau 35 ; non dépensé : 0 (estimé, après achat du 11ᵉ PT)
+- Capital : 245 au total au niveau 40 (4ᵉ PM acheté) ; non dépensé : à confirmer
 - Emplacements : **2 armes**, **10 puces** (RAM 10), jusqu'à 8 composants
 - Armes : mitraillette, pistolet
 - Puces (10/10, supposé d'après les recommandations) : éclair, flamme, caillou, rocher, étincelle, protéines,
@@ -36,4 +36,6 @@ Stats au niveau 32 (combat 54965116) + RAM et ventilateur (niveau 33) + 11ᵉ PT
 - **Coffres** : ont tué krazyKlick plusieurs fois en solo → l'IA ne les touche plus (voir `ai/lib/threat.leek`).
 - **Kiteur étincelle derrière un mur** (Prunaux, combat 54965116) : bug d'approche corrigé ;
   le casque est la parade (bouclier par coup).
+- **Tanks Solidification + Bouclier** (BigLittlePhi niv. 43, combat 54977259) : bouclier 63/coup pendant 3 tours ;
+  fusil à pompe adverse qui annule nos boucliers. Parade future : Libération (niv. 60).
 - (à compléter avec des liens de combats)

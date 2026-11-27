@@ -6,7 +6,8 @@ Deux maps (les ids d'armes et de puces peuvent se chevaucher) : WEAPON_DATA et C
 Chaque entrée :
   [coût PT, portée min, portée max, type de lancer, ligne de vue (bool),
    utilisations max/tour (-1 = illimité), recharge, dégâts moyens de base (somme des effets
-   de dégâts), nombre d'effets de dégâts, soin moyen de base, zone (1 = une seule case)]
+   de dégâts), nombre d'effets de dégâts, soin moyen de base, zone (1 = une seule case),
+   vulnérabilité absolue infligée (annule nos boucliers absolus, ex. fusil à pompe 25)]
 Les dégâts/soins sont les valeurs de base (avant force/sagesse) : moyenne value1 + value2/2.
 """
 import json
@@ -15,7 +16,7 @@ import pathlib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = ROOT / "docs" / "data"
 OUT = ROOT / "ai" / "lib" / "items.leek"
-EFFECT_DAMAGE, EFFECT_HEAL = 1, 2
+EFFECT_DAMAGE, EFFECT_HEAL, EFFECT_ABSOLUTE_VULNERABILITY = 1, 2, 27
 
 
 def row(item, cooldown):
@@ -24,7 +25,8 @@ def row(item, cooldown):
     avg = lambda effects: sum(e["value1"] + e["value2"] / 2 for e in effects)
     return [item["cost"], item["min_range"], item["max_range"], item["launch_type"],
             "true" if item["los"] else "false", item["max_uses"], cooldown,
-            avg(dmg), len(dmg), avg(heal), item["area"]]
+            avg(dmg), len(dmg), avg(heal), item["area"],
+            sum(e["value1"] for e in item["effects"] if e["id"] == EFFECT_ABSOLUTE_VULNERABILITY)]
 
 
 def main():
@@ -48,13 +50,13 @@ def main():
         return out + ["];", ""]
 
     lines = ["// FICHIER GÉNÉRÉ par tools/gen_items.py — ne pas modifier à la main.",
-             "// [coût, porteeMin, porteeMax, lancer, lignedevue, maxUtil, recharge, degatsMoy, nbDegats, soinMoy, zone]",
+             "// [coût, porteeMin, porteeMax, lancer, lignedevue, maxUtil, recharge, degatsMoy, nbDegats, soinMoy, zone, vulnAbs]",
              ""]
     lines += block("WEAPON_DATA", weapon_rows) + block("CHIP_DATA", chip_rows)
     entries = weapon_rows + chip_rows
     lines += ["// Index des colonnes",
               "global I_COST = 0; global I_MIN = 1; global I_MAX = 2; global I_LAUNCH = 3; global I_LOS = 4;",
-              "global I_USES = 5; global I_CD = 6; global I_DMG = 7; global I_HITS = 8; global I_HEAL = 9; global I_AREA = 10;",
+              "global I_USES = 5; global I_CD = 6; global I_DMG = 7; global I_HITS = 8; global I_HEAL = 9; global I_AREA = 10; global I_ABSVULN = 11;",
               ""]
     OUT.write_text("\n".join(lines))
     print(f"{len(entries)} objets -> {OUT.relative_to(ROOT)}")

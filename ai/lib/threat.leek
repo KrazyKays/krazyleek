@@ -103,3 +103,23 @@ function combatSoon(enemy) {
     var reach = max(attackRange(enemy), attackRange(getEntity()));
     return getCellDistance(getCell(enemy), getCell()) <= getTotalMP() + getTotalMP(enemy) + reach;
 }
+
+// Vulnérabilité absolue que l'adversaire peut nous infliger (ex. fusil à pompe : 25).
+// Elle se soustrait à nos boucliers absolus (combat 54977259 : casque 15 totalement annulé).
+function enemyAbsVulnerability(enemy) {
+    var vuln = 0;
+    for (var w in getWeapons(enemy)) {
+        var wd = WEAPON_DATA[w];
+        if (wd != null) vuln = max(vuln, wd[I_ABSVULN]);
+    }
+    for (var c in getChips(enemy)) {
+        var cd = CHIP_DATA[c];
+        if (cd != null) vuln = max(vuln, cd[I_ABSVULN]);
+    }
+    return vuln;
+}
+
+// Bouclier absolu effectif par coup d'une puce de bouclier contre cet adversaire.
+function effectiveShieldPerHit(baseShield, enemy) {
+    return max(0, baseShield * (1 + getResistance() / 100) - enemyAbsVulnerability(enemy));
+}

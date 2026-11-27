@@ -9,7 +9,7 @@ Décodage des actions établi empiriquement (combats 54965116, 54966254) :
   10 déplacement [entité, case, chemin] | 12 puce [modèle, case, résultat]
   13 changement d'arme [modèle] | 16 tir [case, résultat] | 101 PV perdus [entité, valeur, érosion]
   103 soin [entité, valeur] | 302 effet [objet, id, lanceur, cible, ?, type, valeur, tours]
-  303 fin d'effet [id] | 203 message | 5 mort [entité, tueur]
+  303 fin d'effet [id] | 203 message | 5 mort [entité, tueur] | 110 poison [entité, valeur, érosion]
 """
 import json
 import pathlib
@@ -85,6 +85,7 @@ def main(argv):
     wasted = []
     engaged_idle = []   # tours où l'on garde >= 5 PT alors que l'adversaire est à <= 8 cases
     healed = {i: 0 for i in leeks}
+    poison = {}
     used_chips = {i: set() for i in leeks}
     weapon = {i: None for i in leeks}
     tp_total = {i: l["tp"] for i, l in leeks.items()}
@@ -134,6 +135,13 @@ def main(argv):
             if current is not None and current != a[1]:
                 dealt[current] += a[2]
             line[-1:] = [f"{line[-1]} [{a[2]}]"] if line else []
+        elif code == 110:  # dégâts de poison [cible, valeur, érosion] (ignorent les boucliers)
+            taken[a[1]] += a[2]
+            poison[a[1]] = poison.get(a[1], 0) + a[2]
+            others = [i for i in leeks if leeks[i]["team"] != leeks[a[1]]["team"] and not leeks[i].get("summon")]
+            if len(others) == 1:
+                dealt[others[0]] += a[2]
+            line.append(f"poison [{a[2]}]")
         elif code == 103:
             healed[a[1]] = healed.get(a[1], 0) + a[2]
             line.append(f"+{a[2]} PV")
@@ -147,6 +155,8 @@ def main(argv):
         total = sum(w for _, w in wasted)
         print(f"PT non utilisés par {names[me]} : {total} au total — " +
               ", ".join(f"T{t}:{w}" for t, w in wasted))
+    for i, v in poison.items():
+        print(f"Dont poison subi par {names[i]} : {v}")
     print(f"Opérations : {data.get('ops')}")
     if foe is not None:
         diagnose(fight, leeks, me, foe, dealt, taken, healed, used_chips, engaged_idle)

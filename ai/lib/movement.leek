@@ -55,10 +55,43 @@ function advanceTowardStrongPositions(target) {
 // (pas de ligne de vue nécessaire) : on va au contact.
 function approachAttackPosition(target) {
     var cells = attackPositions(target, 0);
-    if (count(cells) > 0) {
-        moveTowardCells(cells);
-    } else {
+    if (count(cells) == 0) {
         moveToward(target);
+        return;
+    }
+    // Une position d'attaque est atteignable dès ce tour : y aller directement.
+    var reachable = reachableCells(getMP());
+    for (var entry in reachable) {
+        if (inArray(cells, entry[0])) {
+            moveTowardCells(cells);
+            return;
+        }
+    }
+    // Sinon, approche prudente (contre les kiteurs, combat 54978528) : parmi les cases atteignables,
+    // la plus proche d'une position d'attaque, en évitant de finir le tour à découvert et à sa portée.
+    var targetCell = getCell(target);
+    var best = null;
+    var bestScore = 0;
+    for (var entry in reachable) {
+        var cell = entry[0];
+        var nearest = 999;
+        var checked = 0;
+        for (var pos in cells) {
+            nearest = min(nearest, getCellDistance(cell, pos));
+            if (++checked >= 150) break; // borne le coût en opérations
+        }
+        var score = nearest;
+        if (enemyCanReach(target, cell) && exposedTo(cell, target)) score += 3;
+        score += chestDangerAt(cell) / 10;
+        if (best == null || score < bestScore) {
+            best = cell;
+            bestScore = score;
+        }
+    }
+    if (best != null && best != getCell()) {
+        moveTowardCell(best);
+    } else {
+        moveTowardCells(cells);
     }
 }
 

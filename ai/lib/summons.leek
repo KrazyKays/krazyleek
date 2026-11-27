@@ -1,0 +1,95 @@
+// Invocations (bulbes). Inactif tant qu'aucune puce d'invocation n'est équipée.
+// Rappels (encyclopédie « Bulbs ») :
+//  - summon(puce, case, fonctionIA) ; la fonction sert d'IA au bulbe à chacun de ses tours ;
+//  - dans cette fonction, getEntity() / getChips() / getCell()… désignent le BULBE ;
+//  - le bulbe partage nos variables globales, nos fonctions ET notre budget d'opérations : IA légère ;
+//  - 8 invocations vivantes max par équipe (USE_TOO_MANY_SUMMONS).
+// Dépend de lib/items.leek, lib/chips.leek, lib/targeting.leek.
+
+// Puces d'invocation reconnues (toutes utilisent la même IA générique ci-dessous).
+global SUMMON_CHIPS = [CHIP_PUNY_BULB, CHIP_ROCKY_BULB, CHIP_ICED_BULB, CHIP_HEALER_BULB, CHIP_FIRE_BULB,
+    CHIP_LIGHTNING_BULB, CHIP_METALLIC_BULB, CHIP_WIZARD_BULB, CHIP_TACTICIAN_BULB, CHIP_SAVANT_BULB];
+// Nombre max de nos bulbes en vie en même temps (au-delà, les PT servent mieux ailleurs).
+global MAX_OWN_SUMMONS = 2;
+
+// ---------- Côté poireau : invoquer ----------
+
+// Case d'invocation : à portée de la puce, libre, et la plus proche de l'ennemi (le bulbe sert de
+// bouclier vivant entre lui et nous, et attire les IA qui visent l'ennemi le plus proche).
+function bestSummonCell(chip, target) {
+    var me = getCell();
+    var x0 = getCellX(me);
+    var y0 = getCellY(me);
+    var maxRange = CHIP_DATA[chip][I_MAX];
+    var targetCell = target != null ? getCell(target) : me;
+    var best = null;
+    var bestScore = 0;
+    for (var dx = -maxRange; dx <= maxRange; dx++) {
+        for (var dy = -maxRange; dy <= maxRange; dy++) {
+            if (abs(dx) + abs(dy) > maxRange || (dx == 0 && dy == 0)) continue;
+            var c = getCellFromXY(x0 + dx, y0 + dy);
+            if (c == null || c < 0 || !isEmptyCell(c) || !canUseChipOnCell(chip, c)) continue;
+            var score = getCellDistance(c, targetCell);
+            if (best == null || score < bestScore) {
+                best = c;
+                bestScore = score;
+            }
+        }
+    }
+    return best;
+}
+
+// Invoque un bulbe si une puce d'invocation est prête et qu'on a les PT. Renvoie true si réussi.
+function trySummon(target) {
+    if (count(getSummons()) >= MAX_OWN_SUMMONS) return false;
+    for (var chip in SUMMON_CHIPS) {
+        if (!inArray(getChips(), chip) || getCooldown(chip) > 0) continue;
+        if (getTP() < CHIP_DATA[chip][I_COST]) continue;
+        var cell = bestSummonCell(chip, target);
+        if (cell == null) continue;
+        var result = summon(chip, cell, bulbAI);
+        if (result > 0) return true;
+        debugW("[summon] échec " + getChipName(chip) + " : code " + result);
+    }
+    return false;
+}
+
+// ---------- Côté bulbe : son IA ----------
+
+// IA générique d'un bulbe : rester près du poireau, le soigner, le protéger / booster, puis attaquer.
+// Volontairement simple (pas de planificateur) : le budget d'opérations est partagé.
+function bulbAI() {
+    var master = getSummoner();
+    var enemy = chooseTarget();
+    var hasMaster = master != null && isAlive(master);
+
+    // 1. Se rapprocher du poireau (à 2 cases max) pour pouvoir le soigner / protéger.
+    if (hasMaster && getCellDistance(getCell(), getCell(master)) > 2) moveToward(master);
+
+    for (var chip in getChips()) {
+        var data = CHIP_DATA[chip];
+        if (data == null || getCooldown(chip) > 0) continue;
+        // 2. Soins : le poireau d'abord, sinon soi-même.
+        if (data[I_HEAL] > 0) {
+            var heal = data[I_HEAL] * (1 + getWisdom() / 100);
+            if (hasMaster && getTotalLife(master) - getLife(master) >= heal) tryChip(chip, master);
+            else if (getTotalLife() - getLife() >= heal) tryChipSelf(chip);
+            continue;
+        }
+        // 3. Boucliers / buffs (puces sans dégâts ni soin) : sur le poireau s'il est à portée.
+        if (data[I_DMG] <= 0) {
+            if (hasMaster && !tryChip(chip, master)) tryChipSelf(chip);
+            continue;
+        }
+    }
+    // 4. Attaque : chaque puce de dégâts tant que possible sur la cible du poireau.
+    if (enemy != null) {
+        for (var chip in getChips()) {
+            var data = CHIP_DATA[chip];
+            if (data == null || data[I_DMG] <= 0) continue;
+            spamChip(chip, enemy, 3);
+        }
+        // 5. PM restants : s'interposer entre le poireau et l'ennemi.
+        if (getMP() > 0 && hasMaster) moveToward(enemy, min(getMP(), 1));
+    }
+}

@@ -23,7 +23,8 @@ Stats au niveau 47 (combat 54984587) :
 - Armes : laser, mitraillette
 - Puces (10/10) : éclair, flamme, caillou, rocher, protéines, motivation, **étincelle**, casque, bouclier, Solidification (bandage retiré au niv. 46)
 - Composants (4/8) : ressort (+20 force, +40 agilité), pomme (+100 PV), RAM (+4 RAM), ventilateur (+40 fréquence)
-  Recettes possédées non craftées : CD (manque 3 jus de poireau), noyau XN.a-56 (+4 cœurs)
+  Recettes possédées non craftées : CD (manque 3 jus de poireau), noyau XN.a-56 (+4 cœurs),
+  **Morus** (+60 PV, +20 sagesse, +40 magie ; 4 feuilles, 2 fleurs, 2 jus de poireau, 4 chairs d'aubergine)
   Recette obtenue, ressources manquantes : **plaque de fer** (30 rochers, 50 briques, 20 cailloux, 40 écrous)
   Pas encore obtenues : batterie, carte mère (recettes aléatoires en fin de combat)
 - IA utilisée : [`ai/main.leek`](../../ai/main.leek) (planificateur générique)

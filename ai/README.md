@@ -6,6 +6,7 @@
 - `lib/chips.leek` : utilisation sûre des puces (`tryChip`, `tryChipSelf`, `spamChip`).
 - `lib/threat.leek` : coffres (ne jamais les réveiller, éviter les coffres réveillés, les achever si possible).
 - `lib/team.leek` : combats d'équipe (tirs amis, cible commune par messages, soins des alliés, menaces multiples). **Inactif en solo.**
+- `lib/summons.leek` : invocation des bulbes (case devant nous, 2 max) et IA générique du bulbe (soigne / protège / booste le poireau, puis attaque). **Inactif sans puce d'invocation.**
 - `lib/targeting.leek` : choix de la cible (jamais un coffre, invocations en dernier).
 - `lib/planner.leek` : choix de la case et de la combinaison d'attaques (sac à dos sur les PT).
 - `lib/survival.leek` : soins et puces de soutien avec les PT restants.

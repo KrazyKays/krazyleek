@@ -197,3 +197,13 @@ Tous ces changements sont gérés par l'IA sans modification (étincelle, PM sup
 | 56 | Goutte (soin 40–45) | non prioritaire |
 
 Capital : 5ᵉ PM (40) recommandé (cf. niveau 47) ; sinon vie.
+
+## Niveau 50 : la Stalactite
+
+- **Acheter la Stalactite** (`CHIP_STALACTITE`, 54 500 habs) : 6 PT, portée 2–7 en cercle, ligne de vue,
+  recharge 3, ≈ 210 dégâts (35/PT). Contre les boucliers de 60 par coup des niveaux 50 : ≈ 150 restent.
+- **Elle remplace le caillou** (dégâts très aléatoires 6–109, fortement réduits par les boucliers).
+- Aucune modification de l'IA : le planificateur l'intègre automatiquement (ex. 11 PT = Stalactite + éclair
+  + 2 PT restants, ou Stalactite + flamme).
+- Prochain cap : **Libération (niv. 60, 90 000 habs)** contre Solidification / boucliers ; recettes à guetter :
+  Batterie, Carte mère, Propulseur.

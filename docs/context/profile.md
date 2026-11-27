@@ -10,18 +10,18 @@
 
 ## Poireaux
 
-### krazyKlick — niveau 48
+### krazyKlick — niveau 50
 
 Stats au niveau 47 (combat 54984587) :
 
 | Vie | Force | Sagesse | Agilité | Résistance | Science | Magie | Fréquence | PT | PM | Cœurs | RAM |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 881 | 220 | 0 | 40 | 0 | 0 | 0 | **140** | **11** | **4** | 1 | **10** |
+| 887 | 220 | 0 | 40 | 0 | 0 | 0 | **140** | **11** | **4** | 1 | **10** |
 
-- Capital : 285 au total au niveau 48 ; tout le reste en vie (881 PV estimés). Habs : largement assez pour la Stalactite
+- Capital : 295 au total au niveau 50 ; tout en vie. Habs : largement assez pour la Stalactite
 - Emplacements : **2 armes**, **10 puces** (RAM 10), jusqu'à 8 composants
 - Armes : laser, mitraillette
-- Puces (10/10) : éclair, flamme, caillou, rocher, protéines, motivation, **étincelle**, casque, bouclier, Solidification (bandage retiré au niv. 46)
+- Puces (10/10) : éclair, flamme, caillou, rocher, protéines, motivation, étincelle, bouclier, Solidification, **bulbe chétif** (casque retiré au niv. 48 ; bandage au niv. 46)
 - Composants (4/8) : ressort (+20 force, +40 agilité), pomme (+100 PV), RAM (+4 RAM), ventilateur (+40 fréquence)
   Recettes possédées non craftées : CD (manque 3 jus de poireau), noyau XN.a-56 (+4 cœurs),
   **Morus** (+60 PV, +20 sagesse, +40 magie ; 4 feuilles, 2 fleurs, 2 jus de poireau, 4 chairs d'aubergine)

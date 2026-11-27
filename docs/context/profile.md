@@ -10,19 +10,18 @@
 
 ## Poireaux
 
-### krazyKlick — niveau 40
+### krazyKlick — niveau 42
 
-Stats au niveau 40 (combat 54977259) :
+Stats au niveau 42 (combat 54977555) :
 
 | Vie | Force | Sagesse | Agilité | Résistance | Science | Magie | Fréquence | PT | PM | Cœurs | RAM |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 677 | 220 | 0 | 40 | 0 | 0 | 0 | **140** | **11** | **4** | 1 | **10** |
+| 743 | 220 | 0 | 40 | 0 | 0 | 0 | **140** | **11** | **4** | 1 | **10** |
 
-- Capital : 245 au total au niveau 40 (4ᵉ PM acheté) ; non dépensé : à confirmer
+- Capital : 255 au total au niveau 42 ; tout le reste mis en vie, non dépensé : 0
 - Emplacements : **2 armes**, **10 puces** (RAM 10), jusqu'à 8 composants
-- Armes : mitraillette, pistolet
-- Puces (10/10, supposé d'après les recommandations) : éclair, flamme, caillou, rocher, étincelle, protéines,
-  motivation, bandage, casque, **bouclier** (remplace les bottes en cuir au niveau 35)
+- Armes : laser, mitraillette
+- Puces (10/10) : éclair, flamme, caillou, rocher, protéines, motivation, bandage, casque, bouclier, **Solidification**
 - Composants : ressort (+20 force, +40 agilité), pomme (+100 PV), RAM (+4 RAM), ventilateur (+40 fréquence)
 - IA utilisée : [`ai/main.leek`](../../ai/main.leek) (planificateur générique)
   Ancienne IA Python : [`ai/legacy/krazyklick_v0.py`](../../ai/legacy/krazyklick_v0.py)

@@ -123,3 +123,38 @@ function enemyAbsVulnerability(enemy) {
 function effectiveShieldPerHit(baseShield, enemy) {
     return max(0, baseShield * (1 + getResistance() / 100) - enemyAbsVulnerability(enemy));
 }
+
+// ---------- Attendre la fin d'un gros bouclier adverse ----------
+
+// Nombre de tours restants du bouclier absolu le plus long de l'entité (0 si aucun).
+// getEffects : [type, valeur, lanceur, tours, critique, objet, cible, modificateurs]
+function absoluteShieldTurnsLeft(entity) {
+    var turns = 0;
+    for (var effect in getEffects(entity)) {
+        if (effect[0] == EFFECT_ABSOLUTE_SHIELD || effect[0] == EFFECT_RAW_ABSOLUTE_SHIELD) {
+            if (effect[3] < 0) return 99; // bouclier permanent : inutile d'attendre
+            turns = max(turns, effect[3]);
+        }
+    }
+    return turns;
+}
+
+// Existe-t-il une case atteignable hors de portée de l'adversaire ?
+function canEscape(enemy) {
+    for (var entry in reachableCells(getMP())) {
+        if (!enemyCanReach(enemy, entry[0])) return true;
+    }
+    return false;
+}
+
+// Vaut-il mieux ne pas attaquer ce tour ? Oui si son bouclier absolu est gros, expire bientôt,
+// mange l'essentiel de nos dégâts, et qu'on peut se mettre hors de sa portée en attendant.
+// (combats 54977259 et 54977555 : bouclier 63–129 par coup après Solidification.)
+function shouldWaitOutShield(target, plannedDamage) {
+    if (getAbsoluteShield(target) < 40) return false;
+    var turnsLeft = absoluteShieldTurnsLeft(target);
+    if (turnsLeft <= 0 || turnsLeft > 2) return false;
+    if (plannedDamage >= getLife(target)) return false; // un kill reste un kill
+    if (plannedDamage >= unshieldedPotential(target) * 0.4) return false;
+    return canEscape(target);
+}

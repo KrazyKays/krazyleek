@@ -31,8 +31,17 @@ if (target != null) {
         }
     }
 
+    // Gros bouclier adverse sur le point d'expirer : se mettre à l'abri au lieu de taper dans le vide.
+    var waiting = attack != null && attackTarget == target && shouldWaitOutShield(target, attack[2][1]);
+    if (waiting) {
+        debug("[plan] bouclier adverse " + getAbsoluteShield(target) + " (" + absoluteShieldTurnsLeft(target)
+            + " tour(s)) : on attend à l'abri");
+        attack = null;
+        retreatFrom(target);
+    }
+
     // Hors de portée : marcher vers une position d'attaque, puis réévaluer avec les PM restants.
-    if (attack == null) {
+    if (attack == null && !waiting) {
         if (combatSoon(target)) tryChipSelf(CHIP_LEATHER_BOOTS); // +2 PM pour atteindre une position d'attaque
         approachAttackPosition(target);
         attack = chooseAttackCell(target);

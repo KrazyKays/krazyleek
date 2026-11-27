@@ -19,3 +19,10 @@ non encore installé).
 | niv. 50 | **Stalactite** (≈ 210 en un coup) | perce leurs boucliers (un gros coup > plusieurs petits) |
 | niv. 60 | **Libération** | retire leur Solidification / boucliers (et une partie des effets) |
 | niv. 114 | Antidote | annule le poison |
+
+## 54984438 — 3693F1 (niv. 50, force 300 + soins) : NIVEAU / BUILD, aucune erreur IA
+- 1ᵉʳ combat avec l'étincelle + correctif « bulbes » : l'IA frappe le poireau quand il est à portée
+  (rocher + caillou 197, éclair + laser 265), sinon tue ses bulbes à l'étincelle (2 bulbes tués T7–T8).
+- Nous lui infligeons 531 dégâts pour 497 PV… mais il se soigne de **484 PV** (Connaissance + Soin :
+  303 en un seul tour) et nous tue à la Stalactite (259) + laser.
+- Réponse : dégâts en rafale pour passer ses soins → Stalactite (niv. 50) ; Libération (niv. 60).

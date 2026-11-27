@@ -56,6 +56,17 @@ if (target != null) {
         attack = chooseAttackCell(target);
     }
 
+    // Toujours rien sur la cible principale : frapper un autre ennemi atteignable (ex. les bulbes qui
+    // bloquent le passage et nous tirent dessus) plutôt que de rester immobile.
+    if (!waiting && (attack == null || attack[2][1] <= 0)) {
+        var other = fallbackAttack(target);
+        if (other != null) {
+            debug("[plan] cible principale hors d'atteinte : on frappe " + getName(other[0]));
+            attackTarget = other[0];
+            attack = other[1];
+        }
+    }
+
     var attacked = false;
     // Potentiel calculé avant d'attaquer (les recharges changent ensuite).
     var potential = potentialDamage(target);

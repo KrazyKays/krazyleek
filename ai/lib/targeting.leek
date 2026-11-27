@@ -34,3 +34,33 @@ function chooseTarget() {
     if (focus != null && focus != best && targetScore(focus) <= bestScore + 200) return focus;
     return best;
 }
+
+// Cible inattaquable ce tour (souvent : poireau adverse retranché derrière ses bulbes, combat
+// 54983936) → attaquer le meilleur autre ennemi atteignable (bulbe, autre poireau), en priorité
+// celui qu'on peut tuer. Renvoie [ennemi, attaque] ou null. Jamais un coffre.
+function fallbackAttack(mainTarget) {
+    // Budget d'opérations : seulement les 3 ennemis les plus proches à portée (déplacement + portée).
+    var reach = getMP() + attackRange(getEntity());
+    var candidates = [];
+    for (var enemy in getAliveEnemies()) {
+        if (enemy == mainTarget || isChest(enemy)) continue;
+        var d = distanceTo(enemy);
+        if (d <= reach) push(candidates, [d, enemy]);
+    }
+    candidates = arraySort(candidates, function(a, b) { return a[0] - b[0]; });
+    var best = null;
+    var bestScore = 0;
+    var tried = 0;
+    for (var entry in candidates) {
+        if (tried++ >= 3) break;
+        var enemy = entry[1];
+        var attack = chooseAttackCell(enemy);
+        if (attack == null || attack[2][1] <= 0) continue;
+        var score = attack[2][0]; // score du plan (kill = PV + 1000)
+        if (best == null || score > bestScore) {
+            best = [enemy, attack];
+            bestScore = score;
+        }
+    }
+    return best;
+}

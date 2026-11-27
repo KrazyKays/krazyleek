@@ -32,9 +32,14 @@ Stats au niveau 51 (après restat, 2026-11-28) :
   Ancienne IA Python : [`ai/legacy/krazyklick_v0.py`](../../ai/legacy/krazyklick_v0.py)
 - Config cible : voir [`docs/game/build-recommendation.md`](../game/build-recommendation.md)
 
-### 2ᵉ poireau — à créer (débloqué au niv. 51 de krazyKlick)
-- Nom, build et rôle : à décider (voir `docs/game/build-recommendation.md`, section « 2ᵉ poireau »).
+### KrazyKeel — niveau 1 (créé le 2026-11-27, 10 000 habs)
+- Rôle visé : **soutien / tank** (soins + boucliers) à partir du niv. 20–35 ; avant, build dégâts pour monter vite
+  (20 potions de restat gratuites pour basculer ensuite).
+- Capital : 50 (niv. 1) — répartition conseillée : vie 35 (+140 PV), force 15 (+30).
 - IA : même `ai/main.leek` (générique).
+
+### 3ᵉ poireau — envisagé (100 000 habs)
+- Rôle proposé : attaquant **magie / poison** (Venin niv. 42, double pistolet niv. 45). Code poison à écrire.
 
 ## Objectifs
 - Court terme : progresser en solo.

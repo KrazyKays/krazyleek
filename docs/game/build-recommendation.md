@@ -226,3 +226,13 @@ jusqu'à ~1 300 PV (meilleur gain par point), puis 12ᵉ PT (35, Stalactite + la
   de toucher un coéquipier. Option alternative : 2ᵉ attaquant force pour doubler les combats solo.
 - **IA** : `ai/main.leek` est générique (lit l'équipement porté) → on peut l'assigner aux deux poireaux.
   `healAllies()` (lib/team.leek) soigne déjà le coéquipier le plus blessé ; à prévoir si soutien : boucliers sur l'allié.
+
+### KrazyKeel (créé niv. 1) et 3ᵉ poireau
+- Niveau 1 : 50 capital, vie de base ≈ 100 → maximiser dégâts × survie = (1 + 2·F/100) × (1 + 4·V/100)
+  avec F + V = 50 → optimum V ≈ 37, F ≈ 13. Conseil : **vie 35, force 15**. Puis +5/niveau sur le même ratio.
+- Achats aux paliers : décharge (2), bandage (3), caillou (4), protéines (6), mitraillette (8), casque (10),
+  rocher (13), motivation (14), soin (20), éclair (24), flamme (29). Composants : pomme (5), ressort (7), RAM (11).
+- Basculer en soutien (restat) quand les puces existent : soin (20), Connaissance (32), bouclier (35),
+  Solidification (40) — sagesse pour les soins, résistance pour les boucliers.
+- 3ᵉ poireau (100 000 habs) : oui, coût négligeable. Rôle proposé : magie / poison, l'archétype qui nous bat
+  au niv. 50 (`fights/notes/2026-11-27-meta-poison-niv50.md`) ; il diversifie l'équipe éleveur.

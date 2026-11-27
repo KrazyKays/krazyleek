@@ -59,3 +59,14 @@ Rocher d'un coffre en bois ≈ 38,5 × 6 = **231 dégâts** (portée 2–6) ; é
 ## Carte
 - Grille en losange, obstacles ; distances de Manhattan.
 - `MAX_TURNS` = 64.
+
+## Expérience (relevés du 2026-11-27, champ `report.leeksN[].xp` des combats)
+- **L'XP ne dépend pas de ce que fait l'IA** (dégâts, kills, durée) : 0 dégât infligé → 141 et 172 XP ;
+  716 dégâts → 79 XP. Elle dépend du **résultat** (victoire > nul > défaite) et des **niveaux** en présence.
+- Solo, krazyKlick niv. 40–47, défaites : 70–210 XP (plus contre des niv. 50 que contre des niv. 43) ;
+  nul en 64 tours : 282 XP. Entraînement contre un bot (Domingo) : 0 XP.
+- Équipe (6 c 6), krazyKlick niv. 51 : 5 XP par défaite, 28 par victoire → négligeable (≈ 4 700 XP par niveau) ;
+  ces combats servent aux habs / ressources / talent, pas à monter.
+- Beaucoup d'adversaires niv. 50 gagnent 0 XP : **XP verrouillée** (`xp_locked`), des poireaux bloqués
+  volontairement au niv. 50 et optimisés → explique la difficulté des niv. 50.
+- Donc : pour l'XP, l'IA doit seulement **maximiser les victoires** (et, perdu d'avance, un nul vaut mieux).

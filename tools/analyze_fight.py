@@ -189,10 +189,11 @@ def diagnose(fight, leeks, me, foe, dealt, taken, healed, used_chips, engaged_id
     draw = fight["winner"] <= 0
     gap = f.get("level", 0) - m.get("level", 0)
     foe_left = max(0, f["life"] - taken[foe] + healed.get(foe, 0))
-    my_items = {chips[c]["name"] for c in m["equipment"]["chips"] if c in chips}
-    foe_items = ({chips[c]["name"] for c in f["equipment"]["chips"] if c in chips}
-                 | {weapons[w]["name"] for w in f["equipment"]["weapons"] if w in weapons})
-    my_weapons = {weapons[w]["name"] for w in m["equipment"]["weapons"] if w in weapons}
+    equip = lambda e, k: e.get("equipment", {}).get(k, [])  # tourelles / bulbes : pas d'équipement
+    my_items = {chips[c]["name"] for c in equip(m, "chips") if c in chips}
+    foe_items = ({chips[c]["name"] for c in equip(f, "chips") if c in chips}
+                 | {weapons[w]["name"] for w in equip(f, "weapons") if w in weapons})
+    my_weapons = {weapons[w]["name"] for w in equip(m, "weapons") if w in weapons}
 
     signals = []
     if engaged_idle:
@@ -208,6 +209,12 @@ def diagnose(fight, leeks, me, foe, dealt, taken, healed, used_chips, engaged_id
     close = not won and not draw and foe_left <= f["life"] * 0.25
 
     print("\n=== DIAGNOSTIC ===")
+    for side in ("leeks1", "leeks2"):
+        for r in (fight.get("report") or {}).get(side, []):
+            if r["name"] == m["name"]:
+                left = r["next_xp"] - r["cur_xp"]
+                print(f"XP gagnée : {r['xp']} (niveau {r['level']}, reste {left} pour le suivant"
+                      + (", XP verrouillée" if r.get("xp_locked") else "") + ")")
     print(f"Niveaux : {m['name']} {m.get('level')} vs {f['name']} {f.get('level')} (écart {gap:+d})")
     print(f"Stats adverses vs nous : PV {f['life']}/{m['life']}, force {f['strength']}/{m['strength']}, "
           f"résistance {f['resistance']}/{m['resistance']}, PT {f['tp']}/{m['tp']}, PM {f['mp']}/{m['mp']}, "

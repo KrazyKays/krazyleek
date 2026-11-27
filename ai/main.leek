@@ -79,6 +79,20 @@ if (target != null) {
         executePlan(attack[2], attackTarget);
         attacked = true;
     }
+    // Cible tuée avec des PT restants : enchaîner sur l'ennemi le plus rentable à portée
+    // (combat d'équipe 54991599 : 5 puis 6 PT perdus juste après un kill).
+    var chain = 0;
+    while (attacked && !isAlive(attackTarget) && getTP() > 0 && chain < 2) {
+        chain++;
+        var next = fallbackAttack(null);
+        if (next == null) break;
+        debug("[plan] cible tuée : on enchaîne sur " + getName(next[0]));
+        attackTarget = next[0];
+        attack = next[1];
+        if (attack[0] != getCell()) moveTowardCell(attack[0]);
+        executePlan(attack[2], attackTarget);
+        if (!isAlive(target)) target = attackTarget; // la suite du tour (repli) vise la nouvelle cible
+    }
     var dealtDamage = attacked && attack[2][1] > 0;
 
     // Après le plan : défensif → s'approcher ; attaque faible (< 60 % du potentiel) → avancer vers une

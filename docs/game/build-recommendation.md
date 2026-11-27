@@ -128,3 +128,25 @@ des déplacements, l'IA va chercher la ligne de vue au lieu de rester derrière 
 L'IA gère déjà tout : elle évalue Solidification + boucliers ensemble (ordre : résistance puis boucliers),
 tient compte de la vulnérabilité adverse et ne lance rien si l'adversaire ne va pas frapper.
 Limite : la vulnérabilité du fusil à pompe (25) se soustrait toujours, mais 58 − 25 = 33 par coup reste utile.
+
+## Niveau 42 : setup et anticipation jusqu'au niveau 52
+
+Actuel : laser + mitraillette ; éclair, flamme, caillou, rocher, protéines, motivation, bandage, casque,
+bouclier, Solidification ; composants ressort, pomme, RAM, ventilateur (**4/8**).
+
+**Tout de suite : 4 emplacements de composants libres**
+| Composant | Niv | Apport | Pourquoi |
+|---|---|---|---|
+| **Plaque de fer** | 37 | +50 PV, **+40 résistance** | boucliers × 1,4 en permanence ; avec Solidification : bouclier 66/coup au lieu de 58 |
+| **CD** | 33 | +40 sagesse | soins × 1,4 ; vol de vie = 4 % des dégâts infligés (~10–15 PV/tour) |
+| Noyau XN.a-56 | 41 | +4 cœurs | inutile pour l'instant (~250 k opérations / 1 M) |
+
+**À anticiper**
+| Niv | Quoi | Action |
+|---|---|---|
+| 47 | **Batterie** (composant) : +1 PT, +10 rés., +10 fréquence | préparer la recette (sel, jus de poireau ×8, briques ×10, écrous ×10, feuille de poireau) |
+| 49 | **Carte mère** (composant) : +2 RAM, +2 cœurs, +40 PV | 2 emplacements de puces en plus (recette chère : boîte de 10 000 habs, crâne, statuette) |
+| 50 | **Stalactite** : 210 dégâts, 35/PT, portée 2–7 en cercle | **économiser 54 500 habs** ; remplacera la flamme ou le caillou |
+| 45 | Double pistolet (17/PT) | ne pas acheter |
+
+Capital : continuer la vie (743 PV, 4 PV/capital) jusqu'à ~1 000 PV, puis réévaluer force / 12ᵉ PT (35 capital).

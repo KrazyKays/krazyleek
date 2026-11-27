@@ -4,7 +4,8 @@
 |---|---|
 | `fetch_api_data.py` | Télécharge puces, armes, constantes et fonctions dans `docs/data/` |
 | `gen_items.py` | Génère `ai/lib/items.leek` (données des armes/puces pour l'IA) |
-| `analyze_fight.py <id>` | Déroulé tour par tour d'un combat, dégâts, PT non utilisés (cache dans `fights/`) |
+| `unlocks.py <de> <à> --force N` | Armes, puces et composants débloqués entre deux niveaux (dégâts/PT, prix) |
+| `analyze_fight.py <id>` | Déroulé d'un combat + DIAGNOSTIC (évitable / écart de niveau / mixte) |
 | `check_api.py` | Vérifie que le code `ai/` n'utilise que des fonctions/constantes existantes et non dépréciées |
 
 ## À venir

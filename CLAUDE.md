@@ -17,7 +17,7 @@ Ce repo sert d'atelier pour écrire, tester et optimiser des IA pour [Leek Wars]
 | `docs/context/` | Profil du joueur : poireaux, builds, équipement, stratégie. **À lire avant d'écrire une IA.** |
 | `tools/` | Scripts (sync API, simulateur local, analyse de combats). |
 | `fights/` | Données de combats téléchargées (ignorées par git sauf `fights/notes/`). |
-| `.claude/skills/` | Skills : `/leek-write`, `/leek-review`. |
+| `.claude/skills/` | Skills : `/leek-write`, `/leek-review`, `/leek-fight-review`, `/leek-levelup`. |
 | `.claude/agents/` | Agents spécialisés (`leek-strategist`). |
 
 ## Règles pour écrire du LeekScript
@@ -32,6 +32,13 @@ Ce repo sert d'atelier pour écrire, tester et optimiser des IA pour [Leek Wars]
 4. Une responsabilité par module dans `ai/lib/` ; `main.leek` ne fait qu'orchestrer.
 5. Les variables qui doivent survivre entre les tours sont déclarées `global`.
 6. Mettre à jour `docs/leekscript/pitfalls.md` dès qu'on découvre un piège ou un bug.
+
+## Réflexes permanents (demandés par l'utilisateur)
+- **Chaque combat envoyé** → skill `leek-fight-review` : annoncer d'abord le verdict
+  **Évitable** (erreur IA → corriger le code) / **Écart de niveau** (ne pas sur-adapter le code ;
+  dire ce qui manque et quand on l'aura) / **Mixte**. Outil : `tools/analyze_fight.py` (section DIAGNOSTIC).
+- **Chaque montée de niveau** (annoncée, ou visible dans un combat) → skill `leek-levelup` :
+  proposer de soi-même un nouveau setup armes / puces / composants / capital (`tools/unlocks.py`).
 
 ## Workflow
 1. Lire `docs/context/profile.md` (build et stratégie actuels).

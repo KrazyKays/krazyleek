@@ -1,0 +1,461 @@
+{
+ "components": [
+  {
+   "level": 5,
+   "name": "Apple",
+   "gives": [
+    "100 [Life]"
+   ],
+   "recipe": "1 Leaf, 5 Branch, 4 Ice cube"
+  },
+  {
+   "level": 7,
+   "name": "Spring",
+   "gives": [
+    "20 [Strength]",
+    "40 [Agility]"
+   ],
+   "recipe": "1 Pebble, 1 Metal plate, 4 Nut, 1 Rock"
+  },
+  {
+   "level": 11,
+   "name": "RAM",
+   "gives": [
+    "4 [RAM]"
+   ],
+   "recipe": "1 Ivy, 4 Nut, 4 Brick"
+  },
+  {
+   "level": 21,
+   "name": "Fan",
+   "gives": [
+    "40 [Frequency]"
+   ],
+   "recipe": "9 Branch, 1 Metal plate, 2 Nut"
+  },
+  {
+   "level": 33,
+   "name": "CD",
+   "gives": [
+    "40 [Wisdom]"
+   ],
+   "recipe": "3 Leek juice, 16 Ice cube, 4 Sand, 2 Sea water"
+  },
+  {
+   "level": 37,
+   "name": "Iron Plate",
+   "gives": [
+    "50 [Life]",
+    "40 [Resistance]"
+   ],
+   "recipe": "30 Rock, 50 Brick, 20 Pebble, 40 Nut"
+  },
+  {
+   "level": 41,
+   "name": "XN.a-56 Core",
+   "gives": [
+    "4 [Cores]"
+   ],
+   "recipe": "1 12mm wrench, 12 Branch, 6 Sand, 3 Leek juice"
+  },
+  {
+   "level": 46,
+   "name": "Morus",
+   "gives": [
+    "60 [Life]",
+    "20 [Wisdom]",
+    "40 [Magic]"
+   ],
+   "recipe": "4 Leaf, 2 Flower, 2 Leek juice, 4 Eggplant flesh"
+  },
+  {
+   "level": 47,
+   "name": "Battery",
+   "gives": [
+    "10 [Resistance]",
+    "10 [Frequency]",
+    "1 [TP]"
+   ],
+   "recipe": "1 Salt, 100 Habs, 10 Nut, 1 Leek leaf, 8 Leek juice, 10 Brick"
+  },
+  {
+   "level": 49,
+   "name": "Motherboard",
+   "gives": [
+    "40 [Life]",
+    "20 [Science]",
+    "10 [Frequency]",
+    "2 [Cores]",
+    "2 [RAM]"
+   ],
+   "recipe": "5 Brick, 1 Box of 10,000 Habs, 1 Skull, 2 Metal plate, 10 Nut, 1 Sea water, 1 Statuette, 1 Leek juice"
+  },
+  {
+   "level": 58,
+   "name": "Orange",
+   "gives": [
+    "25 [Wisdom]",
+    "25 [Resistance]",
+    "20 [Frequency]"
+   ],
+   "recipe": "8 Leaf, 9 Carrot, 4 Flower, 2 Apple"
+  },
+  {
+   "level": 62,
+   "name": "Limbani",
+   "gives": [
+    "30 [Life]",
+    "40 [Strength]",
+    "10 [Wisdom]"
+   ],
+   "recipe": "18 Carrot, 2 Leaf, 9 Statuette, 2 Coconut, 1 Aragonite, 1 Apple"
+  },
+  {
+   "level": 72,
+   "name": "Kirabo",
+   "gives": [
+    "100 [Life]",
+    "20 [Strength]",
+    "30 [Resistance]"
+   ],
+   "recipe": "2 Pinecone, 1 Topaz, 1 Leek juice, 10 Sand"
+  },
+  {
+   "level": 79,
+   "name": "Walnut",
+   "gives": [
+    "80 [Life]",
+    "30 [Wisdom]",
+    "1 [RAM]"
+   ],
+   "recipe": "1 Coconut, 1 Pinecone, 20 Leaf, 30 Leek juice, 10 Branch, 1 RAM, 2 Leek leaf"
+  },
+  {
+   "level": 88,
+   "name": "SD Card",
+   "gives": [
+    "40 [Life]",
+    "60 [Wisdom]",
+    "1 [RAM]"
+   ],
+   "recipe": "5 Skull, 2 CD, 25 Leaf, 1 Amazonite, 3 12mm wrench, 15 Brick, 20 Leek juice"
+  },
+  {
+   "level": 97,
+   "name": "Liquid Cooler",
+   "gives": [
+    "40 [Agility]",
+    "100 [Frequency]"
+   ],
+   "recipe": "1 Fan, 2 Aquamarine, 1 Snowflake, 1 Spring, 35 Sea water, 5 12mm wrench"
+  },
+  {
+   "level": 103,
+   "name": "Amazonite Plate",
+   "gives": [
+    "150 [Life]",
+    "20 [Wisdom]",
+    "60 [Resistance]"
+   ],
+   "recipe": "1 Iron Plate, 3 Amazonite, 10 Nut, 2 Metal plate, 1 Aragonite"
+  },
+  {
+   "level": 106,
+   "name": "Advanced Motherboard",
+   "gives": [
+    "60 [Life]",
+    "20 [Science]",
+    "20 [Frequency]",
+    "3 [Cores]",
+    "3 [RAM]",
+    "1 [TP]"
+   ],
+   "recipe": "1 Motherboard, 2 Aquamarine, 8 12mm wrench, 2 Carnelian, 10 Metal plate, 10 Nut"
+  },
+  {
+   "level": 112,
+   "name": "Neural Core",
+   "gives": [
+    "60 [Science]",
+    "20 [Frequency]",
+    "2 [Cores]"
+   ],
+   "recipe": "50 Ice cube, 3 12mm wrench, 1 [[Mutation]], 4 Aquamarine, 1 [[B-Laser]], 8 Brick, 1 Amazonite"
+  },
+  {
+   "level": 123,
+   "name": "RAM 2",
+   "gives": [
+    "40 [Life]",
+    "20 [Science]",
+    "6 [RAM]"
+   ],
+   "recipe": "3 Aquamarine, 2 Metal plate, 1 RAM, 2 Amazonite, 3 Topaz, 1 Empty wooden chest"
+  },
+  {
+   "level": 138,
+   "name": "Nephelium",
+   "gives": [
+    "70 [Life]",
+    "60 [Strength]",
+    "30 [Agility]",
+    "20 [Science]"
+   ],
+   "recipe": "5 Desert rose, 3 Aragonite, 1 Coconut, 5 Statuette, 20 Leek juice, 1 Topaz"
+  },
+  {
+   "level": 144,
+   "name": "Copper Spring",
+   "gives": [
+    "50 [Life]",
+    "40 [Strength]",
+    "60 [Agility]",
+    "30 [Resistance]"
+   ],
+   "recipe": "1 Copper, 2 Spring, 1 Topaz, 3 Desert rose"
+  },
+  {
+   "level": 154,
+   "name": "Power Supply",
+   "gives": [
+    "40 [Agility]",
+    "10 [Science]",
+    "20 [Frequency]",
+    "2 [TP]"
+   ],
+   "recipe": "2 Box of 100,000 Habs, 1 Liquid Cooler, 25 Metal plate, 3 Battery, 1 Empty iron chest, 1 Silver nugget, 1 Spring, 1 XN.a-56 Core"
+  },
+  {
+   "level": 157,
+   "name": "Strawberry",
+   "gives": [
+    "300 [Life]",
+    "50 [Wisdom]"
+   ],
+   "recipe": "12 Mushroom, 18 Pinecone, 35 Flower, 1 Coconut, 1 Carnelian, 1 Apple"
+  },
+  {
+   "level": 161,
+   "name": "Blue Mango",
+   "gives": [
+    "70 [Wisdom]",
+    "50 [Agility]",
+    "30 [Science]"
+   ],
+   "recipe": "3 Amazonite, 89 Leek juice, 2 Snowflake, 83 Leaf, 97 Sea water, 5 Coconut, 79 Ivy, 7 Aquamarine"
+  },
+  {
+   "level": 164,
+   "name": "Y.v-57 Computing Core",
+   "gives": [
+    "20 [Frequency]",
+    "6 [Cores]"
+   ],
+   "recipe": "1 Gold nugget, 4 Amazonite, 3 Construction cone, 1 XN.a-56 Core, 30 Nut, 27 Sand, 1 [[Prism]]"
+  },
+  {
+   "level": 173,
+   "name": "Quince \\",
+   "gives": [
+    "180 [Life]",
+    "40 [Wisdom]",
+    "40 [Resistance]",
+    "1 [MP]",
+    "1 [TP]"
+   ],
+   "recipe": "1 Kirabo, 30 Ivy, 1 Orange, 6 Topaz, 37 Sand, 36 Pumpkin seeds \\*, 1 Gold nugget"
+  },
+  {
+   "level": 189,
+   "name": "Uzoma",
+   "gives": [
+    "100 [Life]",
+    "40 [Agility]",
+    "60 [Magic]",
+    "2 [Cores]"
+   ],
+   "recipe": "1 Shell, 3 Morus, 22 Mushroom, 1 [[Toxin]], 5 Apple, 70 Eggplant flesh, 80 Sea water, 5 Skull"
+  },
+  {
+   "level": 198,
+   "name": "Amethyst Ring",
+   "gives": [
+    "180 [Life]",
+    "40 [Science]",
+    "60 [Magic]",
+    "2 [RAM]"
+   ],
+   "recipe": "1 Raw ruby, 2 Obsidian, 3 Aquamarine, 2 Snowflake, 2 Desert rose, 20 Sand, 30 Sea water"
+  },
+  {
+   "level": 202,
+   "name": "Pro Motherboard \\",
+   "gives": [
+    "80 [Life]",
+    "20 [Wisdom]",
+    "20 [Science]",
+    "30 [Frequency]",
+    "4 [Cores]",
+    "4 [RAM]",
+    "1 [TP]"
+   ],
+   "recipe": "20 Metal plate, 2 Aquamarine, 1 Empty iron chest, 1 Obsidian, 16 Lantern \\*, 40 12mm wrench, 1 Advanced Motherboard"
+  },
+  {
+   "level": 206,
+   "name": "Sharp Chestnut \\",
+   "gives": [
+    "240 [Life]",
+    "80 [Strength]",
+    "40 [Resistance]",
+    "1 [TP]"
+   ],
+   "recipe": "1 Acorn, 1 Coconut, 22 Lantern \\*, 1 Nephelium, 1 Empty wooden chest, 10 Pinecone, 8 Statuette, 5 Branch"
+  },
+  {
+   "level": 213,
+   "name": "Soursop",
+   "gives": [
+    "120 [Life]",
+    "50 [Strength]",
+    "50 [Wisdom]",
+    "20 [Frequency]",
+    "1 [MP]"
+   ],
+   "recipe": "9 Coconut, 30 Sliced fennel, 60 Leek leaf, 50 Leaf, 6 Amazonite, 2 Acorn, 40 Leek juice, 36 Statuette"
+  },
+  {
+   "level": 218,
+   "name": "SSD",
+   "gives": [
+    "80 [Life]",
+    "80 [Wisdom]",
+    "30 [Science]",
+    "2 [RAM]",
+    "1 [TP]"
+   ],
+   "recipe": "1 Gold nugget, 1 Battery, 2 Aragonite, 1 Copper Spring, 28 Nut, 1 Box of 100,000 Habs, 1 Y.v-57 Computing Core, 1 Construction cone"
+  },
+  {
+   "level": 224,
+   "name": "Chiyembekezo",
+   "gives": [
+    "260 [Life]",
+    "30 [Agility]",
+    "80 [Magic]",
+    "1 [TP]"
+   ],
+   "recipe": "1 Morus, 1 Uzoma, 38 Ivy, 1 Aquamarine, 5 Leek juice, 1 Gold nugget, 1 [[Plague]]"
+  },
+  {
+   "level": 235,
+   "name": "Z.v-850 Computing Core",
+   "gives": [
+    "30 [Frequency]",
+    "10 [Cores]"
+   ],
+   "recipe": "8 Carnelian, 2 Copper, 1 Y.v-57 Computing Core, 70 Nut, 2 Raw ruby, 10 Branch"
+  },
+  {
+   "level": 241,
+   "name": "Hokajin \\",
+   "gives": [
+    "70 [Life]",
+    "70 [Agility]",
+    "70 [Resistance]",
+    "70 [Magic]"
+   ],
+   "recipe": "1 Quince \\*, 20 Leek leaf, 1 Aquamarine, 2 Copper, 5 Statuette, 1 Obnoxious Onion, 20 Lantern \\*"
+  },
+  {
+   "level": 245,
+   "name": "Blue Plum \\",
+   "gives": [
+    "130 [Life]",
+    "50 [Wisdom]",
+    "50 [Agility]",
+    "50 [Science]",
+    "1 [MP]"
+   ],
+   "recipe": "80 Ivy, 2 Kiwi, 50 Sea water, 1 Blue Mango, 1 Silver nugget, 6 Aquamarine, 3 Feather \\*, 16 Inrō"
+  },
+  {
+   "level": 253,
+   "name": "Neural Core Pro",
+   "gives": [
+    "80 [Science]",
+    "30 [Frequency]",
+    "4 [Cores]",
+    "1 [TP]"
+   ],
+   "recipe": "16 Aquamarine, 1 Obsidian, 1 Neural Core, 1 Empty diamond chest"
+  },
+  {
+   "level": 255,
+   "name": "Hylocereus",
+   "gives": [
+    "600 [Life]",
+    "40 [Wisdom]",
+    "40 [Magic]"
+   ],
+   "recipe": "7 Desert rose, 1 Gold nugget, 30 Sliced fennel, 1 Strawberry, 1 Kirabo, 2 Carnelian, 1 Uzoma, 7 Aragonite"
+  },
+  {
+   "level": 259,
+   "name": "Gyroscope",
+   "gives": [
+    "140 [Life]",
+    "60 [Strength]",
+    "40 [Resistance]",
+    "60 [Science]",
+    "1 [MP]"
+   ],
+   "recipe": "1 Y.v-57 Computing Core, 2 Copper, 1 Gold nugget, 2 Silver ingot, 40 Nut, 5 12mm wrench"
+  },
+  {
+   "level": 263,
+   "name": "Obsidian Plate",
+   "gives": [
+    "300 [Life]",
+    "20 [Strength]",
+    "80 [Resistance]",
+    "1 [TP]"
+   ],
+   "recipe": "3 Topaz, 2 Raw ruby, 1 Copper, 4 Iron Plate, 1 Amazonite Plate, 90 Katana fragment, 3 Obsidian, 1 Silver ingot"
+  },
+  {
+   "level": 274,
+   "name": "RAM 3",
+   "gives": [
+    "80 [Life]",
+    "8 [RAM]"
+   ],
+   "recipe": "2 Obsidian, 2 RAM 2, 1 RAM, 1 Gold ingot, 2 Copper"
+  },
+  {
+   "level": 293,
+   "name": "Elinvar Spring \\",
+   "gives": [
+    "180 [Life]",
+    "30 [Strength]",
+    "80 [Agility]",
+    "20 [Resistance]",
+    "1 [MP]"
+   ],
+   "recipe": "4 Obsidian, 1 Box of 1 million Habs, 2 Copper Spring, 5 Topaz, 2 Copper, 1 Silver ingot, 2 Feather \\*"
+  },
+  {
+   "level": 295,
+   "name": "Thokozani",
+   "gives": [
+    "50 [Strength]",
+    "50 [Wisdom]",
+    "50 [Agility]",
+    "50 [Resistance]",
+    "50 [Science]",
+    "50 [Magic]"
+   ],
+   "recipe": "40 Leek leaf, 3 Shell, 1 Blue Mango, 3 Acorn, 2 Gold nugget, 1 Raw ruby, 4 Restat Potion, 5 Aquamarine"
+  }
+ ]
+}

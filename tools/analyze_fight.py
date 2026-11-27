@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Analyse un combat Leek Wars : déroulé tour par tour, PT gaspillés, dégâts.
 
-Usage : python3 tools/analyze_fight.py <id ou URL> [--me NOM]
+Usage : python3 tools/analyze_fight.py <id ou URL> [--me NOM]   (défaut : KrazyKlick)
+Termine par un DIAGNOSTIC : défaite évitable (erreurs de l'IA) ou due à l'écart de niveau / d'équipement.
 Le JSON est mis en cache dans fights/<id>.json (ignoré par git).
 Décodage des actions établi empiriquement (combats 54965116, 54966254) :
   6 nouveau tour | 7 début du tour d'une entité | 8 fin [entité, PT total, PM total]
@@ -64,7 +65,10 @@ def main(argv):
     leeks = {l["id"]: l for l in data["leeks"]}
     names = {i: l["name"] for i, l in leeks.items()}
     pos = {i: l["cellPos"] for i, l in leeks.items()}
-    me = next((i for i, l in leeks.items() if len(argv) > 2 and l["name"] == argv[2]), 0)
+    my_name = argv[argv.index("--me") + 1] if "--me" in argv else "KrazyKlick"
+    me = next((i for i, l in leeks.items() if l["name"].lower() == my_name.lower()), 0)
+    foes = [i for i, l in leeks.items() if l["team"] != leeks[me]["team"] and not l.get("summon")]
+    foe = foes[0] if foes else None
 
     print(f"Combat {fight['id']} — gagnant : équipe {fight['winner']} "
           f"({'victoire' if fight['winner'] == leeks[me]['team'] else 'défaite' if fight['winner'] > 0 else 'nul'})")
@@ -79,6 +83,9 @@ def main(argv):
     dealt = {i: 0 for i in leeks}
     taken = {i: 0 for i in leeks}
     wasted = []
+    engaged_idle = []   # tours où l'on garde >= 5 PT alors que l'adversaire est à <= 8 cases
+    healed = {i: 0 for i in leeks}
+    used_chips = {i: set() for i in leeks}
     weapon = {i: None for i in leeks}
     tp_total = {i: l["tp"] for i, l in leeks.items()}
     line = []
@@ -86,10 +93,11 @@ def main(argv):
     def flush(entity, tp):
         nonlocal line
         left = tp - spent
+        d = min((distance(pos[me], pos[f], width) for f in foes), default="?")
         if entity == me and left > 0:
             wasted.append((turn, left))
-        foes = [i for i, l in leeks.items() if l["team"] != leeks[me]["team"] and not l.get("summon")]
-        d = min((distance(pos[me], pos[f], width) for f in foes), default="?")
+            if left >= 5 and d != "?" and d <= 8:
+                engaged_idle.append((turn, left, d))
         print(f"T{turn:<2} {names[entity]:12} case {pos[entity]:>3} dist {d:>2} | "
               f"{', '.join(line) or '—'} | PT non utilisés : {left}")
         line = []
@@ -111,6 +119,7 @@ def main(argv):
             chip = chip_by_tpl.get(a[1])
             name = chip["name"] if chip else f"puce#{a[1]}"
             spent += chip["cost"] if chip else 0
+            used_chips[current].add(name)
             line.append(name + ("" if a[3] > 0 else " (échec)"))
         elif code == 13:
             weapon[current] = weapon_by_tpl.get(a[1])
@@ -126,6 +135,7 @@ def main(argv):
                 dealt[current] += a[2]
             line[-1:] = [f"{line[-1]} [{a[2]}]"] if line else []
         elif code == 103:
+            healed[a[1]] = healed.get(a[1], 0) + a[2]
             line.append(f"+{a[2]} PV")
         elif code == 5:
             line.append(f"MORT de {names.get(a[1], a[1])}")
@@ -138,7 +148,62 @@ def main(argv):
         print(f"PT non utilisés par {names[me]} : {total} au total — " +
               ", ".join(f"T{t}:{w}" for t, w in wasted))
     print(f"Opérations : {data.get('ops')}")
+    if foe is not None:
+        diagnose(fight, leeks, me, foe, dealt, taken, healed, used_chips, engaged_idle)
     return 0
+
+
+DEFENSIVE = {"shield", "helmet", "solidification", "armor", "wall"}
+
+
+def diagnose(fight, leeks, me, foe, dealt, taken, healed, used_chips, engaged_idle):
+    """Classe le résultat : évitable (erreurs IA) / écart de niveau / build."""
+    chips = {c["id"]: c for c in json.loads((DATA / "chips.json").read_text())["chips"].values()}
+    weapons = {w["item"]: w for w in json.loads((DATA / "weapons.json").read_text())["weapons"].values()}
+    m, f = leeks[me], leeks[foe]
+    won = fight["winner"] == m["team"]
+    draw = fight["winner"] <= 0
+    gap = f.get("level", 0) - m.get("level", 0)
+    foe_left = max(0, f["life"] - taken[foe] + healed.get(foe, 0))
+    my_items = {chips[c]["name"] for c in m["equipment"]["chips"] if c in chips}
+    foe_items = ({chips[c]["name"] for c in f["equipment"]["chips"] if c in chips}
+                 | {weapons[w]["name"] for w in f["equipment"]["weapons"] if w in weapons})
+    my_weapons = {weapons[w]["name"] for w in m["equipment"]["weapons"] if w in weapons}
+
+    signals = []
+    if engaged_idle:
+        signals.append("tours vides au contact : " + ", ".join(f"T{t} ({p} PT, {d} cases)" for t, p, d in engaged_idle))
+    if dealt[me] == 0:
+        signals.append("aucun dégât infligé (ciblage / déplacement)")
+    if draw:
+        signals.append("match nul : on n'a pas réussi à conclure")
+    unused_def = (my_items & DEFENSIVE) - used_chips[me]
+    if not won and unused_def and taken[me] >= m["life"] * 0.5:
+        signals.append("puces défensives jamais lancées : " + ", ".join(sorted(unused_def)))
+    close = not won and not draw and foe_left <= f["life"] * 0.25
+
+    print("\n=== DIAGNOSTIC ===")
+    print(f"Niveaux : {m['name']} {m.get('level')} vs {f['name']} {f.get('level')} (écart {gap:+d})")
+    print(f"Stats adverses vs nous : PV {f['life']}/{m['life']}, force {f['strength']}/{m['strength']}, "
+          f"résistance {f['resistance']}/{m['resistance']}, PT {f['tp']}/{m['tp']}, PM {f['mp']}/{m['mp']}, "
+          f"fréquence {f['frequency']}/{m['frequency']}")
+    print(f"PV adverses restants (estimation) : {foe_left}/{f['life']}" + (" → défaite serrée" if close else ""))
+    notable = sorted(foe_items - my_items - my_weapons)
+    if notable:
+        print("Objets adverses que nous n'avons pas : " + ", ".join(notable))
+    if won:
+        verdict = "VICTOIRE" + (" — points à améliorer ci-dessous" if signals else "")
+    elif signals and gap >= 5:
+        verdict = "MIXTE : écart de niveau, MAIS erreurs de l'IA à corriger"
+    elif signals:
+        verdict = "ÉVITABLE : erreurs de l'IA"
+    elif gap >= 5:
+        verdict = "ÉCART DE NIVEAU : pas d'erreur flagrante, l'adversaire est simplement plus avancé"
+    else:
+        verdict = "NIVEAU PROCHE, SANS ERREUR FLAGRANTE : regarder le build / l'équipement adverse"
+    print("Verdict : " + verdict)
+    for s in signals:
+        print("  - " + s)
 
 
 if __name__ == "__main__":

@@ -32,3 +32,7 @@
 13. **Tirs amis** : les effets de dégâts ciblent aussi les alliés (cibles 31). L'éclair (zone cercle 1)
     et surtout le **laser** (`AREA_LASER_LINE` : touche tout ce qui est aligné dans la direction du tir,
     jusqu'à la portée max) peuvent blesser un coéquipier. Vérifié par `wouldHitAlly` (lib/team.leek).
+14. **Distance « à vol d'oiseau » pour se déplacer = boucle** : choisir sa case par distance de Manhattan
+    vers des cases cibles fait tourner en rond autour des murs (combat 54979521 : 56 tours d'allers-retours).
+    Toujours laisser le jeu calculer le chemin (`moveTowardCells`, `moveToward`) et garder un détecteur
+    de boucle (`isStuck` dans lib/movement.leek).

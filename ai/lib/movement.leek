@@ -50,49 +50,39 @@ function advanceTowardStrongPositions(target) {
     if (count(cells) > 0) moveTowardCells(cells);
 }
 
-// Aucune attaque possible ce tour : marcher (vrai chemin, contourne les murs) vers la
-// position d'attaque la plus proche. Se cacher ne sert à rien contre une étincelle
-// (pas de ligne de vue nécessaire) : on va au contact.
+// ---------- Anti-boucle ----------
+// Historique des cases de fin de tour et dernier tour où l'on a infligé des dégâts.
+global POS_HISTORY = [];
+global LAST_DAMAGE_TURN = 0;
+
+// À appeler en fin de tour (main.leek).
+function recordTurn(dealtDamage) {
+    push(POS_HISTORY, getCell());
+    if (dealtDamage) LAST_DAMAGE_TURN = getTurn();
+}
+
+// Coincé dans une boucle : 3 tours sans dégâts et retour sur une case d'il y a 2 tours
+// (combat 54979521 : 56 tours d'allers-retours 257 ↔ 327 à 7 cases, nul à 4 PV près).
+function isStuck() {
+    var n = count(POS_HISTORY);
+    if (n < 4 || getTurn() - LAST_DAMAGE_TURN < 3) return false;
+    return POS_HISTORY[n - 1] == POS_HISTORY[n - 3] || POS_HISTORY[n - 2] == POS_HISTORY[n - 4];
+}
+
+// Aucune attaque possible ce tour : marcher (vrai chemin du jeu, qui contourne les murs) vers la
+// position d'attaque la plus proche. Pas de calcul « à vol d'oiseau » : il fait tourner en rond
+// autour des murs (combat 54979521).
 function approachAttackPosition(target) {
-    var cells = attackPositions(target, 0);
-    if (count(cells) == 0) {
+    if (isStuck()) {
+        debugW("[move] boucle détectée : on fonce sur l'adversaire");
         moveToward(target);
         return;
     }
-    // Une position d'attaque est atteignable dès ce tour : y aller directement.
-    var reachable = reachableCells(getMP());
-    for (var entry in reachable) {
-        if (inArray(cells, entry[0])) {
-            moveTowardCells(cells);
-            return;
-        }
-    }
-    // Sinon, approche prudente (contre les kiteurs, combat 54978528) : parmi les cases atteignables,
-    // la plus proche d'une position d'attaque, en évitant de finir le tour à découvert et à sa portée.
-    var targetCell = getCell(target);
-    var best = null;
-    var bestScore = 0;
-    for (var entry in reachable) {
-        var cell = entry[0];
-        var nearest = 999;
-        var checked = 0;
-        for (var pos in cells) {
-            nearest = min(nearest, getCellDistance(cell, pos));
-            if (++checked >= 150) break; // borne le coût en opérations
-        }
-        var score = nearest;
-        // Contre un poisonneur, pas de prudence : on fonce (le poison s'accumule à chaque tour).
-        if (!isPoisoner(target) && enemyCanReach(target, cell) && exposedTo(cell, target)) score += 3;
-        score += chestDangerAt(cell) / 10;
-        if (best == null || score < bestScore) {
-            best = cell;
-            bestScore = score;
-        }
-    }
-    if (best != null && best != getCell()) {
-        moveTowardCell(best);
-    } else {
+    var cells = attackPositions(target, 0);
+    if (count(cells) > 0) {
         moveTowardCells(cells);
+    } else {
+        moveToward(target);
     }
 }
 
@@ -117,6 +107,7 @@ function retreatScore(cell, pathLen, target, myReach) {
 
 function retreatFrom(target) {
     if (getMP() <= 0) return;
+    if (isStuck()) return; // en boucle : ne pas reculer, rester au contact
     var myReach = attackRange(getEntity()) + getTotalMP();
     var best = null;
     var bestScore = 0;

@@ -87,6 +87,7 @@ if (target != null) {
     healIfNeeded();
     healAllies(); // équipe uniquement
     if (isAlive(target)) useLeftoverSupport(target);
+    recordTurn(dealtDamage); // anti-boucle
 }
 
 // Tour 1 : un PT restant sert à saluer (trophée « Bavard » / speaker, 2 500 habs).

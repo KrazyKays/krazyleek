@@ -36,3 +36,8 @@
     vers des cases cibles fait tourner en rond autour des murs (combat 54979521 : 56 tours d'allers-retours).
     Toujours laisser le jeu calculer le chemin (`moveTowardCells`, `moveToward`) et garder un détecteur
     de boucle (`isStuck` dans lib/movement.leek).
+
+## Outils
+- `api/fight/get/<id>` répond **409 `fight_with_secret_trophy`** pour un combat qui contient un trophée secret :
+  l'analyse automatique est impossible sans être connecté. Récupérer le JSON depuis le navigateur et le passer
+  à `tools/analyze_fight.py <fichier.json>`.

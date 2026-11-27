@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Analyse un combat Leek Wars : déroulé tour par tour, PT gaspillés, dégâts.
 
-Usage : python3 tools/analyze_fight.py <id ou URL> [--me NOM]   (défaut : KrazyKlick)
+Usage : python3 tools/analyze_fight.py <id, URL ou fichier .json> [--me NOM]   (défaut : KrazyKlick)
+Combat avec trophée secret : l'API publique répond 409 « fight_with_secret_trophy » → enregistrer le JSON
+depuis le navigateur (connecté) et passer le chemin du fichier.
 Termine par un DIAGNOSTIC : défaite évitable (erreurs de l'IA) ou due à l'écart de niveau / d'équipement.
 Le JSON est mis en cache dans fights/<id>.json (ignoré par git).
 Décodage des actions établi empiriquement (combats 54965116, 54966254) :
@@ -15,6 +17,7 @@ import json
 import pathlib
 import re
 import sys
+import urllib.error
 import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -23,11 +26,21 @@ CACHE = ROOT / "fights"
 
 
 def load_fight(arg):
+    if arg.endswith(".json") and pathlib.Path(arg).exists():
+        return json.loads(pathlib.Path(arg).read_text())
     fight_id = re.findall(r"\d+", arg)[-1]
     path = CACHE / f"{fight_id}.json"
     if not path.exists() or json.loads(path.read_text()).get("status") != 2:
-        with urllib.request.urlopen(f"https://leekwars.com/api/fight/get/{fight_id}", timeout=30) as r:
-            path.write_bytes(r.read())
+        try:
+            with urllib.request.urlopen(f"https://leekwars.com/api/fight/get/{fight_id}", timeout=30) as r:
+                path.write_bytes(r.read())
+        except urllib.error.HTTPError as e:
+            body = e.read().decode(errors="replace")
+            if "secret_trophy" in body:
+                sys.exit(f"Combat {fight_id} : trophée secret, l'API publique le refuse. Ouvrir (connecté) "
+                         f"https://leekwars.com/api/fight/get/{fight_id}, enregistrer la page en .json "
+                         "et relancer avec le chemin du fichier.")
+            raise
     return json.loads(path.read_text())
 
 

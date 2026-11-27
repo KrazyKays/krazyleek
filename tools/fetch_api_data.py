@@ -26,11 +26,15 @@ def fetch_components():
     with urllib.request.urlopen(API + "encyclopedia/get/en/Components", timeout=30) as resp:
         text = json.load(resp)["content"]
     text = re.sub(r'<img[^>]*alt="([^"]+)"[^>]*/?>', r"[\1]", text).replace("\xa0", " ")
+    text = re.sub(r"<[^>]+>", "", text)  # autres balises (ex. <span> autour de « Removes »)
     comps = []
-    for m in re.finditer(r"\*\*Level (\d+): ([^*]+)\*\*[^\n]*\nGives: ([^\n]*)\nResources needed to craft: ([^\n]*)", text):
+    pattern = (r"\*\*Level (\d+): ([^*]+)\*\*[^\n]*\nGives: ([^\n]*)\n"
+               r"(?:\s*Removes: ([^\n]*)\n)?Resources needed to craft: ([^\n]*)")
+    for m in re.finditer(pattern, text):
         gives = [g.strip() for g in m.group(3).split("|")]
+        removes = [g.strip() for g in m.group(4).split("|")] if m.group(4) else []
         comps.append({"level": int(m.group(1)), "name": m.group(2).strip(), "gives": gives,
-                      "recipe": m.group(4).strip()})
+                      "removes": removes, "recipe": m.group(5).strip()})
     return {"components": comps}
 
 

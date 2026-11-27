@@ -66,10 +66,10 @@ def main():
     sel = [c for c in comps if lo < c["level"] <= hi]
     if sel:
         print("\nComposants débloqués :\n")
-        print("| Niv | Composant | Apports | Recette |")
-        print("|---|---|---|---|")
+        print("| Niv | Composant | Apports | Retire | Recette |")
+        print("|---|---|---|---|---|")
         for c in sel:
-            print(f"| {c['level']} | {c['name']} | {', '.join(c['gives'])} | {c['recipe']} |")
+            print(f"| {c['level']} | {c['name']} | {', '.join(c['gives'])} | {', '.join(c.get('removes', []))} | {c['recipe']} |")
     return 0
 
 

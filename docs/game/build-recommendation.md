@@ -161,3 +161,17 @@ Capital : continuer la vie (743 PV, 4 PV/capital) jusqu'à ~1 000 PV, puis réé
   Priorité : CD dès 3 jus (gain immédiat), puis garder 8 jus pour la batterie (+1 PT).
 - Ressources « communes » par type de carte : rocher/sable (désert), branche/feuille (forêt),
   glaçon (glacier), caillou/eau de mer (plage), écrou/plaque de métal (usine), brique (temple, tournois).
+
+## Niveau 45 : le problème, c'est la mobilité
+
+Défaites récentes contre des niveaux 50 à **5–6 PM** (+ bottes) qui frappent puis sortent de notre portée
+(Portemurmure 54979684, Fabistan 54979702). Les deux portent le **Propulseur** (composant niv. 44).
+
+| Priorité | Quoi | Pourquoi |
+|---|---|---|
+| 1 | **Propulseur / Thruster** (composant niv. 44) : **+1 PM**, +20 agilité, −30 résistance | recette cheap (10 écrous, 1 feuille de poireau, 1 plaque de métal, 1 clé de 12 mm) ; la recette tombe au hasard. −30 rés. : boucliers × 2,6 au lieu de × 2,9 sous Solidification, acceptable |
+| 2 | **Étincelle à la place du bandage** | seule attaque sans ligne de vue (portée 10) : touche un kiteur caché. Le bandage (25 PV / 2 PT) pèse peu face à 800+ dégâts subis |
+| 3 | **5ᵉ PM en capital** (40 capital) | = 160 PV. Option : potion de restat (20 gratuites) pour basculer 160 PV → 1 PM tout de suite |
+| — | Double pistolet (niv. 45) | non (17 dégâts/PT) |
+
+Tous ces changements sont gérés par l'IA sans modification (étincelle, PM supplémentaires).

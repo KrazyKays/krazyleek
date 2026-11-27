@@ -10,15 +10,15 @@
 
 ## Poireaux
 
-### krazyKlick — niveau 44
+### krazyKlick — niveau 45
 
-Stats au niveau 44 (combat 54979521) :
+Stats au niveau 45 (combat 54979702) :
 
 | Vie | Force | Sagesse | Agilité | Résistance | Science | Magie | Fréquence | PT | PM | Cœurs | RAM |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 789 | 220 | 0 | 40 | 0 | 0 | 0 | **140** | **11** | **4** | 1 | **10** |
+| 812 | 220 | 0 | 40 | 0 | 0 | 0 | **140** | **11** | **4** | 1 | **10** |
 
-- Capital : 265 au total au niveau 44 ; tout le reste en vie
+- Capital : 270 au total au niveau 45 ; tout le reste en vie
 - Emplacements : **2 armes**, **10 puces** (RAM 10), jusqu'à 8 composants
 - Armes : laser, mitraillette
 - Puces (10/10) : éclair, flamme, caillou, rocher, protéines, motivation, bandage, casque, bouclier, **Solidification**
@@ -40,4 +40,6 @@ Stats au niveau 44 (combat 54979521) :
   le casque est la parade (bouclier par coup).
 - **Tanks Solidification + Bouclier** (BigLittlePhi niv. 43, combat 54977259) : bouclier 63/coup pendant 3 tours ;
   fusil à pompe adverse qui annule nos boucliers. Parade future : Libération (niv. 60).
+- **Kiteurs rapides niv. 50** (5–6 PM + bottes, propulseur, Stalactite) : Portemurmure 54979684, Fabistan 54979702.
+  Ils frappent puis sortent de notre portée (4 PM) : 0 à 233 dégâts infligés.
 - (à compléter avec des liens de combats)

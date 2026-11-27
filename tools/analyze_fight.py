@@ -88,7 +88,8 @@ def main(argv):
         left = tp - spent
         if entity == me and left > 0:
             wasted.append((turn, left))
-        d = distance(pos[0], pos[1], width) if len(pos) == 2 else "?"
+        foes = [i for i, l in leeks.items() if l["team"] != leeks[me]["team"] and not l.get("summon")]
+        d = min((distance(pos[me], pos[f], width) for f in foes), default="?")
         print(f"T{turn:<2} {names[entity]:12} case {pos[entity]:>3} dist {d:>2} | "
               f"{', '.join(line) or '—'} | PT non utilisés : {left}")
         line = []

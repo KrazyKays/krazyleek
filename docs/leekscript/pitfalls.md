@@ -24,3 +24,5 @@
     contre un obstacle. Utiliser le vrai chemin (`moveToward`, `moveTowardCells`,
     `getCellsToUseWeapon/Chip`). Ne jamais « reculer » un tour où on n'a pas attaqué.
     (Combat 54965116, `fights/notes/2026-11-26-defaite-etincelle-derriere-mur.md`.)
+11. **Cibler une invocation** : un bulbe a peu de PV, donc un ciblage « PV les plus bas » le choisit.
+    Toujours exclure `isSummon(e)` tant qu'un poireau adverse est vivant (combat 54977534).

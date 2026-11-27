@@ -1,5 +1,7 @@
-// Choix de la cible : uniquement les vrais adversaires, jamais les coffres
-// (voir lib/threat.leek : un coffre n'est attaqué que si on peut l'achever dans le tour).
+// Choix de la cible : uniquement les vrais adversaires.
+//  - jamais les coffres (lib/threat.leek : un coffre n'est attaqué que si on peut l'achever) ;
+//  - les invocations (bulbes) seulement s'il ne reste aucun poireau adverse
+//    (combat 54977534 : poursuite d'un bulbe de 90 PV pendant que le poireau adverse nous tuait).
 
 // Plus le score est bas, plus la cible est prioritaire : PV faibles puis proximité.
 function targetScore(enemy) {
@@ -9,13 +11,22 @@ function targetScore(enemy) {
 function chooseTarget() {
     var best = null;
     var bestScore = 0;
+    var bestSummon = null;
+    var bestSummonScore = 0;
     for (var enemy in getAliveEnemies()) {
         if (isChest(enemy)) continue;
         var score = targetScore(enemy);
+        if (isSummon(enemy)) {
+            if (bestSummon == null || score < bestSummonScore) {
+                bestSummon = enemy;
+                bestSummonScore = score;
+            }
+            continue;
+        }
         if (best == null || score < bestScore) {
             best = enemy;
             bestScore = score;
         }
     }
-    return best;
+    return best != null ? best : bestSummon;
 }

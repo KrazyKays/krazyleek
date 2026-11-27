@@ -76,8 +76,10 @@ function bulbAI() {
             else if (getTotalLife() - getLife() >= heal) tryChipSelf(chip);
             continue;
         }
-        // 3. Boucliers / buffs (puces sans dégâts ni soin) : sur le poireau s'il est à portée.
+        // 3. Boucliers / buffs (puces sans dégâts ni soin) : sur le poireau s'il est à portée, et
+        //    seulement si le combat est proche (combats 54985371/90 : protéines/casque lancés à 15 cases).
         if (data[I_DMG] <= 0) {
+            if (enemy == null || !combatSoon(enemy)) continue;
             if (hasMaster && !tryChip(chip, master)) tryChipSelf(chip);
             continue;
         }

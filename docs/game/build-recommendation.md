@@ -207,3 +207,7 @@ Capital : 5ᵉ PM (40) recommandé (cf. niveau 47) ; sinon vie.
   + 2 PT restants, ou Stalactite + flamme).
 - Prochain cap : **Libération (niv. 60, 90 000 habs)** contre Solidification / boucliers ; recettes à guetter :
   Batterie, Carte mère, Propulseur.
+
+## Niveau 51 : restat effectué (2026-11-28)
+Force 100 (+200 → 220), PT 30 (11 PT), PM 60 (5 PM), vie 110 (+440 → ≈ 790 PV). Ensuite : capital en vie
+jusqu'à ~1 300 PV (meilleur gain par point), puis 12ᵉ PT (35, Stalactite + laser = 373 en un tour).

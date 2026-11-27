@@ -10,15 +10,15 @@
 
 ## Poireaux
 
-### krazyKlick — niveau 50
+### krazyKlick — niveau 51
 
-Stats au niveau 47 (combat 54984587) :
+Stats au niveau 51 (après restat, 2026-11-28) :
 
 | Vie | Force | Sagesse | Agilité | Résistance | Science | Magie | Fréquence | PT | PM | Cœurs | RAM |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 887 | 220 | 0 | 40 | 0 | 0 | 0 | **140** | **11** | **4** | 1 | **10** |
+| ≈790 | 220 | 0 | 40 | 0 | 0 | 0 | **140** | **11** | **5** | 1 | **10** |
 
-- Capital : 295 au total au niveau 50 ; tout en vie. Habs : largement assez pour la Stalactite
+- Capital (300, niveau 51, restat le 2026-11-28) : force 100 (+200), PT 30 (11ᵉ), PM 60 (4ᵉ + 5ᵉ), vie 110 (+440)
 - Emplacements : **2 armes**, **10 puces** (RAM 10), jusqu'à 8 composants
 - Armes : laser, mitraillette
 - Puces (10/10) : éclair, flamme, caillou, rocher, protéines, motivation, étincelle, bouclier, Solidification, **bulbe chétif** (casque retiré au niv. 48 ; bandage au niv. 46)

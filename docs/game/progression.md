@@ -58,3 +58,23 @@ Les composants s'améliorent aussi (« Component upgrades »). Ils ne comptent p
 - Combats éleveur (4 contre 4) dès qu'on a plusieurs poireaux, équipe (6 contre 6 + tourelle),
   tournois, battle royale (jusqu'à 20 poireaux) : ciblage multi-ennemis et zones d'effet deviennent importants.
 - Le talent monte avec les victoires → adversaires de plus en plus optimisés : l'IA fait la différence.
+
+## 7. Améliorer un composant (encyclopédie « Component upgrades » / « Améliorations »)
+1. **Détruire** des composants inutiles (Inventaire → onglet Détruire) → on récupère des **altérations**
+   (même catégorie que le composant : fruit / physique / électronique, et ses caractéristiques) + une
+   partie des ingrédients.
+2. **Améliorer** (onglet Améliorer) : une « recette » = 1 composant + jusqu'à 8 altérations.
+   - **Dose** = somme des doses des altérations ; chaque composant a un **métabolisme** (dose idéale)
+     inconnu, à deviner par essais (l'historique affiche la proximité en %). Le métabolisme est figé
+     dès le premier essai sur cet exemplaire.
+   - **Charge** = somme des charges ; plus elle est haute, plus le risque de **casse** est grand et plus
+     la dose doit être précise. Casse = perte aléatoire de caractéristiques (mais charge négative ajoutée,
+     ce qui facilite les essais suivants).
+   - Caractéristique **exceptionnelle** (non native) : une même stat exceptionnelle ne peut apparaître
+     qu'une fois sur l'ensemble des composants équipés.
+3. **Stratégie sûre** : on ne peut pas équiper deux fois le même composant, donc **crafter un 2ᵉ exemplaire,
+   l'améliorer, et ne l'équiper qu'en cas de réussite**. Ne jamais tenter sur l'exemplaire équipé (une casse
+   de la RAM ferait perdre des emplacements de puces).
+   - RAM (recette : 1 lierre, 4 écrous, 4 briques) : chaque point de RAM = 1 puce de plus → **prioritaire**.
+     Altérations RAM : détruire des RAM en surplus.
+   - Ventilateur (9 branches, 1 plaque de métal, 2 écrous) : fréquence ; moins prioritaire (déjà 140).

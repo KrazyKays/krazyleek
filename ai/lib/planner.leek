@@ -215,6 +215,7 @@ function planFrom(from, target, tp, buffs) {
 
     var plan = null;
     var life = getLife(target);
+    var raceWeight = min(3, max(0.5, getLife(target) / max(1, getLife())));
     var candCache = [:];
     var memoCache = [:];
     for (var sub in subsets) {
@@ -235,6 +236,9 @@ function planFrom(from, target, tp, buffs) {
         for (var b in sub) {
             if (b[3] > 0) shield += max(0, b[3] * resMult - b[7]) * b[6] * b[4] * 0.7;
         }
+        // Course aux PV : un PV sauvé vaut (PV adverses / nos PV) PV infligés. Contre un tank
+        // à 1 258 PV quand on en a 743, protéger rapporte 1,7× plus (combat 54977572).
+        shield *= raceWeight;
         if (cost >= tp) continue;
         // Cache : candidats et mémo du sac à dos ne dépendent que du bonus de force
         // (la mémo couvre tous les budgets de PT) → coût quasi nul par combinaison.

@@ -10,15 +10,15 @@
 
 ## Poireaux
 
-### krazyKlick — niveau 43
+### krazyKlick — niveau 44
 
-Stats au niveau 43 (combat 54978528) :
+Stats au niveau 44 (combat 54979521) :
 
 | Vie | Force | Sagesse | Agilité | Résistance | Science | Magie | Fréquence | PT | PM | Cœurs | RAM |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 766 | 220 | 0 | 40 | 0 | 0 | 0 | **140** | **11** | **4** | 1 | **10** |
+| 789 | 220 | 0 | 40 | 0 | 0 | 0 | **140** | **11** | **4** | 1 | **10** |
 
-- Capital : 260 au total au niveau 43 ; tout le reste en vie
+- Capital : 265 au total au niveau 44 ; tout le reste en vie
 - Emplacements : **2 armes**, **10 puces** (RAM 10), jusqu'à 8 composants
 - Armes : laser, mitraillette
 - Puces (10/10) : éclair, flamme, caillou, rocher, protéines, motivation, bandage, casque, bouclier, **Solidification**

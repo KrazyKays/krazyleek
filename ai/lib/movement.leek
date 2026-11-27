@@ -81,7 +81,8 @@ function approachAttackPosition(target) {
             if (++checked >= 150) break; // borne le coût en opérations
         }
         var score = nearest;
-        if (enemyCanReach(target, cell) && exposedTo(cell, target)) score += 3;
+        // Contre un poisonneur, pas de prudence : on fonce (le poison s'accumule à chaque tour).
+        if (!isPoisoner(target) && enemyCanReach(target, cell) && exposedTo(cell, target)) score += 3;
         score += chestDangerAt(cell) / 10;
         if (best == null || score < bestScore) {
             best = cell;

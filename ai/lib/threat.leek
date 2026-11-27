@@ -158,3 +158,10 @@ function shouldWaitOutShield(target, plannedDamage) {
     if (plannedDamage >= unshieldedPotential(target) * 0.4) return false;
     return canEscape(target);
 }
+
+// Adversaire dont les dégâts viennent surtout du poison (magie > force) : se cacher ne sert à rien
+// (le poison déjà posé continue), et chaque tour de plus nous coûte : il faut conclure vite.
+// (combats 54978580, 54978826 : 776–794 PV perdus en poison contre des builds force 0 / magie 300.)
+function isPoisoner(enemy) {
+    return getMagic(enemy) > getStrength(enemy);
+}

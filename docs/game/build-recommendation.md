@@ -227,12 +227,15 @@ jusqu'à ~1 300 PV (meilleur gain par point), puis 12ᵉ PT (35, Stalactite + la
 - **IA** : `ai/main.leek` est générique (lit l'équipement porté) → on peut l'assigner aux deux poireaux.
   `healAllies()` (lib/team.leek) soigne déjà le coéquipier le plus blessé ; à prévoir si soutien : boucliers sur l'allié.
 
-### KrazyKeel (créé niv. 1) et 3ᵉ poireau
-- Niveau 1 : 50 capital, vie de base ≈ 100 → maximiser dégâts × survie = (1 + 2·F/100) × (1 + 4·V/100)
-  avec F + V = 50 → optimum V ≈ 37, F ≈ 13. Conseil : **vie 35, force 15**. Puis +5/niveau sur le même ratio.
+### KrazyKeel (créé niv. 1)
+- **3 potions de restat seulement** → pas de build dégâts provisoire : chaque point va dans le build final.
+- Capital : **vie** d'abord (utile dans tous les rôles, vie de base ≈ 100 au niv. 1 → +4 PV/point = +4 %),
+  puis **sagesse** dès le bandage (niv. 3) pour les soins, **résistance** quand les boucliers arrivent
+  (casque 10, bouclier 35, Solidification 40). 4ᵉ PM (20) vers le niv. 10–15.
+- Si 15 points ont déjà été mis en force : les garder (ne pas gâcher une potion pour ça).
 - Achats aux paliers : `shock` (2), bandage (3), caillou (4), protéines (6), mitraillette (8), casque (10),
-  rocher (13), motivation (14), soin (20), éclair (24), flamme (29). Composants : pomme (5), ressort (7), RAM (11).
-- Basculer en soutien (restat) quand les puces existent : soin (20), Connaissance (32), bouclier (35),
-  Solidification (40) — sagesse pour les soins, résistance pour les boucliers.
-- 3ᵉ poireau (100 000 habs) : oui, coût négligeable. Rôle proposé : magie / poison, l'archétype qui nous bat
-  au niv. 50 (`fights/notes/2026-11-27-meta-poison-niv50.md`) ; il diversifie l'équipe éleveur.
+  rocher (13), motivation (14), soin (20), éclair (24), flamme (29), Connaissance (32), bouclier (35),
+  Solidification (40). Composants : pomme (5), ressort (7), RAM (11).
+- Combats : les 50 combats/jour sont partagés. **Acheter les +50** (habs abondants). Mettre l'essentiel des combats
+  solo sur KrazyKeel (montée rapide aux bas niveaux) ; tester les combats éleveur (les 2 poireaux gagnent
+  de l'XP en un seul combat) — avec 2 poireaux contre 4, et un écart de 50 niveaux, à évaluer sur quelques combats.

@@ -33,7 +33,13 @@ Capital total au niveau N (N < 100) : `50 + 5 × (N − 1)` → **195 au niveau 
 | RAM | 20 pour le 7ᵉ point, +10 ensuite |
 
 Vie de base : `100 + 3 × (niveau − 1)` = 187 au niveau 30.
-20 potions de restat gratuites au départ pour redistribuer le capital.
+Potions de restat : stock limité (**3 restantes** au 2026-11-27) → toute redistribution du capital est précieuse.
+
+## Combats quotidiens (potager)
+- **50 combats/jour communs à tous les poireaux** (+50 achetables en habs), à répartir entre :
+  solo (1 c 1), éleveur (4 c 4), arènes (10 à 20 entités), boss (8 c 8).
+- Combats **équipe (6 c 6)** : tickets séparés, 10 par jour.
+- Nombre de poireaux : un 3ᵉ poireau exige d'avoir un poireau niveau 100.
 
 ## Coffres (`ENTITY_CHEST`)
 - Apparition : 1 combat sur 20 (jardin, tournois, BR ; jamais en combat de test).

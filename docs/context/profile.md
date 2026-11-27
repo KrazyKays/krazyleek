@@ -6,6 +6,8 @@
 ## Éleveur
 - Talent éleveur : 100
 - Habs : ≈ 1 500 000 (trophées, 2026-11-27)
+- Potions de restat : **3**
+- Combats : 50/jour partagés entre les poireaux (+50 achetables), équipe : 10 tickets/jour
 - Mode joué : **solo** (prioritaire), quelques tournois sans enjeu
 - Langage des IA : **LeekScript v4** (migration depuis Python le 2026-11-26)
 
@@ -33,13 +35,13 @@ Stats au niveau 51 (après restat, 2026-11-28) :
 - Config cible : voir [`docs/game/build-recommendation.md`](../game/build-recommendation.md)
 
 ### KrazyKeel — niveau 1 (créé le 2026-11-27, 10 000 habs)
-- Rôle visé : **soutien / tank** (soins + boucliers) à partir du niv. 20–35 ; avant, build dégâts pour monter vite
-  (20 potions de restat gratuites pour basculer ensuite).
-- Capital : 50 (niv. 1) — répartition conseillée : vie 35 (+140 PV), force 15 (+30).
+- Rôle visé : **soutien / tank** (soins + boucliers). Seulement 3 potions de restat → capital placé dès le départ
+  dans ce qui sert au build final (vie, sagesse, résistance), pas de build dégâts provisoire.
+- Capital : 50 (niv. 1) — voir `docs/game/build-recommendation.md` (« KrazyKeel »).
 - IA : même `ai/main.leek` (générique).
 
-### 3ᵉ poireau — envisagé (100 000 habs)
-- Rôle proposé : attaquant **magie / poison** (Venin niv. 42, double pistolet niv. 45). Code poison à écrire.
+### 3ᵉ poireau
+- Impossible avant qu'un poireau atteigne le niveau 100.
 
 ## Objectifs
 - Court terme : progresser en solo.

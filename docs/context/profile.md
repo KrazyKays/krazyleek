@@ -23,7 +23,8 @@ Stats au niveau 42 (combat 54977555) :
 - Armes : laser, mitraillette
 - Puces (10/10) : éclair, flamme, caillou, rocher, protéines, motivation, bandage, casque, bouclier, **Solidification**
 - Composants (4/8) : ressort (+20 force, +40 agilité), pomme (+100 PV), RAM (+4 RAM), ventilateur (+40 fréquence)
-  En attente : CD (manque 3 jus de poireau), plaque de fer (recette pas encore obtenue)
+  Recettes possédées non craftées : CD (manque 3 jus de poireau), noyau XN.a-56 (+4 cœurs)
+  Pas encore obtenues : plaque de fer, batterie, carte mère (recettes aléatoires en fin de combat)
 - IA utilisée : [`ai/main.leek`](../../ai/main.leek) (planificateur générique)
   Ancienne IA Python : [`ai/legacy/krazyklick_v0.py`](../../ai/legacy/krazyklick_v0.py)
 - Config cible : voir [`docs/game/build-recommendation.md`](../game/build-recommendation.md)

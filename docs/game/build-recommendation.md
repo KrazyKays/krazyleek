@@ -185,3 +185,15 @@ Tous ces changements sont gérés par l'IA sans modification (étincelle, PM sup
   sont contre des niveaux 50 à 5–6 PM qui frappent puis sortent de portée ; à 858 PV, +160 PV changent
   peu face à 800+ de poison, alors que +1 PM ouvre des positions de tir chaque tour.
   Option immédiate : potion de restat (gratuite) pour convertir 40 capital de vie → 5ᵉ PM.
+
+## Niveau 48 : tout pour la Stalactite
+
+| Niv | Objet | Verdict |
+|---|---|---|
+| 48 | Bulbe chétif (42 420 habs, 6 PT, invocation) | **pas maintenant** : 6 PT sur 11, retarde la Stalactite, et l'IA ne sait pas encore invoquer (code à écrire : `summon` + IA du bulbe) |
+| 49 | **Carte mère** (composant) : +2 RAM, +2 cœurs, +40 PV, +10 fréquence | à crafter si la recette tombe : 2 puces de plus (ex. remettre le bandage) |
+| **50** | **Stalactite** (54 500 habs) : ≈ 210 dégâts, 35/PT, portée 2–7 cercle, recharge 3 | **priorité absolue** : remplace le caillou (le plus faible en dégâts fiables) ; l'IA l'utilisera sans modification |
+| 55 | Kiwi (composant) : +1 PM, +50 sagesse, −1 PT | intéressant contre les kiteurs, mais −1 PT et 20 jus de poireau |
+| 56 | Goutte (soin 40–45) | non prioritaire |
+
+Capital : 5ᵉ PM (40) recommandé (cf. niveau 47) ; sinon vie.

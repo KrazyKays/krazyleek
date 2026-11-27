@@ -69,10 +69,15 @@ if (target != null) {
     }
     var dealtDamage = attacked && attack[2][1] > 0;
 
-    // Après avoir frappé : si l'attaque était faible (< 60 % du potentiel), avancer vers une
+    // Après le plan : défensif → s'approcher ; attaque faible (< 60 % du potentiel) → avancer vers une
     // meilleure position ; sinon se replier intelligemment. Jamais de repli sans attaque.
     if (attacked && isAlive(target)) {
-        if (dealtDamage && attackTarget == target && attack[2][1] < potential * 0.6) {
+        if (!dealtDamage) {
+            // Tour purement défensif (boucliers) : garder l'initiative en s'approchant prudemment
+            // d'une position de tir pour le tour suivant (combat 54978831 : resté sur place au T2,
+            // aucune case de tir atteignable au T3 → 13 PT perdus, défaite à 20 PV près).
+            approachAttackPosition(target);
+        } else if (attackTarget == target && attack[2][1] < potential * 0.6) {
             advanceTowardStrongPositions(target);
         } else {
             retreatFrom(target);

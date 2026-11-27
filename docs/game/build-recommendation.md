@@ -211,3 +211,17 @@ Capital : 5ᵉ PM (40) recommandé (cf. niveau 47) ; sinon vie.
 ## Niveau 51 : restat effectué (2026-11-28)
 Force 100 (+200 → 220), PT 30 (11 PT), PM 60 (5 PM), vie 110 (+440 → ≈ 790 PV). Ensuite : capital en vie
 jusqu'à ~1 300 PV (meilleur gain par point), puis 12ᵉ PT (35, Stalactite + laser = 373 en un tour).
+
+## Niveau 51 : création d'un 2ᵉ poireau (2026-11-27)
+- **krazyKlick** : setup inchangé (restat déjà fait au niv. 51). Rien de neuf avant le niv. 53 (Altération,
+  peu utile pour nous), 56 (Goutte) et surtout **60 (Libération, 90 000 habs)** → garder des habs.
+- **Budget** : le 2ᵉ poireau entre en concurrence avec la Libération. Ordre conseillé : 1) Libération
+  pour krazyKlick, 2) équiper le nouveau avec des objets bon marché (< 10 000 habs chacun jusqu'au niv. 20).
+- **Équipement** : un objet de l'inventaire ne s'équipe que sur un poireau à la fois *(à vérifier en jeu)* :
+  racheter des exemplaires bon marché (mitraillette 3 080, caillou 3 290, protéines 3 520, casque 2 200,
+  bandage 2 000) plutôt que déséquiper krazyKlick.
+- **Build du 2ᵉ** : ne pas cloner krazyKlick. Option recommandée : **soutien / tank** (sagesse + soins,
+  résistance + boucliers) pour les combats éleveur, où l'IA alliée (`lib/team.leek`) sait déjà éviter
+  de toucher un coéquipier. Option alternative : 2ᵉ attaquant force pour doubler les combats solo.
+- **IA** : `ai/main.leek` est générique (lit l'équipement porté) → on peut l'assigner aux deux poireaux.
+  Code à prévoir si soutien : soigner/protéger l'allié le plus bas (aujourd'hui les soins ciblent surtout soi).

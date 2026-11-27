@@ -31,6 +31,10 @@ Stats au niveau 51 (après restat, 2026-11-28) :
   Ancienne IA Python : [`ai/legacy/krazyklick_v0.py`](../../ai/legacy/krazyklick_v0.py)
 - Config cible : voir [`docs/game/build-recommendation.md`](../game/build-recommendation.md)
 
+### 2ᵉ poireau — à créer (débloqué au niv. 51 de krazyKlick)
+- Nom, build et rôle : à décider (voir `docs/game/build-recommendation.md`, section « 2ᵉ poireau »).
+- IA : même `ai/main.leek` (générique).
+
 ## Objectifs
 - Court terme : progresser en solo.
 - Long terme : à définir.

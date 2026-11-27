@@ -1,5 +1,5 @@
 // =============================================================
-// krazyKlick — IA principale (point d'entrée)
+// IA principale commune à tous nos poireaux (point d'entrée)
 // IA générique « planificateur » : elle lit l'équipement réellement porté et les données
 // officielles (lib/items.leek), choisit la case et la combinaison d'attaques qui font le plus
 // de dégâts ce tour, puis se met à couvert avec les PM restants.
@@ -105,6 +105,6 @@ if (target != null) {
 }
 
 // Tour 1 : un PT restant sert à saluer (trophée « Bavard » / speaker, 2 500 habs).
-if (getTurn() == 1 && getTP() >= 1) say("Salut ! krazyKlick arrive");
+if (getTurn() == 1 && getTP() >= 1) say("Salut ! " + getName(getEntity()) + " arrive");
 
 logOperations("fin du tour");

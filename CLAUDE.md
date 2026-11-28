@@ -15,7 +15,7 @@ Ce repo sert d'atelier pour écrire, tester et optimiser des IA pour [Leek Wars]
 | `docs/game/` | Mécaniques (formules), `equipment.md`, `build-recommendation.md`, `progression.md` (ce qui change en montant). |
 | `docs/data/` | Données brutes de l'API Leek Wars (puces, armes, constantes, fonctions). |
 | `docs/context/` | Profil du joueur : poireaux, builds, équipement, stratégie. **À lire avant d'écrire une IA.** |
-| `tools/` | Scripts (sync API, simulateur local, analyse de combats). |
+| `tools/` | Scripts (sync API, simulateur local, analyse de combats, `xp_stats.py` : XP par mode). |
 | `fights/` | Données de combats téléchargées (ignorées par git sauf `fights/notes/`). |
 | `.claude/skills/` | Skills : `/leek-write`, `/leek-review`, `/leek-fight-review`, `/leek-levelup`. |
 | `.claude/agents/` | Agents spécialisés (`leek-strategist`). |

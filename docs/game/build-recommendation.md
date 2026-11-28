@@ -229,6 +229,9 @@ jusqu'à ~1 300 PV (meilleur gain par point), puis 12ᵉ PT (35, Stalactite + la
 
 ### KrazyKeel (créé niv. 1)
 - **3 potions de restat seulement** → pas de build dégâts provisoire : chaque point va dans le build final.
+- **Révision 2026-11-28 (combats 55028458, 55028589)** : en duel, la force gagne les combats (un adversaire
+  niv. 5 force 50 tire à ≈ 27 contre ≈ 18 pour nous). Prochains points en **force** jusqu'au niv. ~20 ; une
+  potion de restat vers sagesse / résistance quand soin (20), bouclier (35) et Solidification (40) seront là.
 - Capital : **vie** d'abord (utile dans tous les rôles, vie de base ≈ 100 au niv. 1 → +4 PV/point = +4 %),
   puis **sagesse** dès le bandage (niv. 3) pour les soins, **résistance** quand les boucliers arrivent
   (casque 10, bouclier 35, Solidification 40). 4ᵉ PM (20) vers le niv. 10–15.

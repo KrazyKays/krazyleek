@@ -52,8 +52,17 @@ if (target != null) {
 
     // Hors de portée : marcher vers une position d'attaque, puis réévaluer avec les PM restants.
     if (attack == null && !waiting) {
-        if (combatSoon(target)) tryChipSelf(CHIP_LEATHER_BOOTS); // +2 PM pour atteindre une position d'attaque
-        approachAttackPosition(target);
+        // Déjà à portée mais aucune attaque rentable (boucliers absolus énormes : Solidification + bouclier
+        // + casque ≈ 120 par coup) : ne pas rester planté dans sa ligne de vue, se mettre à couvert
+        // (combat 55014975 contre d2d25 : 2 tours immobiles à 6 cases, flamme 116 + rocher 153 encaissés).
+        var inMyReach = getCellDistance(getCell(), getCell(target)) <= attackRange(getEntity()) + getMP();
+        if (getAbsoluteShield(target) >= 40 && inMyReach) {
+            debug("[plan] bouclier adverse " + getAbsoluteShield(target) + " : aucune attaque rentable, on se couvre");
+            retreatFrom(target);
+        } else {
+            if (combatSoon(target)) tryChipSelf(CHIP_LEATHER_BOOTS); // +2 PM pour atteindre une position d'attaque
+            approachAttackPosition(target);
+        }
         attack = chooseAttackCell(target);
     }
 

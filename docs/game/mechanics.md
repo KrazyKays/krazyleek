@@ -65,6 +65,8 @@ Rocher d'un coffre en bois ≈ 38,5 × 6 = **231 dégâts** (portée 2–6) ; é
   716 dégâts → 79 XP. Elle dépend du **résultat** (victoire > nul > défaite) et des **niveaux** en présence.
 - Solo, krazyKlick niv. 40–47, défaites : 70–210 XP (plus contre des niv. 50 que contre des niv. 43) ;
   nul en 64 tours : 282 XP. Entraînement contre un bot (Domingo) : 0 XP.
+- Solo niv. 51 : **victoire 665 XP** (contre un niv. 48), défaite 103 XP (contre un niv. 51).
+- Battle royale : 140 XP (mort au T11, 55004987) ; tournoi BR gagné : **837 XP** (55020061).
 - Équipe (6 c 6), krazyKlick niv. 51 : 5 XP par défaite, 28 par victoire → négligeable (≈ 4 700 XP par niveau) ;
   ces combats servent aux habs / ressources / talent, pas à monter.
 - Beaucoup d'adversaires niv. 50 gagnent 0 XP : **XP verrouillée** (`xp_locked`), des poireaux bloqués

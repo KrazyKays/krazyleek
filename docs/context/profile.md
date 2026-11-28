@@ -25,7 +25,7 @@ Stats au niveau 51 (après restat, 2026-11-28) :
 - Niveau 52 (2026-11-28) : +5 capital → conseillé en vie (+20 PV → ≈ 810)
 - Emplacements : **2 armes**, **10 puces** (RAM 10), jusqu'à 8 composants
 - Armes : laser, mitraillette
-- Puces (10/10) : éclair, flamme, caillou, rocher, protéines, motivation, étincelle, bouclier, Solidification, **bulbe chétif** (casque retiré au niv. 48 ; bandage au niv. 46)
+- Puces (10/10) : éclair, flamme, **Stalactite** (à la place du caillou, niv. 50), rocher, protéines, motivation, étincelle, bouclier, Solidification, **bulbe chétif** (casque retiré au niv. 48 ; bandage au niv. 46)
 - Composants (4/8) : ressort (+20 force, +40 agilité), pomme (+100 PV), RAM (+4 RAM), ventilateur (+40 fréquence)
   Recettes possédées non craftées : CD (manque 3 jus de poireau), noyau XN.a-56 (+4 cœurs),
   **Morus** (+60 PV, +20 sagesse, +40 magie ; 4 feuilles, 2 fleurs, 2 jus de poireau, 4 chairs d'aubergine)

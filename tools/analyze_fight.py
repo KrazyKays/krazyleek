@@ -108,7 +108,10 @@ def main(argv):
     def flush(entity, tp):
         nonlocal line
         left = tp - spent
-        d = min((distance(pos[me], pos[f], width) for f in foes), default="?")
+        # distance de l'entité qui joue à son adversaire le plus proche (poireaux, hors invocations)
+        team = leeks[entity]["team"] if entity in leeks else leeks[me]["team"]
+        opp = [i for i, l in leeks.items() if l["team"] != team and not l.get("summon") and i in pos]
+        d = min((distance(pos.get(entity, pos[me]), pos[f], width) for f in opp), default="?")
         if entity == me and left > 0:
             wasted.append((turn, left))
             if left >= 5 and d != "?" and d <= 8:

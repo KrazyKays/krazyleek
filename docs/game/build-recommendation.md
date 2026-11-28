@@ -239,3 +239,10 @@ jusqu'à ~1 300 PV (meilleur gain par point), puis 12ᵉ PT (35, Stalactite + la
 - Combats : 50/jour partagés + 50 achetables une fois par jour (à faire chaque jour, habs abondants). Mettre l'essentiel des combats
   solo sur KrazyKeel (montée rapide aux bas niveaux) ; tester les combats éleveur (les 2 poireaux gagnent
   de l'XP en un seul combat) — avec 2 poireaux contre 4, et un écart de 50 niveaux, à évaluer sur quelques combats.
+
+## Niveau 52 (krazyKlick, 2026-11-28)
+- Rien de nouveau au marché. Capital +5 → **vie** (+20 PV).
+- À venir : Altération (53, 75 710 habs) : dégâts nova 18–20, portée 6–12. Les dégâts nova dépendent de la
+  science (0 chez nous) → **ne pas acheter**. Goutte (56) : non prioritaire. **Libération (60)** : l'objectif.
+- Composants : Kiwi (55 : +1 PM, −1 PT) toujours déconseillé ; Orange (58 : +25 sagesse, +25 résistance,
+  +20 fréquence) à envisager si une place se libère.

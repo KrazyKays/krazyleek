@@ -26,7 +26,7 @@ def main(argv):
             for l in r[side]:
                 if l["name"] in MINE:
                     res = "nul" if f["winner"] <= 0 else ("victoire" if f["winner"] == team else "défaite")
-                    stats[(l["name"], TYPES.get(f["type"], f"type {f['type']}"), res)].append((l["xp"], l["level"]))
+                    stats[(l["name"], TYPES.get(f["type"], f"type {f['type']}") + (" (tournoi)" if f.get("context") == 3 and f["type"] != 7 else ""), res)].append((l["xp"], l["level"]))
     print(f"{'Poireau':11} {'Mode':24} {'Résultat':9} {'n':>3} {'XP moy.':>8} {'min–max':>11} niveaux")
     for (name, mode, res), v in sorted(stats.items()):
         xp = [x for x, _ in v]

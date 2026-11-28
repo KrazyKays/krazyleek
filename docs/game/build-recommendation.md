@@ -246,3 +246,13 @@ jusqu'à ~1 300 PV (meilleur gain par point), puis 12ᵉ PT (35, Stalactite + la
   science (0 chez nous) → **ne pas acheter**. Goutte (56) : non prioritaire. **Libération (60)** : l'objectif.
 - Composants : Kiwi (55 : +1 PM, −1 PT) toujours déconseillé ; Orange (58 : +25 sagesse, +25 résistance,
   +20 fréquence) à envisager si une place se libère.
+
+## Plan de combats quotidien (2026-11-28, 96 combats restants)
+Base : XP par combat (`tools/xp_stats.py`) — krazyKlick solo ≈ 690 (victoire) / 148 (défaite), ≈ 4 800 XP
+par niveau ; KrazyKeel ≈ 16 par victoire au niv. 1, 74 XP pour le niv. 2 (≈ 5 victoires par niveau au début).
+1. **KrazyKeel, ≈ 25 solos** d'abord : niv. 5–6 visés. Entre deux combats, à chaque niveau : capital (vie, puis
+   sagesse dès le niv. 3) et achats (`shock` 2, bandage 3, caillou 4, pomme 5, protéines 6).
+2. **krazyKlick, ≈ 70 solos** ensuite, par blocs de 20 ; m'envoyer les défaites (et 1–2 victoires) de chaque
+   bloc pour vérifier les derniers changements d'IA (couverture face aux boucliers, enchaînement, attente).
+3. Pas d'éleveur tant que KrazyKeel n'arrive pas au contact (≈ 180 XP par combat contre ≈ 690 en solo).
+4. Hors quota : 10 tickets d'équipe ; tournois (inscription quotidienne, *à vérifier* : sans coût de combat).

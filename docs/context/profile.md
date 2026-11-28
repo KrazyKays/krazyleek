@@ -28,8 +28,9 @@ Stats au niveau 51 (après restat, 2026-11-28) :
 - Emplacements : **2 armes**, **10 puces** (RAM 10), jusqu'à 8 composants
 - Armes : laser, mitraillette
 - Puces (10/10) : éclair, flamme, **Stalactite** (à la place du caillou, niv. 50), rocher, protéines, motivation, étincelle, bouclier, Solidification, **bottes en cuir** (bulbe chétif retiré le 2026-11-28 ; casque retiré au niv. 48 ; bandage au niv. 46)
-- Composants (4/8) : ressort (+20 force, +40 agilité), pomme (+100 PV), RAM (+4 RAM), ventilateur (+40 fréquence)
-  Recettes possédées non craftées : CD (manque 3 jus de poireau), noyau XN.a-56 (+4 cœurs),
+- Composants (5/8) : ressort (+20 force, +40 agilité), pomme (+100 PV), RAM (+4 RAM), ventilateur (+40 fréquence),
+  **CD** (+40 sagesse, crafté le 2026-11-28 → 4 % de vol de vie)
+  Recettes possédées non craftées : noyau XN.a-56 (+4 cœurs),
   **Morus** (+60 PV, +20 sagesse, +40 magie ; 4 feuilles, 2 fleurs, 2 jus de poireau, 4 chairs d'aubergine)
   Recette obtenue, ressources manquantes : **plaque de fer** (30 rochers, 50 briques, 20 cailloux, 40 écrous)
   Pas encore obtenues : batterie, carte mère (recettes aléatoires en fin de combat)

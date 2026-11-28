@@ -12,3 +12,8 @@
 - Joué probablement avec l'ancien code (bottes lancées sans avancer au T3).
 - Leçon : contre un adversaire à gros dégâts et peu de PV, l'attente laisse l'initiative ; à surveiller sur
   les prochains combats avec le code à jour avant de changer encore la règle.
+
+## 55030612 — revanche contre Miroboss (code à jour, CD équipé) : VICTOIRE en 3 tours, 645 XP
+- T2 : il entre (bottes, 7 cases) et frappe le premier (Stalactite 391), mais nous répondons aussitôt :
+  protéines + flamme 106 + Stalactite 250. T3 : il fuit en se soignant, 2 étincelles sans ligne de vue l'achèvent.
+- Le CD (+40 sagesse) donne du vol de vie : +4 et +10 PV sur la flamme et la Stalactite (≈ 4 % des dégâts).

@@ -47,3 +47,5 @@
   à l'adversaire (54991303). S'arrêter une case avant (`holdOutsideReach`).
 - **Anti-boucle insuffisant** : `isStuck` détecte un retour sur une case déjà occupée, pas une dérive d'une
   case par tour (54991925). Toute logique d'attente doit avoir sa propre limite de tours.
+- **Règle défensive sans limite** : toute règle « ne pas approcher / se couvrir » doit avoir un compteur de tours,
+  sinon un adversaire qui maintient la condition en permanence (boucliers renouvelés) nous fige (55030551).

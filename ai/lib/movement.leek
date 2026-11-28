@@ -61,6 +61,7 @@ function recordTurn(dealtDamage) {
     if (dealtDamage) {
         LAST_DAMAGE_TURN = getTurn();
         HOLD_COUNT = 0;
+        COVER_TURNS = 0;
     }
 }
 
@@ -101,6 +102,7 @@ function advanceUnderCover(target) {
 }
 
 global HOLD_COUNT = 0; // tours d'attente consécutifs sans dégâts (remis à 0 par recordTurn)
+global COVER_TURNS = 0; // tours consécutifs passés à se couvrir (main.leek, remis à 0 par recordTurn)
 
 function holdOutsideReach(target) {
     // Équipe : pas d'attente, nos alliés se battent pendant ce temps (combat 54991925 : 8 tours à
@@ -147,6 +149,8 @@ function approachAttackPosition(target) {
         return;
     }
     if (holdOutsideReach(target)) return;
+    // Bottes seulement quand on avance vraiment (55030551 : lancées puis 1 case parcourue, attente).
+    if (combatSoon(target)) tryChipSelf(CHIP_LEATHER_BOOTS);
     var cells = attackPositions(target, 0);
     if (count(cells) > 0) {
         moveTowardCells(cells);

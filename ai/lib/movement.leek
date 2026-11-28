@@ -78,13 +78,35 @@ function isStuck() {
 // il doit alors entrer dans la nôtre pour nous toucher. Seulement si notre portée + PM dépasse la sienne
 // (sinon un tireur à longue portée nous pilonnerait de loin). L'anti-boucle (isStuck) relance l'assaut
 // si les deux camps attendent.
+// Fin d'attente : avancer vers lui en finissant hors de sa ligne de vue, pour ne pas lui offrir la
+// première salve (combat 55028458 : après 2 tours d'attente, entré à 5 cases sans pouvoir tirer,
+// il tire le premier ; défaite à 61 PV près). Distance strictement décroissante : pas de boucle.
+function advanceUnderCover(target) {
+    var targetCell = getCell(target);
+    var here = getCellDistance(getCell(), targetCell);
+    var best = null;
+    var bestDist = 0;
+    for (var entry in reachableCells(getMP())) {
+        var d = getCellDistance(entry[0], targetCell);
+        if (d >= here || exposedTo(entry[0], target)) continue;
+        if (best == null || d < bestDist) {
+            best = entry[0];
+            bestDist = d;
+        }
+    }
+    if (best == null) return false; // aucun couvert plus proche : approche normale
+    debug("[move] fin d'attente : on avance à couvert (case " + best + ")");
+    moveTowardCell(best);
+    return true;
+}
+
 global HOLD_COUNT = 0; // tours d'attente consécutifs sans dégâts (remis à 0 par recordTurn)
 
 function holdOutsideReach(target) {
     // Équipe : pas d'attente, nos alliés se battent pendant ce temps (combat 54991925 : 8 tours à
     // 8 cases avec 11–13 PT inutilisés, en dérivant d'une case par tour, l'anti-boucle ne voyait rien).
     if (inTeamFight()) return false;
-    if (HOLD_COUNT >= 2) return false; // il ne vient pas : on y va
+    if (HOLD_COUNT >= 2) return advanceUnderCover(target); // il ne vient pas : on y va, à couvert
     if (attackRange(getEntity()) + getMP() <= attackRange(target)) return false;
     var targetCell = getCell(target);
     // Encore loin : on ne peut pas entrer dans sa portée ce tour → approche normale par le vrai chemin
